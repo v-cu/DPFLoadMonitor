@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Device</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* Top navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e1e1e;
+            padding: 0 20px;
+            height: 56px;
+        }
+
+        .nav-left a,
+        .nav-right a {
+            color: #ddd;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        .nav-left a:hover,
+        .nav-right a:hover {
+            color: #ffffff;
+        }
+
+        .nav-left a.active {
+            color: #4caf50;
+        }
+
+        /* Page content */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Simple footer */
+        footer {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="#" class="active">Info</a>
+            <a href="#">User Guide</a>
+            <a href="#">Update</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="#">EN</a> | <a href="#">PL</a>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container">
+        <h1>My Device</h1>
+
+        <p>
+            This device is designed for precise measurement and control applications.
+            It provides reliable performance and simple integration with external systems.
+        </p>
+
+        <p>
+            Key features:
+        </p>
+
+        <ul>
+            <li>High accuracy measurement</li>
+            <li>USB and CAN interface</li>
+            <li>Firmware updatable</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2026 My Device
+    </footer>
+
+</body>
+</html>
