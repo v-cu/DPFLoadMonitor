@@ -1,46 +1,50 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+color:#222;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e1e1e;
-    padding: 0 20px;
-    height: 56px;
+.navbar{
+display:flex;
+justify-content:space-between;
+background:#111;
+padding:15px;
 }
 
-.nav-left a,
-.nav-right a {
-    color: #ddd;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 14px;
+.navbar a{
+color:#ddd;
+text-decoration:none;
+margin-right:20px;
 }
 
-.nav-left a.active {
-    color: #4caf50;
+.navbar a:hover{
+color:white;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
-    color: #fff;
+.active{
+color:#4CAF50 !important;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+background:white;
 }
 
-footer {
-    margin-top: 80px;
-    padding: 20px;
-    text-align: center;
-    font-size: 13px;
-    color: #777;
+h1{
+margin-top:0;
+}
+
+.download-box{
+border:1px solid #ddd;
+padding:15px;
+margin:10px 0;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#777;
 }
