@@ -1,32 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>DPF Monitor</title>
-<link rel="stylesheet" href="../assets/style.css">
+<title>DPF Load Monitor</title>
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-<div>
-<a class="active" href="index.html">DPF Monitor Mini</a>
-<a href="pro.html">DPF Monitor Pro</a>
-<a href="parameters.html">Jak czytać parametry</a>
-<a href="update.html">Aktualizacje</a>
-<a href="contact.html">Kontakt</a>
-</div>
+<header class="site-header">
+  <div class="container nav">
 
-<div>
-<a href="../en/index.html">EN</a> |
-<a href="../pl/index.html">PL</a>
-</div>
-</div>
+    <!-- LEWA: logo -->
+    <a class="logo" href="/pl/">DPF Load Monitor</a>
 
-<div class="container">
-<h1>Witamy na stronie DPF Monitor</h1>
-</div>
+    <!-- ŚRODEK: menu -->
+    <nav class="nav-center">
+      <ul class="nav-list">
+        <li><a href="/pl/mini/">Mini</a></li>
+        <li><a href="/pl/pro/">Pro</a></li>
+        <li><a href="/pl/parameters/">Parametry</a></li>
+        <li><a href="/pl/update/">Aktualizacje</a></li>
+        <li><a href="/pl/contact/">Kontakt</a></li>
+      </ul>
+    </nav>
 
-<footer>© DPF Monitor</footer>
+    <!-- PRAWA: język -->
+    <div class="lang-switch">
+      <a href="/en/">EN</a> |
+      <a class="active" href="/pl/">PL</a>
+    </div>
+
+  </div>
+</header>
+
+
+<section class="section">
+  <div class="container">
+<h1>DPF Load Monitor</h1>
+
+<p>DPF Monitor to kompaktowe urządzenie zaprojektowane do monitorowania stanu filtra cząstek stałych (DPF) w pojazdach grupy VAG. Obsługuje sterowniki silnika z protokołem CAN UDS.</p>
+
+<p>Urządzenie umożliwia podgląd kluczowych parametrów w czasie rzeczywistym, pozwalając świadomie zarządzać procesem regeneracji DPF.</p>
+
+<p>Urządzenie podłącza się przez port OBD2, a dane wyświetlane są na dedykowanym ekranie.</p>
+
+<h2>Funkcje</h2>
+<ul>
+<li>Odczyt parametrów silnika i DPF</li>
+<li>Powiadomienia dźwiękowe i wizualne</li>
+<li>Logowanie danych na kartę microSD</li>
+<li>Historia regeneracji</li>
+<li>Odczyt i kasowanie błędów DTC</li>
+<li>Test ciśnienia różnicowego</li>
+<li>Tryb dzień/noc</li>
+</ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 DPF Load Monitor</span>
+  </div>
+</footer>
+
 </body>
 </html>

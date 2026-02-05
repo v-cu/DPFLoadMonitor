@@ -1,34 +1,128 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>DPF Monitor</title>
-<link rel="stylesheet" href="../assets/style.css">
+<title>DPF Load Monitor</title>
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-<div>
-<a class="active" href="index.html">DPF Monitor Mini</a>
-<a href="pro.html">DPF Monitor Pro</a>
-<a href="parameters.html">How to read parameters</a>
-<a href="update.html">Update</a>
-<a href="contact.html">Contact</a>
-</div>
+<header class="site-header">
+  <div class="container nav">
 
-<div>
-<a href="../en/index.html">EN</a> |
-<a href="../pl/index.html">PL</a>
-</div>
-</div>
+    <!-- LEWA: logo -->
+    <a class="logo" href="index.html">DPF Load Monitor</a>
 
+    <!-- ŚRODEK: menu -->
+    <nav class="nav-center">
+      <ul class="nav-list">
+        <li><a href="/en/mini/">Mini</a></li>
+        <li><a href="/en/pro/">Pro</a></li>
+        <li><a href="/en/parameters/">Parametry</a></li>
+        <li><a href="/en/update/">Aktualizacje</a></li>
+        <li><a href="/en/contact/">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <!-- PRAWA: język -->
+    <div class="lang-switch">
+      <a class="active" href="/en/">EN</a> |
+      <a href="/pl/">PL</a>
+    </div>
+
+
+  </div>
+</header>
+
+
+<section class="section">
+<div class="container product-layout">
+
+  <!-- LEWA STRONA – tekst -->
+  <div class="product-text">
+
+    <h1>DPF Load Monitor</h1>
+
+    <p>
+      The DPF Monitor is a compact device designed to monitor the status of the Diesel Particulate Filter (DPF) in VAG group vehicles.
+    </p>
+
+    <p>
+      This device provides a real-time view of key parameters, enabling you to consciously manage the DPF regeneration process and prevent costly failures.
+    </p>
+
+    <p>
+      The device connects to your car via the OBD2 port, and all data is displayed on a dedicated screen.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>Readout of engine and DPF parameters</li>
+      <li>Audible and visual regeneration notifications</li>
+      <li>Logging data to microSD</li>
+      <li>Regeneration history</li>
+      <li>Read and clear engine DTC codes</li>
+      <li>Quick differential pressure test</li>
+      <li>Day/night mode</li>
+    </ul>
+
+  </div>
+
+  <!-- PRAWA STRONA – duże zdjęcie -->
+  <div class="product-image">
+    <img src="../assets/img/main_photo.jpg" alt="DPF Load Monitor">
+  </div>
+
+</div>
+</section>
+
+<section class="section alt">
 <div class="container">
-<h1>Welcome to DPF Monitor</h1>
-<p>Select section from menu.</p>
+
+<h2 class="gallery-title">Gallery</h2>
+
+<div class="gallery">
+
+  <img src="../assets/img/dpf_simple.jpg" class="gallery-img">
+  <img src="../assets/img/dpf_adv.jpg" class="gallery-img">
+  <img src="../assets/img/all_data.jpg" class="gallery-img">
+  <img src="../assets/img/info.jpg" class="gallery-img">
+  <img src="../assets/img/dtc.jpg" class="gallery-img">
+  <img src="../assets/img/diff_press.jpg" class="gallery-img">
+
 </div>
 
-<footer>© DPF Monitor</footer>
+</div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 DPF Load Monitor</span>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img">
+</div>
+
+<script>
+const galleryImages = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+galleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("open");
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("open");
+});
+</script>
 
 </body>
 </html>

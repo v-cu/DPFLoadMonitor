@@ -1,2 +1,2 @@
 # DPFLoadMonitor
-DPF Monitor vor VAGs
+DPF Monitor for VAGs
