@@ -40,11 +40,11 @@
   <div class="container">
 <h1>DPF Load Monitor</h1>
 
-<p>DPF Monitor to kompaktowe urządzenie zaprojektowane do monitorowania stanu filtra cząstek stałych (DPF) w pojazdach grupy VAG. Obsługuje sterowniki silnika z protokołem CAN UDS.</p>
+<p>DPF Monitor to kompaktowe urządzenie, zaprojektowane do monitorowania stanu filtra cząstek stałych (DPF) w pojazdach z grupy VAG. Urządzenie obsługuje sterowniki silnika z protokołem magistrali CAN UDS (silniki 4-cyfrowe, zaczynające się od Cxxx i Dxxx).</p>
 
-<p>Urządzenie umożliwia podgląd kluczowych parametrów w czasie rzeczywistym, pozwalając świadomie zarządzać procesem regeneracji DPF.</p>
+<p>Urządzenie pozwala na bieżący podgląd kluczowych parametrów, co umożliwia świadome kontrolowanie procesu regeneracji DPF i zapobieganie kosztownym awariom. Należy pamiętać, że podgląd i analiza parametrów jest tak samo ważna, jak sama informacja o wypalaniu. Dzięki DPF Monitorowi będziesz na bieżąco informowany o rozpoczęciu wypalania filtra, co pozwoli uniknąć przerwania tego procesu.</p>
 
-<p>Urządzenie podłącza się przez port OBD2, a dane wyświetlane są na dedykowanym ekranie.</p>
+<p>Urządzenie łączy się z samochodem za pośrednictwem złącza OBD2, a wszystkie dane wyświetlane są na dedykowanym ekranie. To idealne narzędzie dla każdego kierowcy, który chce mieć pełną kontrolę nad kondycją swojego DPF.</p>
 
 <h2>Funkcje</h2>
 <ul>
@@ -57,6 +57,13 @@
 <li>Tryb dzień/noc</li>
 </ul>
   </div>
+
+    <!-- PRAWA STRONA – duże zdjęcie -->
+  <div class="product-image">
+    <img src="/assets/img/main_photo.jpeg" alt="DPF Load Monitor">
+  </div>
+
+</div>
 </section>
 
 <footer class="site-footer">
@@ -64,6 +71,27 @@
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
+
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img">
+</div>
+
+<script>
+const galleryImages = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+galleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("open");
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("open");
+});
+</script>
 
 </body>
 </html>

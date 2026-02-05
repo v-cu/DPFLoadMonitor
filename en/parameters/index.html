@@ -68,20 +68,18 @@ During regeneration, temperatures range from 550 to 700°C.
 </p>
 
 <ul>
-<li><b>Passive Regeneration:</b> Occurs when the temperature exceeds 350°C. It may also happen at lower temperatures, resulting in a decrease in measured soot mass.</li>
-<li><b>Active Regeneration:</b> Forced by the ECU. Minimum temperature should be 580°C. If this temperature is not reached, it may indicate a problem with auxiliary components.</li>
+<li><b>Passive Regeneration:</b> A spontaneous DPF regeneration that occurs when the temperature exceeds 350 degrees. My observations suggest that passive regeneration can also happen at lower temperatures, resulting in a decrease in the measured soot mass.</li>
+<li><b>Active Regeneration:</b> A DPF regeneration forced by the ECU. For the filter to regenerate properly, the minimum temperature should be 580 degrees. If the car does not reach this temperature during regeneration, it indicates a problem with the ancillary equipment.</li>
 </ul>
 
 <p>
-To achieve correct temperatures, avoid aggressive acceleration and engine braking.
-Maintain steady speed within 2,000–2,500 RPM.
+To achieve the correct temperatures, you should not accelerate aggressively or use engine braking (as this turns off the additional fuel injection for DPF regeneration). You should maintain a steady speed within the 2,000-2,500 RPM range.
 </p>
 
 <h2>4. Differential Pressure</h2>
 <p>
 This is the most important parameter for analyzing DPF blockage.
 Pressure is measured before and after the filter.
-For more details, refer to section 4.2 "Differential Pressure Test."
 </p>
 
 <h3>4a. Differential Pressure Offset</h3>
@@ -97,20 +95,29 @@ After regeneration, this value resets to zero.
 
 <h2>6. Soot Mass Calculated</h2>
 <p>
-This soot mass is calculated by the ECU. Regeneration usually starts when it reaches 14g to 24g.
-It should always be higher than measured soot mass.
-After regeneration, it drops to approximately 2.5–5g.
+This is the soot mass calculated by the ECU. Based on this value, regeneration should start when the value reaches 14g to 24g. This value should always be higher than the measured soot mass. After regeneration, the calculated soot mass drops to around 2.5-5g.
 </p>
 
 <p>
-Vehicles used mainly in city driving tend to regenerate closer to 24g.
-Highway driving may trigger regeneration earlier.
+My observations show that for cars driven more in the city, regeneration tends to start closer to the 24g limit. However, during highway driving, if the engine conditions are right, regeneration might start earlier (even before 20g).
 </p>
 
 <p>
-Vehicles with pre-Dieselgate software may trigger regeneration using cruise control.
-If DPF temperature is about 300°C and calculated soot mass exceeds 14g,
-regeneration may start within seconds or minutes.
+For cars with pre-Dieselgate software, it's possible to initiate regeneration using cruise control. If the DPF temperature is around 300 degrees (during a highway drive) and the calculated mass is above 14g, the ECU will see that the conditions are right and will initiate a DPF regeneration within a few seconds or minutes.
+</p>
+
+<p>
+Using cruise control for regeneration has another advantage: when regenerating without it, the process usually ends around 5g. With cruise control, the DPF regenerates longer, down to about 2.5g, resulting in a more thorough cleaning.
+</p>
+
+<h2>7. Soot Mass Measured</h2>
+
+<p>
+The measured soot mass should never increase faster than the calculated mass. If this happens (e.g., calculated soot mass is 11g and measured is 18g), it may indicate a problem with the engine's ancillary equipment or the filter itself. This value is calculated based on engine load, engine speed, and, most importantly, differential pressure.
+</p>
+
+<p>
+When the measured value increases faster, it triggers the regeneration process, and the measured and calculated soot values equalize. After regeneration, the value drops to 0g or can even be negative (in which case you could say the DPF is in better condition than the ECU expects).
 </p>
 
 <p>

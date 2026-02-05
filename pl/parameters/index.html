@@ -51,9 +51,7 @@ Masa obliczona rośnie szybciej w porównaniu do starszych wersji.
 
 <h2>2. Ilość popiołu olejowego</h2>
 <p>
-Pokazuje zapełnienie filtra popiołem, który nie jest wypalany i rośnie wraz z przebiegiem.
-Dla silników 2.0 TDI maksymalna wartość wynosi 0.175L lub 60g.
-Po przekroczeniu może być konieczne czyszczenie lub wymiana filtra.
+Wartość ta pokazuje zapełnienie filtra popiołem. Jest to wartość która nie jest wypalana(rośnie wraz z przebiegiem samochodu). W zależności od silnika wartość ta podawana jest w litrach lub gramach. Dla silników 2.0TDI maksymalna wartość zapełnienia popiołem wynosi 0.175L lub 60g. Po przekroczeniu tych wartości może być wymagana wymiana/czyszczenie filtra ale nie musi. Wszystko zależy od stylu jazdy czy trasy.
 </p>
 
 <h2>3. Temperatura przed i za filtrem DPF</h2>
@@ -64,12 +62,12 @@ Podczas wypalania temperatury wynoszą 550–700°C.
 </p>
 
 <ul>
-<li><b>Regeneracja bierna</b> – występuje powyżej 350°C, ale może także przy niższej temperaturze.</li>
-<li><b>Regeneracja aktywna</b> – wymuszona przez sterownik. Minimalna temperatura to 580°C.</li>
+<li><b>Regeneracja bierna</b> - samoczynne wypalanie się filtra DPF występuje gdy temperatura wynosi powyżej 350 stopni. Z moich obserwacji wynika że wypalanie bierne może być również przy niższej temperaturze – spada wtedy masa zmierzona sadzy.</li>
+<li><b>Regeneracja aktywna</b> – wypalanie się filtra DPF wymuszona przez sterownik. Aby poprawnie wypalić filtr DPF minimalna temperatura powinna wynosić 580stopni. Jeśli podczas wypalania auto nie osiąga tej temperatury oznacza to że występuje jakiś problem w osprzęcie.</li>
 </ul>
 
 <p>
-Aby uzyskać właściwe temperatury, należy utrzymywać stałą prędkość i zakres 2000–2500 RPM.
+Aby uzyskać odpowiednie temperatury nie można przyśpieszać samochodem ani hamować silnikiem (wtedy dotrysk dodatkowego paliwa do filtra DPF jest wyłączony). Należy poruszać się ze stałą prędkością w zakresie obrotów 2-2.5tyś.
 </p>
 
 <h2>4. Ciśnienie różnicowe filtra</h2>
@@ -80,38 +78,38 @@ Mierzone jest przed i za filtrem.
 
 <h3>4a. Offset różnicy ciśnień</h3>
 <p>
-Pozwala ocenić sprawność czujnika. Wartość powinna być bliska zeru.
+Ten parametr może nam dużo powiedzieć czy nasz czujnik jest sprawny. Wartość powinna wynosić w okolicy zera. 
 </p>
 
 <h2>5. Kilometry od ostatniej regeneracji</h2>
 <p>
-Pokazuje dystans od ostatniego wypalania. Zwykle 200–1000 km.
-Po regeneracji wartość zeruje się.
+Ile kilometrów minęło od ostatniej regeneracji. W zależności od samochodu może to być od 200km do nawet 800-1000km. Po skończeniu wypalania wartość się zeruje.
 </p>
 
 <h2>6. Ilość sadzy obliczonej</h2>
 <p>
-Regeneracja rozpoczyna się zwykle przy 14–24g.
-Po wypalaniu spada do około 2.5–5g.
+Obliczona masa sadzy przez sterownik. Na jej podstawie powinno rozpoczynać się wypalanie gdy wartość osiągnie od 14g do 24g. Wartość ta zawsze powinna być wyższa od ilości sadzy zmierzonej. Ilość sadzy obliczonej po wypalaniu spada do okolic 2.5-5g.
 </p>
 
 <p>
-W ruchu miejskim regeneracja następuje bliżej 24g.
-Na trasie może rozpocząć się wcześniej.
+Z moich obserwacji wynika, że samochody które więcej jeżdżą po mieście wypalanie zaczyna się bliżej tej granicy 24g. Natomiast w trasie jeśli silnik będzie miał odpowiednie warunki może zacząć wypalanie wcześniej (nawet przed wartością 20g). 
 </p>
 
 <p>
-W pojazdach przed Diesel Gate możliwe jest uruchomienie regeneracji tempomatem.
+Dla samochodów z oprogramowaniem przed diesel gate istnieje możliwość włączania wypalania za pomocą tempomatu. Wystarczy, że temperatura filtra DPF wynosi w okolicach 300stopni (jazda trasą) i wartość masy obliczonej wynosi powyżej 14g. Wtedy sterownik widzi, że ma warunki do wypalania więc w ciągu kilku sekund bądź paru minut włączy wypalanie filtra DPF.
+</p>
+
+<p>
+Wypalanie na tempomacie ma jeszcze jedną zaletę. Gdy wypalamy bez tempomatu koniec wypalania zazwyczaj jest w okolicach 5g. Natomiast z tempomatem DPF wypala się dłużej do okolic 2.5g. Jest wypalony wtedy lepiej.
 </p>
 
 <h2>7. Ilość sadzy zmierzonej</h2>
 <p>
-Nie powinna rosnąć szybciej niż masa obliczona.
-Jeśli tak się dzieje, może wskazywać problem z osprzętem silnika lub filtrem.
+Zmierzona masa sadzy nigdy nie powinna rosnąć szybciej. Gdy się tak dzieje (np. obliczona masa sadzy ma 11g a zmierzona 18g) wtedy można stwierdzić, że coś się dzieje z osprzętem silnika lub samym filtrem. Ta wartość jest obliczana na podstawie obciążenia silnika, obrotów silnika i najważniejszego parametru - ciśnienia różnicowego.
 </p>
 
 <p>
-Po regeneracji wartość spada do 0g lub może być ujemna.
+Gdy wartość ta rośnie szybciej wtedy ona rozpoczyna proces wypalania i wartości sadzy zmierzonej i obliczonej się zrównują. Po wypalaniu wartość spada do 0g a nawet może wynosić na minusie (wtedy można powiedzieć ,że dpf jest w lepszym stanie niż oczekuje sterownik)
 </p>
 
   </div>
