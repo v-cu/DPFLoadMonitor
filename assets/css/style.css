@@ -282,9 +282,6 @@ body {
     overflow-x: auto; /* Dodajemy przewijanie na telefonach */
 }
 
-/* Usuwamy ogólne stylowanie h2, żeby nie psuło nagłówków na stronie, 
-   zamiast tego stylujemy h2 wewnątrz sekcji jeśli trzeba */
-
 /* Stylizacja tabeli */
 table {
     width: 100%;
@@ -293,14 +290,14 @@ table {
 }
 
 th, td {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid var(--border);
 }
 
 th {
     background-color: rgba(255, 255, 255, 0.05); /* Delikatne wyróżnienie nagłówka */
-    color: var(--brand-2); /* Akcent kolorystyczny dla nagłówków */
+    color: var(--text); 
     text-transform: uppercase;
     font-size: 0.85em;
     letter-spacing: 1px;
@@ -319,12 +316,6 @@ th {
 .status-check    { background-color: rgba(255, 152, 0, 0.15); }  /* Pomarańczowy */
 .status-clogged  { background-color: rgba(244, 67, 54, 0.15); }  /* Czerwony */
 .status-critical { background-color: rgba(244, 67, 54, 0.3); color: #ff8a80; font-weight: bold; }
-
-/* Efekt najechania myszką */
-tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: 0.2s;
-}
 
 /* Poprawka dla tekstu nad tabelą, żeby nie był czarny */
 .table-container h2 {
