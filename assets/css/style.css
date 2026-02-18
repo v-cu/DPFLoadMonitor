@@ -271,3 +271,47 @@ body {
 }
 
 
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Stylizacja tabeli */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.range {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Kolorowanie wierszy w zależności od stanu */
+.status-perfect { background-color: #e8f5e9; } /* Jasnozielony */
+.status-good    { background-color: #f1f8e9; } 
+.status-warning { background-color: #fffde7; } /* Żółtawy */
+.status-check   { background-color: #fff3e0; } /* Pomarańczowy */
+.status-clogged { background-color: #ffebee; } /* Jasnoczerwony */
+.status-critical { background-color: #ffcdd2; color: #b71c1c; } /* Mocny czerwony */
+
+/* Efekt najechania myszką */
+tr:hover {
+    filter: brightness(95%);
+    transition: 0.2s;
+}
