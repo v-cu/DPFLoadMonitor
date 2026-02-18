@@ -78,9 +78,60 @@ To achieve the correct temperatures, you should not accelerate aggressively or u
 
 <h2>4. Differential Pressure</h2>
 <p>
-This is the most important parameter for analyzing DPF blockage.
-Pressure is measured before and after the filter.
+    This is the most important parameter for assessing DPF clogging. Based on this value, you can determine the overall health of your filter.
 </p>
+
+<p><b>Measurement methods:</b></p>
+<ul>
+    <li>At idle (1-15 hPa);</li>    
+    <li>At idle while increasing RPM to 2.5k-3k (10-30 hPa);</li>
+    <li>While driving in higher gears with the accelerator pedal to the floor;</li>
+</ul>
+
+<p>
+    Option (c) is the most relevant, as it is the only way to accurately check the extent of DPF clogging.
+</p>
+
+<p>
+    To perform the test, the best method is to engage 3rd gear and press the accelerator to the floor. The measurement should be taken up to approximately 4,000 RPM. The values recorded at 4,000 RPM should be interpreted according to the following table:
+</p>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Range (hPa)</th>
+                <th>Technical condition description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="status-perfect">
+                <td class="range">0 - 100</td>
+                <td>DPF in perfect condition.</td>
+            </tr>
+            <tr class="status-good">
+                <td class="range">101 - 200</td>
+                <td>DPF in good condition.</td>
+            </tr>
+            <tr class="status-warning">
+                <td class="range">201 - 300</td>
+                <td>DPF is slowly starting to clog.</td>
+            </tr>
+            <tr class="status-check">
+                <td class="range">301 - 400</td>
+                <td>Requires attention, DPF issues may be starting.</td>
+            </tr>
+            <tr class="status-clogged">
+                <td class="range">400 - 450</td>
+                <td>DPF clogged.</td>
+            </tr>
+            <tr class="status-critical">
+                <td class="range">> 450</td>
+                <td>DPF in very poor condition – engine power is limited by the ECU.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <h3>4a. Differential Pressure Offset</h3>
 <p>
