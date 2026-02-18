@@ -271,56 +271,63 @@ body {
 }
 
 .table-container {
-    background-color: #fff;
+    background-color: var(--card); /* Używamy Twojego koloru karty */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    max-width: 800px;
+    border-radius: 14px; /* Dopasowane do Twoich kart */
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    max-width: 100%; /* Lepiej na urządzeniach mobilnych */
     width: 100%;
+    margin: 2rem 0;
+    overflow-x: auto; /* Dodajemy przewijanie na telefonach */
 }
 
-
-h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
+/* Usuwamy ogólne stylowanie h2, żeby nie psuło nagłówków na stronie, 
+   zamiast tego stylujemy h2 wewnątrz sekcji jeśli trzeba */
 
 /* Stylizacja tabeli */
 table {
     width: 100%;
     border-collapse: collapse;
+    color: var(--text); /* Jasny tekst ze zmiennej */
 }
 
 th, td {
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
-    background-color: #333;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.05); /* Delikatne wyróżnienie nagłówka */
+    color: var(--brand-2); /* Akcent kolorystyczny dla nagłówków */
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 0.85em;
     letter-spacing: 1px;
 }
 
 .range {
     font-weight: bold;
     white-space: nowrap;
+    color: #fff;
 }
 
-/* Kolorowanie wierszy w zależności od stanu */
-.status-perfect { background-color: #e8f5e9; } /* Jasnozielony */
-.status-good    { background-color: #f1f8e9; } 
-.status-warning { background-color: #fffde7; } /* Żółtawy */
-.status-check   { background-color: #fff3e0; } /* Pomarańczowy */
-.status-clogged { background-color: #ffebee; } /* Jasnoczerwony */
-.status-critical { background-color: #ffcdd2; color: #b71c1c; } /* Mocny czerwony */
+/* Kolorowanie wierszy - dopasowane do ciemnego tła (półprzezroczyste) */
+.status-perfect  { background-color: rgba(76, 175, 80, 0.15); }  /* Zielony */
+.status-good     { background-color: rgba(139, 195, 74, 0.1); }  
+.status-warning  { background-color: rgba(255, 235, 59, 0.1); }  /* Żółty */
+.status-check    { background-color: rgba(255, 152, 0, 0.15); }  /* Pomarańczowy */
+.status-clogged  { background-color: rgba(244, 67, 54, 0.15); }  /* Czerwony */
+.status-critical { background-color: rgba(244, 67, 54, 0.3); color: #ff8a80; font-weight: bold; }
 
 /* Efekt najechania myszką */
 tr:hover {
-    filter: brightness(95%);
+    background-color: rgba(255, 255, 255, 0.05);
     transition: 0.2s;
+}
+
+/* Poprawka dla tekstu nad tabelą, żeby nie był czarny */
+.table-container h2 {
+    color: var(--text);
+    margin-top: 0;
 }
