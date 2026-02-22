@@ -333,3 +333,7 @@ img.center-image {
   box-shadow: var(--shadow);
 }
 
+.section p + h2 {
+  margin-top: 2rem;
+}
+
