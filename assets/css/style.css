@@ -446,7 +446,7 @@ html {
   border-radius: 20px;
   box-shadow: var(--shadow);
 
-  width: min(1200px, 95vw);  /* większa szerokość */
+  width: min(800px, 95vw);  /* większa szerokość */
   margin: 0 auto;           /* wyśrodkowanie */
 }
 
