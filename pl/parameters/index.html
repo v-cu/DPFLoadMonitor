@@ -39,23 +39,25 @@
 
 <section class="section">
   <div class="container">
+    <div class="page-layout">
+      <div class="page-content">
+
 <h1>Jak czytać parametry</h1>
 
 <p>Wszystkie poniższe informacje podane są na podstawie zdobytych informacji w Internecie oraz własnego doświadczenia.<span style="color: #6d6d6d;"></span></p>
-
-<h2>1. Wersja oprogramowania</h2>
+<h2 id="hw">1. Wersja oprogramowania</h2>
 <p>
 Wersja oprogramowania sterownika silnika wpływa na częstotliwość wypalania DPF.
 W Audi A4 B8 wersje po Diesel Gate: 9977, 9978, 9979, 9980, 9981 powodują częstsze wypalanie (250–300 km).
 Masa obliczona rośnie szybciej w porównaniu do starszych wersji.
 </p>
 
-<h2>2. Ilość popiołu olejowego (Oil Ash)</h2>
+<h2 id="oil-ash">2. Ilość popiołu olejowego (Oil Ash)</h2>
 <p>
 Wartość ta pokazuje zapełnienie filtra popiołem. Jest to wartość która nie jest wypalana(rośnie wraz z przebiegiem samochodu). W zależności od silnika wartość ta podawana jest w litrach lub gramach. Dla silników 2.0TDI maksymalna wartość zapełnienia popiołem wynosi 0.175L lub 60g. Po przekroczeniu tych wartości może być wymagana wymiana/czyszczenie filtra ale nie musi. Wszystko zależy od stylu jazdy, trasy czy też ogólnego stanu filtra patrząc na ilość sadzy obliczonej i zmierzonej.
 </p>
 
-<h2>3. Temperatura przed i za filtrem DPF (Input and Output Temperature)</h2>
+<h2 id="temp">3. Temperatura przed i za filtrem DPF (Input and Output Temperature)</h2>
 <p>
 Podczas normalnej jazdy temperatury nie przekraczają 350°C.
 Podczas jazdy dynamicznej mogą osiągnąć 450°C.
@@ -71,7 +73,7 @@ Podczas wypalania temperatury wynoszą 550–700°C.
 Aby uzyskać odpowiednie temperatury nie można przyśpieszać samochodem ani hamować silnikiem (wtedy dotrysk dodatkowego paliwa do filtra DPF jest wyłączony). Należy poruszać się ze stałą prędkością w zakresie obrotów 2-2.5tyś.
 </p>
 
-<h2>4. Ciśnienie różnicowe filtra (Differential Pressure)</h2>
+<h2 id="diff-pressure">4. Ciśnienie różnicowe filtra (Differential Pressure)</h2>
 <p>
 Najważniejszy parametr oceny zapchania filtra DPF. Na podstawie tej wartości można stwierdzić w jakim stanie jest nasz filtr.
 <p><b>Sposoby mierzenia:</b></p>
@@ -125,17 +127,17 @@ obrotów należy interpretować według poniższej tabeli:
       </div>
 
 
-<h3>4a. Offset różnicy ciśnień</h3>
+<h3 id="offset">4a. Offset różnicy ciśnień</h3>
 <p>
 Ten parametr może nam dużo powiedzieć czy nasz czujnik jest sprawny. Wartość powinna wynosić w okolicy zera. 
 </p>
 
-<h2>5. Kilometry od ostatniej regeneracji (Last Regeneration Distance)</h2>
+<h2 id="last-regen">5. Kilometry od ostatniej regeneracji (Last Regeneration Distance)</h2>
 <p>
 Ile kilometrów minęło od ostatniej regeneracji. W zależności od samochodu może to być od 200km do nawet 800-1000km. Po skończeniu wypalania wartość się zeruje.
 </p>
 
-<h2>6. Ilość sadzy obliczonej (Soot Calculated)</h2>
+<h2 id="soot-calculated">6. Ilość sadzy obliczonej (Soot Calculated)</h2>
 <p>
 Obliczona masa sadzy przez sterownik. Na jej podstawie powinno rozpoczynać się wypalanie gdy wartość osiągnie od 14g do 24g. Wartość ta zawsze powinna być wyższa od ilości sadzy zmierzonej. Ilość sadzy obliczonej po wypalaniu spada do okolic 2.5-5g.
 </p>
@@ -152,7 +154,7 @@ Dla samochodów z oprogramowaniem przed diesel gate istnieje możliwość włąc
 Wypalanie na tempomacie ma jeszcze jedną zaletę. Gdy wypalamy bez tempomatu koniec wypalania zazwyczaj jest w okolicach 5g. Natomiast z tempomatem DPF wypala się dłużej do okolic 2.5g. Jest wypalony wtedy lepiej.
 </p>
 
-<h2>7. Ilość sadzy zmierzonej (Soot Measured)</h2>
+<h2 id="soot-measured">7. Ilość sadzy zmierzonej (Soot Measured)</h2>
 <p>
 Zmierzona masa sadzy nigdy nie powinna rosnąć szybciej. Gdy się tak dzieje (np. obliczona masa sadzy ma 11g a zmierzona 18g) wtedy można stwierdzić, że coś się dzieje z osprzętem silnika lub samym filtrem. Ta wartość jest obliczana na podstawie obciążenia silnika, obrotów silnika i najważniejszego parametru - ciśnienia różnicowego.
 </p>
@@ -160,6 +162,24 @@ Zmierzona masa sadzy nigdy nie powinna rosnąć szybciej. Gdy się tak dzieje (n
 <p>
 Gdy wartość ta rośnie szybciej wtedy ona rozpoczyna proces wypalania i wartości sadzy zmierzonej i obliczonej się zrównują. Po wypalaniu wartość spada do 0g a nawet może wynosić na minusie (wtedy można powiedzieć ,że dpf jest w lepszym stanie niż oczekuje sterownik)
 </p>
+
+      </div>
+
+      <aside class="toc">
+        <h4>Spis treści</h4>
+        <ul>
+          <li><a href="#hw">Oprogramowanie</a></li>
+          <li><a href="#oil-ash">Popiół olejowy</a></li>
+          <li><a href="#temp">Temperatury</a></li>
+          <li><a href="#diff-pressure">Ciśnienie różnicowe</a></li>
+          <li><a href="#offset">Offset różnicy ciśnień</a></li>
+          <li><a href="#last-regen">Kilometry od ostatniej regeneracji</a></li>
+          <li><a href="#soot-calculated">Ilość sadzy obliczonej</a></li>
+          <li><a href="#soot-measured">Ilość sadzy zmierzonej</a></li>
+        </ul>
+      </aside>
+
+    </div>
 
   </div>
 </section>
@@ -169,6 +189,37 @@ Gdy wartość ta rośnie szybciej wtedy ona rozpoczyna proces wypalania i warto�
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const sections = document.querySelectorAll("h2[id], h3[id]");
+  const navLinks = document.querySelectorAll(".toc a");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        navLinks.forEach(link => link.classList.remove("active"));
+
+        const id = entry.target.getAttribute("id");
+        const activeLink = document.querySelector('.toc a[href="#' + id + '"]');
+
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      }
+    });
+  }, {
+    rootMargin: "-10% 0px -70% 0px",
+    threshold: 0
+  });
+
+  sections.forEach(section => observer.observe(section));
+
+});
+</script>
+
 
 </body>
 </html>
