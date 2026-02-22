@@ -345,9 +345,8 @@ img.center-image {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: 4rem;
-  max-width: 1300px;
+  width: min(1300px, 92%);
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
 .page-content {
