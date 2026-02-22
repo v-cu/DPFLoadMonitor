@@ -343,7 +343,7 @@ img.center-image {
 
 .page-layout {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 400px;
   gap: 3rem;
   align-items: start;
 }
@@ -357,6 +357,7 @@ img.center-image {
 .toc {
   position: sticky;
   top: 100px;
+  align-self: start;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
