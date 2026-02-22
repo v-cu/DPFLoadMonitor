@@ -343,12 +343,14 @@ img.center-image {
 
 .page-layout {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 4rem;
+  grid-template-columns: 1fr 280px; 
+  gap: 3rem;
+  align-items: start;
 }
 
 .page-content {
   min-width: 0;
+  width: 100%;
 }
 
 /* ===== TOC ===== */
