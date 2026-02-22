@@ -35,6 +35,90 @@
   </div>
 </header>
 
+<section class="section">
+  <div class="container">
+
+<h1>Instrukcja użytkownika</h1>
+
+<p><b>UAWAGA! Pierwsze podłączenie urządzenia w samochodzie powinno być wykonane zawsze na włączonym silniku.</b></p>
+
+<h2>1. Ekran główny</h2>
+
+<li>Ekran główny składa się z pięciu stron. Użytkownik może wybrać stronę najbardziej odpowiadającą jego preferencjom.</li>
+<li>Przełączanie pomiędzy stronami odbywa się poprzez przesunięcie palcem w lewo lub w prawo.</li>
+<img src="/assets/img/mainscreen_gesture_leftright.png" alt="Gest przesunięcia palcem w lewo lub w prawo" class="center-image">
+<li>Jeżeli urządzenie nie pracuje w trybie automatycznej regulacji jasności, dotknięcie ekranu w dowolnym miejscu powoduje przełączenie między trybem jasnym (dziennym) a ciemnym.</li>
+<li>Gdy wyświetlana jest strona 5 – Differential Pressure Test, użytkownik może wyzerować wartości maksymalne, wykonując gest przesunięcia palcem z dołu do góry.</li>
+<img src="/assets/img/page5_gesture_bottomup.png" alt="Gest przesunięcia palcem z dołu do góry" class="center-image">
+<li>Z każdej strony ekranu głównego użytkownik może przejść do menu, wykonując gest przesunięcia palcem z góry do dołu</li>
+<img src="/assets/img/gesture_topbottom.png" alt="Gest przesunięcia palcem z góry do dołu" class="center-image">
+
+<h3>1.1 Opis parametrów na ekranie głównym</h3>
+<h4>Strona 1</h4>
+<img src="/assets/img/page1.png" alt="Strona 1" class="center-image">
+<li>Po środku ekranu znajduję się zegar</li>
+<li>W lewym górnym rogu znajduje się czas od odpalenia silnika</li>
+<li>W prawym górnym rogu znajduje się aktualna temperatura oleju</li>
+<li>W lewym dolnym rogu znajduje się zapełnienie DPF liczone w procentach na podstawie masy obliczonej</li>
+<li>W prawym dolnym rogu znajduje dystans od ostatniego wypalania</li>
+<li>Na dole ekranu znajduje się ikona stanu DPF</li>
+
+<h4>Strona 2</h4>
+<img src="/assets/img/page2.png" alt="Strona 2" class="center-image">
+<li>Po lewej stronie znajduję się zapełnienie DPF oraz dystans od ostatniego wypalania</li>
+<li>Po prawej stronie u góry znajduje się ikona stanu DPF</li>
+<li>Po prawej stronie na dole znajduje się temperatura oleju (czerwona ikona) oraz temepratura cieczy chłodzącej (niebieska ikona)</li>
+
+<h4>Strona 3</h4>
+<img src="/assets/img/page3.png" alt="Strona 3" class="center-image">
+<li>Po lewej stronie znajduję się zapełnienie DPF oraz dystans od ostatniego wypalania</li>
+<li>Po prawej stronie u góry znajdują się temperatura przed i za filtrem DPF</li>
+<li>Po prawej stronie na dole znajduje się ciśnienie różnicowe</li>
+
+<h2>2. Menu</h2>
+<img src="/assets/img/menu1.png" alt="Menu" class="center-image">
+<li>Menu składa się z sześciu podstron</li>
+<li>Po wejściu do dowolnej podstony, wyjście odbywa się zawsze wykonując gest przesunięcia palcem z lewej strony do prawej.</li>
+<li>Wyjście z menu odbywa się poprzez gest przesunięcia palcem z góry do dołu.</li>
+
+<h2>3. Ustawienia</h2>
+<img src="/assets/img/settings1.png" alt="Ustawienia" class="center-image">
+<li><b>Fast mode</b></li>
+<p>włączenie trybu szybkiego. W tym trybie odczyt CAN wykonywany jest z większą częstotliwością oraz odświeżane są tylko te parametry któe są wyświetlane na danej stronie.</p>
+<li><b>SD Card Save</b></li>
+<p>Włączenie zapisu danych na kartę SD. Dane zapisywane są co 1 sekundę i zawierają wszystkie odczytywane parametry. Z tego względu po włączeniu Fast mode nie ma możlwości zapisu na kartę SD.</p>
+<li><b>Show Passive Regen</b></li>
+<p>Włączenie tej opcji powoduje że na ekranie głównym pojawia się informacja o wypalaniu biernym w postaci pomarańczowego koloru temperatur lub ikony DPF. Infomracja o wypalaniu biernym jest brana na podstawie masy sadzy zmierzonej. Spadek masy = wypalanie bierne.</p>
+<li><b>Buzzer</b></li>
+<p>Włączenie tej opcji powoduje że urządzenie wydaje dźwięk podczas rozpoczęcia i zakończenia wypalania filtra DPF.</p>
+<li><b>Switch page to regen</b></li>
+<p>Włączenie tej opcji powoduje że podczas wypalania filtra DPF ekran automatycznie przełącza się na stronę 4 – stronę z najważniejszymi parametrami DPF.</p>
+<li><b>Clear max after regen</b></li>
+<p>Włączenie tej opcji powoduje że po zakończeniu wypalania filtra DPF wartości maksymalne na stronie 5 – Differential Pressure Test są automatycznie zerowane.</p>
+<li><b>Auto brightness</b></li>
+<p>Włączenie tej opcji powoduje że urządzenie automatycznie przełącza jasność ekranu w tryb dzienny/nocny. Jeżeli ta opcja jest wyłączona, użytkownik może ręcznie przełączać między trybem dziennym a nocnym poprzez dotknięcie ekranu.</p>
+<li><b>Day brightness</b></li>
+<p>Ustawienie jasności ekranu w trybie dziennym.</p>
+<li><b>Night brightness</b></li>
+<p>Ustawienie jasności ekranu w trybie nocnym.</p>
+
+<h2>4. DTC</h2>
+<img src="/assets/img/DTC1.png" alt="DTC" class="center-image">
+<li><b>Current</b></li>
+<p>Odczyt błędów DTC (Diagnostic Trouble Codes) zapisanych w pamięci sterownika. (Błędy powodujące zapalenie się lampki Check Engine)</p>
+<li><b>Pending</b></li>
+<p>Odczyt błędów DTC, które zostały wykryte ale nie zostały jeszcze zapisane w pamięci sterownika.</p>
+<li><b>Clear</b></li>
+<p>Wyczyszczenie wszystkich błędów DTC zapisanych w pamięci sterownika.</p>
+
+<h2>5. Historia</h2>
+<img src="/assets/img/history.png" alt="Historia" class="center-image">
+<li>Urządzenie zapisuje historię dla 10 ostatnich regeneracji DPF. </li>
+<li>Po osiągnięciu 10 regeneracji nowa historia zastępuje najstarszą.</li>
+
+</div>
+</section>
+
 
 <section class="section">
   <div class="container">
