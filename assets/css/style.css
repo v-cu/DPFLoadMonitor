@@ -323,12 +323,13 @@ th {
     margin-top: 0;
 }
 
-.center-image {
+img.center-image {
   display: block;
   margin: 2rem auto;
-  max-width: 60%;
+  width: 70%;
+  max-width: 70%;
+  height: auto;
   border-radius: 35px;
   box-shadow: var(--shadow);
-  height: auto;
 }
-  
+
