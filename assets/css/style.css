@@ -384,15 +384,22 @@ img.center-image {
   margin-bottom: 0.6rem;
 }
 
-.toc a {
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 0.9rem;
-  transition: 0.2s;
-}
 
+
+.toc a {
+  display: block;
+  transition: all 0.2s ease;
+  border-left: 2px solid transparent;
+}
 .toc a:hover {
   color: var(--brand-2);
+}
+
+.toc a.active {
+  color: var(--brand-2);
+  font-weight: 700;
+  padding-left: 5px;
+  border-left: 2px solid var(--brand-2);
 }
 
 /* Płynne przewijanie */

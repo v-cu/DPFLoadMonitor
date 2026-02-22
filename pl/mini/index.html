@@ -201,5 +201,34 @@
   </div>
 </footer>
 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-10% 0px -70% 0px', // Aktywuje się, gdy nagłówek jest w górnej części ekranu
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
+        
+        if (entry.isIntersecting) {
+          // Usuń klasę active ze wszystkich i dodaj do bieżącego
+          document.querySelectorAll('.toc a').forEach(link => link.classList.remove('active'));
+          if (tocLink) tocLink.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    // Śledzimy wszystkie nagłówki h2 i h3, które mają przypisane ID
+    document.querySelectorAll('h2[id], h3[id]').forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+
 </body>
 </html>
