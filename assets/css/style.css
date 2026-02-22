@@ -121,6 +121,12 @@ body {
   margin-top: 0;
 }
 
+.section p + h2 {
+  margin-top: 2rem;
+}
+
+
+
 /* ===== CARD / CONTENT ===== */
 
 .card {
@@ -332,8 +338,3 @@ img.center-image {
   border-radius: 30px;
   box-shadow: var(--shadow);
 }
-
-.section p + h2 {
-  margin-top: 2rem;
-}
-
