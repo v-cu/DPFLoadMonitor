@@ -326,10 +326,10 @@ th {
 img.center-image {
   display: block;
   margin: 2rem auto;
-  width: 70%;
-  max-width: 400px;
+  width: 50%;
+  max-width: 300px;
   height: auto;
-  border-radius: 35px;
+  border-radius: 30px;
   box-shadow: var(--shadow);
 }
 
