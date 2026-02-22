@@ -326,6 +326,9 @@ th {
 .center-image {
   display: block;
   margin: 2rem auto;
-  max-width: 100%;
+  max-width: 60%;
+  border-radius: 35px;
+  box-shadow: var(--shadow);
   height: auto;
 }
+  
