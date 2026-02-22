@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  width: min(1300px, 92%);
+  width: min(1100px, 92%);
   margin-inline: auto;
 }
 
@@ -343,9 +343,11 @@ img.center-image {
 
 .page-layout {
   display: grid;
-  grid-template-columns: 1fr 280px; 
+  /* 1fr zajmie całą dostępną resztę miejsca w kontenerze */
+  grid-template-columns: 1fr 300px; 
   gap: 3rem;
   align-items: start;
+  width: 100%;
 }
 
 .page-content {
