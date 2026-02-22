@@ -343,9 +343,11 @@ img.center-image {
 
 .page-layout {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .page-content {
