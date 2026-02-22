@@ -23,6 +23,7 @@
         <li><a href="/en/parameters/">Parameters</a></li>
         <li><a href="/en/update/">Updates</a></li>
         <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/pl/faq/">FAQ</a></li>
       </ul>
     </nav>
 
@@ -39,11 +40,13 @@
 
 <section class="section">
   <div class="container">
+    <div class="page-layout">
+      <div class="page-content">
 <h1>How to read parameters</h1>
 
 <p>All the information below is based on information gathered from the internet and personal experience.</p>
 
-<h2>1. Software Version</h2>
+<h2 id="software-version">1. Software Version</h2>
 <p>
 The software version of the engine control unit (ECU) affects the frequency of DPF regeneration.
 For example, in an Audi A4 B8, post-Dieselgate software versions are numbered: 9977, 9978, 9979, 9980, and 9981.
@@ -51,7 +54,7 @@ This leads to more frequent DPF regenerations (every 250-300 km).
 The calculated soot mass increases at a faster rate compared to ECUs with lower software versions.
 </p>
 
-<h2>2. Oil Ash Residue</h2>
+<h2 id="oil-ash">2. Oil Ash Residue</h2>
 <p>
 This value indicates the amount of ash filling the filter. This value is not burned off and increases with the vehicle's mileage.
 Depending on the engine, this value is given in liters or grams.
@@ -60,7 +63,7 @@ Exceeding these values may require filter replacement or cleaning, but not alway
 It depends on driving style and routes.
 </p>
 
-<h2>3. Temperature Before and After the DPF</h2>
+<h2 id="temperature">3. Temperature Before and After the DPF</h2>
 <p>
 During normal driving, temperatures do not exceed 350°C.
 With dynamic driving, the temperature can reach up to 450°C.
@@ -76,7 +79,7 @@ During regeneration, temperatures range from 550 to 700°C.
 To achieve the correct temperatures, you should not accelerate aggressively or use engine braking (as this turns off the additional fuel injection for DPF regeneration). You should maintain a steady speed within the 2,000-2,500 RPM range.
 </p>
 
-<h2>4. Differential Pressure</h2>
+<h2 id="diff-pressure">4. Differential Pressure</h2>
 <p>
     This is the most important parameter for assessing DPF clogging. Based on this value, you can determine the overall health of your filter.
 </p>
@@ -133,18 +136,18 @@ To achieve the correct temperatures, you should not accelerate aggressively or u
     </table>
 </div>
 
-<h3>4a. Differential Pressure Offset</h3>
+<h3 id="offset">4a. Differential Pressure Offset</h3>
 <p>
 This parameter indicates sensor health. The value should be close to zero.
 </p>
 
-<h2>5. Kilometers Since Last Regeneration</h2>
+<h2 id="last-regen">5. Kilometers Since Last Regeneration</h2>
 <p>
 Shows distance since last regeneration. Typically ranges from 200 km to 800–1000 km depending on vehicle.
 After regeneration, this value resets to zero.
 </p>
 
-<h2>6. Soot Mass Calculated</h2>
+<h2 id="soot-calculated">6. Soot Mass Calculated</h2>
 <p>
 This is the soot mass calculated by the ECU. Based on this value, regeneration should start when the value reaches 14g to 24g. This value should always be higher than the measured soot mass. After regeneration, the calculated soot mass drops to around 2.5-5g.
 </p>
@@ -161,7 +164,7 @@ For cars with pre-Dieselgate software, it's possible to initiate regeneration us
 Using cruise control for regeneration has another advantage: when regenerating without it, the process usually ends around 5g. With cruise control, the DPF regenerates longer, down to about 2.5g, resulting in a more thorough cleaning.
 </p>
 
-<h2>7. Soot Mass Measured</h2>
+<h2 id="soot-measured">7. Soot Mass Measured</h2>
 
 <p>
 The measured soot mass should never increase faster than the calculated mass. If this happens (e.g., calculated soot mass is 11g and measured is 18g), it may indicate a problem with the engine's ancillary equipment or the filter itself. This value is calculated based on engine load, engine speed, and, most importantly, differential pressure.
@@ -171,7 +174,24 @@ The measured soot mass should never increase faster than the calculated mass. If
 When the measured value increases faster, it triggers the regeneration process, and the measured and calculated soot values equalize. After regeneration, the value drops to 0g or can even be negative (in which case you could say the DPF is in better condition than the ECU expects).
 </p>
 
-<p>
+      </div>
+
+      <aside class="toc">
+        <h4>Spis treści</h4>
+        <ul>
+          <li><a href="#hw">Software</a></li>
+          <li><a href="#oil-ash">Oil Ash</a></li>
+          <li><a href="#temp">Temperatures</a></li>
+          <li><a href="#diff-pressure">Differential Pressure</a></li>
+          <li><a href="#offset">Differential Pressure Offset</a></li>
+          <li><a href="#last-regen">Kilometers Since Last Regeneration</a></li>
+          <li><a href="#soot-calculated">Soot Mass Calculated</a></li>
+          <li><a href="#soot-measured">Soot Mass Measured</a></li>
+        </ul>
+      </aside>
+
+    </div>
+
   </div>
 </section>
 
@@ -180,6 +200,34 @@ When the measured value increases faster, it triggers the regeneration process, 
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-10% 0px -70% 0px', // Aktywuje się, gdy nagłówek jest w górnej części ekranu
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
+        
+        if (entry.isIntersecting) {
+          // Usuń klasę active ze wszystkich i dodaj do bieżącego
+          document.querySelectorAll('.toc a').forEach(link => link.classList.remove('active'));
+          if (tocLink) tocLink.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    // Śledzimy wszystkie nagłówki h2 i h3, które mają przypisane ID
+    document.querySelectorAll('h2[id], h3[id]').forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
 
 </body>
 </html>
