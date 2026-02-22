@@ -9,6 +9,9 @@
 
 <body>
 
+<div class="page-layout">
+<div class="page-content">
+
 <header class="site-header">
   <div class="container nav">
 
@@ -37,10 +40,10 @@
 </header>
 
 <section class="section">
-  <div class="container">
+  <div class="container page-layout">
 
 <h1>DPF Monitor Mini</h1>
-<h2>Specyfikacja techniczna</h2>
+<h2 id="spec">Specyfikacja techniczna</h2>
 <div class="table-container">
 
   <table>
@@ -79,9 +82,9 @@
 </div>
 
 
-<h2>Instrukcja użytkownika</h2>
+<h2 id="instrukcja">Instrukcja użytkownika</h2>
 <p><b>UAWAGA! Pierwsze podłączenie urządzenia w samochodzie powinno być wykonane zawsze na włączonym silniku.</b></p>
-<h3>1. Ekran główny</h3>
+<h3 id="ekran">1. Ekran główny</h3>
 <li>Ekran główny składa się z pięciu stron. Użytkownik może wybrać stronę najbardziej odpowiadającą jego preferencjom.</li>
 <li>Przełączanie pomiędzy stronami odbywa się poprzez przesunięcie palcem w lewo lub w prawo.</li>
 <img src="/assets/img/mainscreen_gesture_leftright.png" alt="Gest przesunięcia palcem w lewo lub w prawo" class="center-image">
@@ -109,13 +112,13 @@
 <li>Po lewej stronie znajduję się zapełnienie DPF oraz dystans od ostatniego wypalania</li>
 <li>Po prawej stronie u góry znajdują się temperatura przed i za filtrem DPF</li>
 <li>Po prawej stronie na dole znajduje się ciśnienie różnicowe</li>
-<h3>2. Menu</h3>
+<h3 id="menu">2. Menu</h3>
 <li>Menu składa się z sześciu podstron</li>
 <li>Po wejściu do dowolnej podstony, wyjście odbywa się zawsze wykonując gest przesunięcia palcem z lewej strony do prawej.</li>
 <img src="/assets/img/info.png" alt="Menu" class="center-image">
 <li>Wyjście z menu odbywa się poprzez gest przesunięcia palcem z dołu do góry.</li>
 <img src="/assets/img/menu1.png" alt="Menu" class="center-image">
-<h3>3. Ustawienia</h3>
+<h3 id="ustawienia">3. Ustawienia</h3>
 <img src="/assets/img/settings1.png" alt="Ustawienia" class="center-image">
 <li><b>Fast mode</b></li>
 <p>Włączenie trybu szybkiego. W tym trybie odczyt CAN wykonywany jest z większą częstotliwością oraz odświeżane są tylko te parametry któe są wyświetlane na danej stronie.</p>
@@ -135,7 +138,7 @@
 <p>Ustawienie jasności ekranu w trybie dziennym.</p>
 <li><b>Night brightness</b></li>
 <p>Ustawienie jasności ekranu w trybie nocnym.</p>
-<h3>4. DTC</h3>
+<h3 id="dtc">4. DTC</h3>
 <img src="/assets/img/dtc1.png" alt="DTC" class="center-image">
 <li><b>Current</b></li>
 <p>Odczyt błędów DTC (Diagnostic Trouble Codes) zapisanych w pamięci sterownika. (Błędy powodujące zapalenie się lampki Check Engine)</p>
@@ -144,13 +147,30 @@
 <li><b>Clear</b></li>
 <p>Wyczyszczenie wszystkich błędów DTC zapisanych w pamięci sterownika.</p>
 
-<h3>5. Historia</h3>
+<h3 id="historia">5. Historia</h3>
 <li>Urządzenie zapisuje historię dla 10 ostatnich regeneracji DPF. </li>
 <li>Po osiągnięciu 10 regeneracji nowa historia zastępuje najstarszą.</li>
 <li>Aby zobaczyć więcej rekordów historii należy przesunąć palcem w lewo lub prawo po prawej stronie ekranu.</li>
 <img src="/assets/img/history.png" alt="Historia" class="center-image">
 </div>
 </section>
+
+</div>
+
+  <aside class="toc">
+    <h4>Spis treści</h4>
+    <ul>
+      <li><a href="#spec">Specyfikacja</a></li>
+      <li><a href="#instrukcja">Instrukcja</a></li>
+      <li><a href="#ekran">Ekran główny</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#ustawienia">Ustawienia</a></li>
+      <li><a href="#dtc">DTC</a></li>
+      <li><a href="#historia">Historia</a></li>
+    </ul>
+  </aside>
+
+</div>
 
 <footer class="site-footer">
   <div class="container footer-inner">

@@ -338,3 +338,72 @@ img.center-image {
   border-radius: 30px;
   box-shadow: var(--shadow);
 }
+
+/* ===== PAGE WITH SIDEBAR ===== */
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.page-content {
+  min-width: 0;
+}
+
+/* ===== TOC ===== */
+
+.toc {
+  position: sticky;
+  top: 100px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+.toc h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc li {
+  margin-bottom: 0.6rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.toc a:hover {
+  color: var(--brand-2);
+}
+
+/* Płynne przewijanie */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 1000px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toc {
+    display: none;
+  }
+}
