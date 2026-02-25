@@ -39,8 +39,76 @@
 
 <section class="section">
   <div class="container">
-    <h1>Software Update</h1>
-    <p>Download section placeholder.</p>
+    <h1>Software Updates</h1>
+
+    <!-- ===== SEKCJA POBIERANIA ===== -->
+    <div class="card">
+      <h2>Download Files</h2>
+      <p>Latest software for DPF Load Monitor devices:</p>
+
+      <ul class="download-list">
+        <li>
+          <a href="/downloads/DPF_Mini_1.6.1.bin" download>
+            DPF Mini – v1.6.1
+          </a>
+          <span class="file-info">Firmware • 25-02-2026</span>
+        </li>
+
+        <!-- <li>
+          <a href="/downloads/DPF_Pro_v2.1.0.bin" download>
+            DPF Pro – v2.1.0
+          </a>
+          <span class="file-info">Firmware • 2026-02-18</span>
+        </li> -->
+
+        <!-- <li>
+          <a href="/downloads/USB_Driver.zip" download>
+            Sterownik USB
+          </a>
+          <span class="file-info">Driver • Windows</span>
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- ===== OPIS ZMIAN ===== -->
+    <div class="card">
+      <h2>Change Description</h2>
+
+      <h3>DPF Mini – v1.6.1</h3>
+      <ul>
+        <li>Fixes for errors.</li>
+        <!-- <li>Faster parameter refresh</li> -->
+        <!-- <li>Fixed reset error at low voltage</li> -->
+      </ul>
+
+      <!-- <h3>DPF Pro – v2.1.0</h3>
+      <ul>
+        <li>Dodano nowe parametry diagnostyczne</li>
+        <li>Ulepszona kalibracja czujników</li>
+        <li>Optymalizacja zużycia pamięci</li>
+      </ul> -->
+    </div>
+
+    <!-- ===== INSTRUKCJA AKTUALIZACJI ===== -->
+    <div class="card">
+      <h2>How to Update the Firmware?</h2>
+
+      <ol>
+        <li>Download the firmware (.bin) file for your device.</li>
+        <li>Copy the file to a microSD card.</li>
+        <li>Insert the card into the device. You do not need to disconnect the device to insert the card. The microSD card is hot swappable. The image below shows which side of the card should be inserted.</li>
+        <img src="/assets/img/microsd_card_insert.jpg" alt="Micro SD insert orientation" class="center-image">
+        <li>During operation, go to the menu and hold the "Update" button for 3 seconds.</li>
+        <img src="/assets/img/update_menu.png" alt="Update menu" class="center-image">
+        <li>Wait for the update process to complete (do not disconnect power).</li>
+        <li>After restarting, the device will operate with the new version.</li>
+      </ol>
+
+      <p style="margin-top:1rem; color: var(--muted);">
+        ⚠ During updates, do not disconnect power – this may damage the device.
+      </p>
+    </div>
+
   </div>
 </section>
 
