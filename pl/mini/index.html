@@ -49,11 +49,11 @@
     <tbody>
       <tr>
         <td>Napięcie pracy</td>
-        <td style="text-align:right;">6-19V (28V MAX)</td>
+        <td style="text-align:right;">6-19V (32V MAX)</td>
       </tr>
       <tr>
         <td>Pobór prądu podczas działania</td>
-        <td style="text-align:right;">~50mA</td>
+        <td style="text-align:right;">~40mA</td>
       </tr>
       <tr>
         <td>Pobór prądu podczas uśpienia</td>
@@ -95,7 +95,7 @@
 <img src="/assets/img/mainscreen_gesture_leftright.png" alt="Gest przesunięcia palcem w lewo lub w prawo" class="center-image">
 <ul>
 <li>Jeżeli urządzenie nie pracuje w trybie automatycznej regulacji jasności, dotknięcie ekranu w dowolnym miejscu powoduje przełączenie między trybem jasnym (dziennym) a ciemnym.</li>
-<li>Gdy wyświetlana jest strona 5 – Differential Pressure Test, użytkownik może wyzerować wartości maksymalne, wykonując gest przesunięcia palcem z dołu do góry.</li>
+<li>Gdy wyświetlana jest strona ostantnia 6 – Differential Pressure Test, użytkownik może wyzerować wartości maksymalne, wykonując gest przesunięcia palcem z dołu do góry.</li>
 </ul>
 <img src="/assets/img/page5_gesture_bottomup.png" alt="Gest przesunięcia palcem z dołu do góry" class="center-image">
 <ul>
@@ -123,6 +123,19 @@
 <h4>Strona 3</h4>
 <img src="/assets/img/page3.png" alt="Strona 3" class="center-image">
 <ul>
+<h4>Strona 4</h4>
+<img src="/assets/img/page4.png" alt="Strona 4" class="center-image">
+<li>Parametry są opisane na ekranie.</li>
+<h4>Strona 5</h4>
+<img src="/assets/img/page5.png" alt="Strona 5" class="center-image">
+<ul>
+<li>Parametry są opisane na ekranie.</li>
+</ul>
+<h4>Strona 6</h4>
+<img src="/assets/img/page6.png" alt="Strona 6" class="center-image">
+<ul>
+<li>Na ostatniej stronie znajduje się pomiar ciśnienia różnicowego. Maksymalne wartości są podświetlone na czerwono. W dolnym lewym rogu znajduje się aktualny procent zapełnienia DPF.</li>
+</ul>
 <li>Po lewej stronie znajduje się zapełnienie DPF oraz dystans od ostatniego wypalania</li>
 <li>Po prawej stronie u góry znajdują się temperatura przed i za filtrem DPF</li>
 <li>Po prawej stronie na dole znajduje się ciśnienie różnicowe</li>
@@ -159,7 +172,12 @@
 <li><b>Night brightness</b></li>
 <p>Ustawienie jasności ekranu w trybie nocnym.</p>
 </ul>
-<h3 id="dtc">4. DTC</h3>
+<h3 id="zegar">4. Ustawienie zegara</h3>
+<img src="/assets/img/clocksettings.png" alt="Zegar" class="center-image"> 
+<ul>
+<li>W celu ustawienia godziny należy przesunąć palec po ekranie w górę lub dół dla godzin i minut po czym kliknąć przycisk set. </li>
+</ul>
+<h3 id="dtc">5. DTC</h3>
 <img src="/assets/img/dtc1.png" alt="DTC" class="center-image">
 <ul>
 <li><b>Current</b></li>
@@ -169,7 +187,7 @@
 <li><b>Clear</b></li>
 <p>Wyczyszczenie wszystkich błędów DTC zapisanych w pamięci sterownika.</p>
 </ul>
-<h3 id="historia">5. Historia</h3>
+<h3 id="historia">6. Historia</h3>
 <ul>
 <li>Urządzenie zapisuje historię dla 10 ostatnich regeneracji DPF. </li>
 <li>Po osiągnięciu 10 regeneracji nowa historia zastępuje najstarszą.</li>
@@ -177,6 +195,26 @@
 <li>Aby wyczyścić całą historię należy przytrzymać przycisk History przez 2 sekundy.</li>
 </ul>
 <img src="/assets/img/history.png" alt="Historia" class="center-image">
+<h3 id="pomiar">7. Pomiar 0-100</h3>
+<ul>
+<li>Urządzenie umożliwia pomiar czasu przyspieszenia od 0 do 100 km/h.</li>
+<li>Aktualny wynik pomiaru jest wyświetlany na ekranie w górnym prawym rogu.</li>
+<li>Poniżej wyświetlane są trzy ostatnie wyniki pomiaru. Na zielono oznaczony jest najlepszy wynik.</li>
+<li>READY oznacza gotowość do rozpoczęcia pomiaru. STOP oczekuje na zatrzymanie samochodu. RESET czeka na kliknięcie przycisku reset w celu zresetowania pomiaru i rozpoczecia nowego.</li> 
+<li>Przytrzymanie przycisku RESET powoduje zresetowanie trzech ostatnich wyników pomiaru.</li>
+</ul>
+<img src="/assets/img/performance.png" alt="Pomiar 0-100" class="center-image">
+<h3 id="silnik">7. Odczyt danych silnika</h3>
+<ul>
+<li>Urządzenie umożliwia odczyt danych z silnika takich jak: ciśnienie doładowania, ciśnienie paliwa na listwie, MAF, korekty wtrysków czy temperatury wydechu.</li>
+<li>Zmiana stron następuje po przesunięciu palcem góra/dół.</li>
+<img src="/assets/img/advanced.png" alt="Dane silnika" class="center-image">
+<li>Wyjście z tego podmenu odbywa się standardowo gestem palca z lewej do prawej.</li>
+<li>Jest również możliwość podejrzenia dancyh na wykresie, takich jak: ciśnienie doładowania, ciśnienie paliwa, MAF - wartości rzeczywiste i zmierzone. W tym celu należy przytrzymać przycisk Advanced przez 2 sekundy.</li> 
+<img src="/assets/img/advanced_long_press.png" alt="Pomiar 0-100" class="center-image">
+<li>Następnie należy wybrać który wykres chce się podejrzeć.</li>
+<img src="/assets/img/choose_graph.png" alt="Wybierz wykres" class="center-image">
+</ul>
 
       </div>
 
@@ -188,8 +226,11 @@
           <li><a href="#ekran">Ekran główny</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#ustawienia">Ustawienia</a></li>
+          <li><a href="#zegar">Ustawienie zegara</a></li>
           <li><a href="#dtc">DTC</a></li>
           <li><a href="#historia">Historia</a></li>
+          <li><a href="#pomiar">Pomiar 0-100</a></li>
+          <li><a href="#silnik">Odczyt danych silnika</a></li>
         </ul>
       </aside>
 
