@@ -497,3 +497,28 @@ html {
   font-size: 0.85rem;
   color: var(--muted);
 }
+
+/* Kontener na 3 obrazy */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;        /* odstęp między zdjęciami */
+  flex-wrap: wrap;    /* zawijanie na małych ekranach */
+  margin: 2rem 0;
+}
+
+/* Obrazy w rzędzie */
+.image-row img {
+  width: 30%;         /* 3 obok siebie */
+  max-width: 250px;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+}
+
+/* Opcjonalnie — lepsze zachowanie na telefonie */
+@media (max-width: 600px) {
+  .image-row img {
+    width: 80%;       /* po jednym na wąskim ekranie */
+  }
+}
