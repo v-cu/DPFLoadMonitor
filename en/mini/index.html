@@ -49,11 +49,11 @@
     <tbody>
       <tr>
         <td>Operating voltage</td>
-        <td style="text-align:right;">6-19V (28V MAX)</td>
+        <td style="text-align:right;">6-19V (32V MAX)</td>
       </tr>
       <tr>
         <td>Operating current consumption</td>
-        <td style="text-align:right;">~60mA</td>
+        <td style="text-align:right;">~40mA</td>
       </tr>
       <tr>
         <td>Standby current consumption</td>
@@ -81,6 +81,12 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="image-row">
+  <img src="/assets/img/bench_photo1.jpg" alt="1">
+  <img src="/assets/img/bench_photo2.jpg" alt="2">
+  <img src="/assets/img/bench_photo3.jpg" alt="3">
 </div>
 
 <h2 id="instrukcja">User Manual</h2>
@@ -129,7 +135,21 @@
   <li>Upper right: Temperatures before and after the DPF filter.</li>
   <li>Lower right: Differential pressure.</li>
 </ul>
-
+<h4>Page 4</h4>
+<img src="/assets/img/page4.png" alt="Page 4" class="center-image">
+<ul>
+<li>Parameters are described on the screen.</li>
+</ul>
+<h4>Page 5</h4>
+<img src="/assets/img/page5.png" alt="Page 5" class="center-image">
+<ul>
+<li>Parameters are described on the screen.</li>
+</ul>
+<h4>Page 6</h4>
+<img src="/assets/img/page6.png" alt="Page 6" class="center-image">
+<ul>
+<li>On the last page, there is a measurement of the differential pressure. The maximum values are highlighted in red. In the lower left corner, the current percentage of DPF filling is displayed.</li>
+</ul>
 <h3 id="menu">2. Menu</h3>
 <ul>
   <li>The menu consists of six subpages.</li>
@@ -171,8 +191,12 @@
   <li><b>Night brightness</b></li>
   <p>Screen brightness setting for night mode.</p>
 </ul>
-
-<h3 id="dtc">4. DTC</h3>
+<h3 id="zegar">4. Setting the Clock</h3>
+<img src="/assets/img/clocksettings.png" alt="Clock" class="center-image"> 
+<ul>
+<li>To set the time, swipe your finger up or down on the screen for hours and minutes, then click the set button.</li>
+</ul>
+<h3 id="dtc">5. DTC</h3>
 <img src="/assets/img/dtc1.png" alt="DTC" class="center-image">
 <ul>
   <li><b>Current</b></li>
@@ -185,13 +209,40 @@
   <p>Clears all DTCs stored in the controller's memory.</p>
 </ul>
 
-<h3 id="historia">5. History</h3>
+<h3 id="historia">6. History</h3>
 <ul>
   <li>The device stores history for the last 10 DPF regenerations.</li>
   <li>After reaching 10 entries, new data overwrites the oldest records.</li>
   <li>To view more history records, swipe left or right on the right side of the screen.</li>
+  <li>To clear the entire history, hold the History button for 2 seconds.</li>
 </ul>
 <img src="/assets/img/history.png" alt="History" class="center-image">
+
+<h3 id="pomiar">7. 0-100 km/h Measurement</h3>
+<ul>
+<li>The device enables measurement of acceleration time from 0 to 100 km/h.</li>
+<li>The current measurement result is displayed in the upper right corner of the screen.</li>
+<li>Below, the three most recent results are shown. The best result is highlighted in green.</li>
+<li>READY indicates readiness to start the measurement. STOP waits for the vehicle to stop. RESET waits for a reset button click to reset the measurement and start a new one.</li> 
+<li>Holding the RESET button resets the three most recent measurement results.</li>
+</ul>
+<img src="/assets/img/performance.png" alt="Pomiar 0-100" class="center-image">
+<h3 id="silnik">8. Engine Data Reading (Advanced)</h3>
+<ul>
+<li>The device enables reading data from the engine such as: boost pressure, fuel pressure on the rail, MAF, injector corrections, and exhaust temperatures. Access is provided through the Advanced button in the menu.</li>
+<li>Page changes occur by swiping the finger up/down.</li>
+</ul>
+<img src="/assets/img/advanced.png" alt="Engine Data" class="center-image">
+<ul>
+<li>To get out of this menu, swipe left or right on the screen.</li>
+<li>There is also the possibility to view data on a graph, such as: boost pressure, fuel pressure, MAF - actual and measured values. For this, you need to hold the Advanced button for 2 seconds.</li> 
+</ul>
+<img src="/assets/img/advanced_long_press.png" alt="Engine Data" class="center-image">
+<ul>
+<li>Next, select the graph you want to view.</li>
+</ul>
+<img src="/assets/img/choose_graph.png" alt="Choose Graph" class="center-image">
+
 
 </div>
 
@@ -203,8 +254,11 @@
     <li><a href="#ekran">Main Screen</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#ustawienia">Settings</a></li>
+    <li><a href="#zegar">Setting the Clock</a></li>
     <li><a href="#dtc">DTC</a></li>
     <li><a href="#historia">History</a></li>
+    <li><a href="#pomiar">0-100 km/h Measurement</a></li>
+    <li><a href="#silnik">Engine Data Reading</a></li>
   </ul>
 </aside>
 

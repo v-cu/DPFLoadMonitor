@@ -510,7 +510,7 @@ html {
 /* Obrazy w rzędzie */
 .image-row img {
   width: 30%;         /* 3 obok siebie */
-  max-width: 300px;
+  max-width: 330px;
   height: auto;
   border-radius: 30px;
   box-shadow: var(--shadow);
