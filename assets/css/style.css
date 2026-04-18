@@ -451,7 +451,7 @@ html {
 /* wrapper pojedynczego filmu */
 .video-wrapper {
   position: relative;
-  padding-bottom: 50%; /* proporcja 16:9 */
+  padding-bottom: 60%; /* proporcja 16:9 */
   height: 0;
   overflow: hidden;
 
