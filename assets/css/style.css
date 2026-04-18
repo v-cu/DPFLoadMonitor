@@ -444,14 +444,14 @@ html {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 /* wrapper pojedynczego filmu */
 .video-wrapper {
   position: relative;
-  padding-bottom: 35%; /* proporcja 16:9 */
+  padding-bottom: 40%; /* proporcja 16:9 */
   height: 0;
   overflow: hidden;
 
