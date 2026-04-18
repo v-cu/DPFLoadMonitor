@@ -438,26 +438,44 @@ html {
   text-align: center;
 }
 
+/* kontener na wiele filmów */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* wrapper pojedynczego filmu */
 .video-wrapper {
   position: relative;
-  padding-bottom: 35%;
+  padding-bottom: 56.25%; /* proporcja 16:9 */
   height: 0;
   overflow: hidden;
+
   border-radius: 20px;
   box-shadow: var(--shadow);
-
-  width: min(700px, 45vw);  /* większa szerokość */
-  margin: 0 auto;           /* wyśrodkowanie */
 }
 
 .video-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   border: 0;
   border-radius: 20px;
+}
+
+/* responsywność — na telefonie pod sobą */
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .download-list {
