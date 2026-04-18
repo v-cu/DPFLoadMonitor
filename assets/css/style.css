@@ -444,7 +444,7 @@ html {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
-  max-width: 300px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
