@@ -48,10 +48,10 @@
       <ul class="download-list">
 
         <li>
-          <a href="/downloads/DPF_Mini_1.8.9.bin" download>
-            Monitor Mini – v1.8.9
+          <a href="/downloads/DPF_Mini_1.8.10.bin" download>
+            Monitor Mini – v1.8.10
           </a>
-          <span class="file-info">Firmware • 21-05-2026</span>
+          <span class="file-info">Firmware • 14-06-2026</span>
         </li>
 
         <!-- <li>
@@ -88,16 +88,14 @@
     <div class="card">
       <h2>Opis zmian</h2>
 
-      <h3>Monitor Mini – v1.8.9</h3>
+      <h3>Monitor Mini – v1.8.10</h3>
       <ul>
-        <li>Kluczowe obniżenie temperatury pracy urządzenia od wersji 1.8.5. Testy w komorze temperaturowej w 85°C przebiegły pomyślnie</li>
-        <li>Zmiany w sterowniku wyświetlacza</li>
-        <li>Zmieniona funkcja usypiania – szybsze wybudzenie przy wyłączeniu i ponownym uruchomieniu silnika</li>
-        <li>Zmiany w zapisywaniu na karcie SD, ale nadal problemy z zawieszaniem się podczas zapisywania...</li>
-        <li>Naprawa auto przyciemniania przy pierwszym uruchomieniu</li>
-        <li>Dodano obsługę silnika CAYC</li>
-        <li>Naprawa EGR CRBC</li>
-        <li>CFJA zmieniono popioł olejowy na litry</li>
+        <li>Zmiany w trybie fast mode. Odświeżanie danych CAN 35ms dla fast mode, 50ms dla slow mode</li>
+        <li>Zablokowano aktywne wypalanie, gdy ostatni przebieg od wypalenia = 0, do czasu gdy przebieg od wypalenia będzie ponownie > 0 z powodu problemów z buzzerem</li>
+        <li>Dodano nową zakładkę z soot mass calc i meas</li>
+        <li>Zmiany w zapisie na kartę SD, dodano kropkę sygnalizującą zapis</li>
+        <li>Zmieniono obliczanie maksymalnej prędkości obrotowej silnika, gdy aktualizowana jest maksymalna różnica ciśnień (strona ostatnia)</li>
+        <li>Ponownie poprawiono EGR CRBC</li>
       </ul>
 
       <!-- <h3>Monitor Mini – v1.8.0</h3>

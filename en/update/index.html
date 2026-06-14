@@ -48,10 +48,10 @@
       <ul class="download-list">
 
         <li>
-          <a href="/downloads/DPF_Mini_1.8.9.bin" download>
-            Monitor Mini – v1.8.9
+          <a href="/downloads/DPF_Mini_1.8.10.bin" download>
+            Monitor Mini – v1.8.10
           </a>
-          <span class="file-info">Firmware • 21-05-2026</span>
+          <span class="file-info">Firmware • 14-06-2026</span>
         </li>
 
         <!-- <li>
@@ -74,16 +74,14 @@
     <div class="card">
       <h2>Change Description</h2>
 
-      <h3>Monitor Mini – v1.8.9</h3>
+      <h3>Monitor Mini – v1.8.10</h3>
       <ul>
-        <li>Key reduction in device operating temperature since version 1.8.5. Tests in a temperature chamber at 85°C were successful</li>
-        <li>Changes in the display driver</li>
-        <li>Modified sleep function – faster wake-up when the engine is turned off and restarted</li>
-        <li>Changes to SD card saving, but issues with freezing during save remain...</li>
-        <li>Fixed auto-dimming on first startup</li>
-        <li>Added support for CAYC engine</li>
-        <li>Fixed EGR CRBC</li>
-        <li>CFJA: changed oil ash unit to liters</li>
+        <li>Changes in slow/fast mode. 35ms vs 50ms refresh of CAN data</li>
+        <li>Blocked active regen when last regen km = 0, until regen km is > 0 again due to issues with buzzer</li>
+        <li>Added new tab with soot mass calc and meas</li>
+        <li>Changes to SD card saving, added signalisation dot when saving</li>
+        <li>Changed calculation of max engine speed when max differential pressure is updated</li>
+        <li>Fixed again EGR CRBC</li>
       </ul>
 
       <!-- <h3>DPF Pro – v2.1.0</h3>
