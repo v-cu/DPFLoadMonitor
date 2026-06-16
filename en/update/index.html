@@ -48,8 +48,8 @@
       <ul class="download-list">
 
         <li>
-          <a href="/downloads/DPF_Mini_1.8.10.bin" download>
-            Monitor Mini – v1.8.10
+          <a href="/downloads/DPF_Mini_1.8.11.bin" download>
+            Monitor Mini – v1.8.11
           </a>
           <span class="file-info">Firmware • 14-06-2026</span>
         </li>
@@ -74,7 +74,7 @@
     <div class="card">
       <h2>Change Description</h2>
 
-      <h3>Monitor Mini – v1.8.10</h3>
+      <h3>Monitor Mini – v1.8.11</h3>
       <ul>
         <li>Changes in slow/fast mode. 35ms vs 50ms refresh of CAN data</li>
         <li>Blocked active regen when last regen km = 0, until regen km is > 0 again due to issues with buzzer</li>
@@ -82,6 +82,7 @@
         <li>Changes to SD card saving, added signalisation dot when saving</li>
         <li>Changed calculation of max engine speed when max differential pressure is updated</li>
         <li>Fixed again EGR CRBC</li>
+        <li>Fix for percentage fill calculation. Now calculated based on the read Load Limit parameter. Previously it was a fixed value of 24g.</li>
       </ul>
 
       <!-- <h3>DPF Pro – v2.1.0</h3>
