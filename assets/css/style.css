@@ -174,30 +174,21 @@ body {
 
 @media (max-width: 700px) {
 
-  .nav {
-    grid-template-columns: 1fr;
-    gap: .8rem;
-    text-align: center;
-  }
-
-  .nav-center {
-    order: 3;
-  }
-
-  .lang-switch {
-    order: 2;
-  }
-
   .nav-list {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.4rem 0.8rem;   /* mniejszy odstęp: pionowy 0.4rem, poziomy 0.8rem */
+    gap: 0.4rem 0.8rem;
+  }
+
+  .nav-list li {
+    flex-shrink: 0;
   }
 
   .nav-list a {
-    white-space: nowrap;   /* nie zawijaj tekstu w środku linku */
-    font-size: 0.9rem;     /* trochę mniejsza czcionka, więcej się zmieści */
-    padding: .4rem .6rem;  /* mniejszy padding na małym ekranie */
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: .4rem .5rem;
   }
 
 }
