@@ -191,6 +191,13 @@ body {
   .nav-list {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.4rem 0.8rem;   /* mniejszy odstęp: pionowy 0.4rem, poziomy 0.8rem */
+  }
+
+  .nav-list a {
+    white-space: nowrap;   /* nie zawijaj tekstu w środku linku */
+    font-size: 0.9rem;     /* trochę mniejsza czcionka, więcej się zmieści */
+    padding: .4rem .6rem;  /* mniejszy padding na małym ekranie */
   }
 
 }
@@ -496,11 +503,11 @@ html {
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;        /* odstęp między zdjęciami */
-  flex-wrap: wrap;    /* zawijanie na małych ekranach */
+  align-items: flex-start;   /* <- to naprawia rozciąganie */
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin: 2rem 0;
 }
-
 /* Obrazy w rzędzie */
 .image-row img {
   width: 30%;         /* 3 obok siebie */
