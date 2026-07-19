@@ -174,21 +174,33 @@ body {
 
 @media (max-width: 700px) {
 
+  .nav {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+    text-align: center;
+  }
+
+  .nav-center {
+    order: 3;
+  }
+
+  .lang-switch {
+    order: 2;
+  }
+
   .nav-list {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.4rem 0.8rem;
   }
 
-  .nav-list li {
-    flex-shrink: 0;
-  }
-
   .nav-list a {
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 0.85rem;
-    padding: .4rem .5rem;
+    display: inline-block;   /* pozwala na text-align wewnątrz linku */
+    text-align: center;      /* centruje zawinięty tekst */
+    width: 90px;              /* stała szerokość - punkt odniesienia dla centrowania */
+    white-space: normal;     /* pozwól na zawijanie (zamiast nowrap) */
+    font-size: 0.9rem;
+    padding: .4rem .3rem;
   }
 
 }
