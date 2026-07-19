@@ -311,6 +311,38 @@
   });
 </script>
 
+<div class="lightbox-overlay" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" alt="Powiększone zdjęcie" id="lightboxImg">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  // Otwieranie po kliknięciu na dowolny obraz w .image-row
+  document.querySelectorAll('.image-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Zamykanie: X, kliknięcie w tło, klawisz Escape
+  const closeLightbox = () => lightbox.classList.remove('active');
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+});
+</script>
 
 </body>
 </html>
