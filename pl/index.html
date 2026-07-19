@@ -152,20 +152,35 @@
   <img id="lightbox-img">
 </div>
 
+<div class="lightbox-overlay" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" alt="Powiększone zdjęcie" id="lightboxImg">
+</div>
+
 <script>
-const galleryImages = document.querySelectorAll(".gallery-img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
 
-galleryImages.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.classList.add("open");
-    lightboxImg.src = img.src;
+  // Obsługa obu galerii jednym selektorem
+  document.querySelectorAll('.gallery img, .image-row img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || '';
+      lightbox.classList.add('active');
+    });
   });
-});
 
-lightbox.addEventListener("click", () => {
-  lightbox.classList.remove("open");
+  const closeLightbox = () => lightbox.classList.remove('active');
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 });
 </script>
 

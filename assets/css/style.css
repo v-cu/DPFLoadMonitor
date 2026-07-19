@@ -252,30 +252,6 @@ body {
   transform: scale(1.03);
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s;
-  z-index: 9999;
-}
-
-.lightbox.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-}
-
 .table-container {
     background-color: var(--card); /* Używamy Twojego koloru karty */
     padding: 20px;
