@@ -1,14 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DPF Load Monitor – a compact OBD2 device for monitoring the diesel particulate filter (DPF) in VAG group vehicles in real time.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://dpfloadmonitor.pl/en/parameters/">
+<link rel="alternate" hreflang="en" href="https://dpfloadmonitor.pl/en/parameters/">
+<link rel="alternate" hreflang="pl" href="https://dpfloadmonitor.pl/pl/parameters/">
+<link rel="alternate" hreflang="x-default" href="https://dpfloadmonitor.pl/en/parameters/">
 <title>How to read parameters</title>
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
 </head>
 
 <body>
 
+<!-- layout:header (edytuj w templates/, potem: python tools/sync_layout.py) -->
 <header class="site-header">
   <div class="container nav">
 
@@ -16,7 +27,7 @@
     <a class="logo" href="/en/">DPF Load Monitor</a>
 
     <!-- ŚRODEK: menu -->
-    <nav class="nav-center">
+    <nav class="nav-center" aria-label="Main navigation">
       <ul class="nav-list">
         <li><a href="/en/mini/">Monitor Mini</a></li>
         <li><a href="/en/long/">Monitor Long</a></li>
@@ -29,15 +40,16 @@
     </nav>
 
     <!-- PRAWA: język -->
-    <div class="lang-switch">
+    <nav class="lang-switch" aria-label="Language selection">
       <a class="active" href="/en/">EN</a> |
       <a href="/pl/">PL</a>
-    </div>      
-
+    </nav>
 
   </div>
 </header>
+<!-- /layout:header -->
 
+<main>
 
 <section class="section">
   <div class="container">
@@ -72,8 +84,8 @@ During regeneration, temperatures range from 550 to 700°C.
 </p>
 
 <ul>
-<li><b>Passive Regeneration:</b> A spontaneous DPF regeneration that occurs when the temperature exceeds 350 degrees. My observations suggest that passive regeneration can also happen at lower temperatures, resulting in a decrease in the measured soot mass.</li>
-<li><b>Active Regeneration:</b> A DPF regeneration forced by the ECU. For the filter to regenerate properly, the minimum temperature should be 580 degrees. If the car does not reach this temperature during regeneration, it indicates a problem with the ancillary equipment.</li>
+<li><strong>Passive Regeneration:</strong> A spontaneous DPF regeneration that occurs when the temperature exceeds 350 degrees. My observations suggest that passive regeneration can also happen at lower temperatures, resulting in a decrease in the measured soot mass.</li>
+<li><strong>Active Regeneration:</strong> A DPF regeneration forced by the ECU. For the filter to regenerate properly, the minimum temperature should be 580 degrees. If the car does not reach this temperature during regeneration, it indicates a problem with the ancillary equipment.</li>
 </ul>
 
 <p>
@@ -85,7 +97,7 @@ To achieve the correct temperatures, you should not accelerate aggressively or u
     This is the most important parameter for assessing DPF clogging. Based on this value, you can determine the overall health of your filter.
 </p>
 
-<p><b>Measurement methods:</b></p>
+<p><strong>Measurement methods:</strong></p>
 <ul>
     <li>At idle (1-15 hPa);</li>    
     <li>At idle while increasing RPM to 2.5k-3k (10-30 hPa);</li>
@@ -110,7 +122,7 @@ To achieve the correct temperatures, you should not accelerate aggressively or u
         </thead>
         <tbody>
             <tr class="status-perfect">
-                <td class="range">< 100</td>
+                <td class="range">&lt; 100</td>
                 <td>DPF in perfect condition.</td>
             </tr>
             <tr class="status-good">
@@ -130,7 +142,7 @@ To achieve the correct temperatures, you should not accelerate aggressively or u
                 <td>DPF clogged.</td>
             </tr>
             <tr class="status-critical">
-                <td class="range">> 450</td>
+                <td class="range">&gt; 450</td>
                 <td>DPF in very poor condition – engine power is limited by the ECU.</td>
             </tr>
         </tbody>
@@ -178,11 +190,11 @@ When the measured value increases faster, it triggers the regeneration process, 
       </div>
 
       <aside class="toc">
-        <h4>Spis treści</h4>
+        <h4>Table of Contents</h4>
         <ul>
-          <li><a href="#hw">Software</a></li>
+          <li><a href="#software-version">Software</a></li>
           <li><a href="#oil-ash">Oil Ash</a></li>
-          <li><a href="#temp">Temperatures</a></li>
+          <li><a href="#temperature">Temperatures</a></li>
           <li><a href="#diff-pressure">Differential Pressure</a></li>
           <li><a href="#offset">Differential Pressure Offset</a></li>
           <li><a href="#last-regen">Kilometers Since Last Regeneration</a></li>
@@ -196,39 +208,15 @@ When the measured value increases faster, it triggers the regeneration process, 
   </div>
 </section>
 
+</main>
+
+<!-- layout:footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-10% 0px -70% 0px', // Aktywuje się, gdy nagłówek jest w górnej części ekranu
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
-        const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
-        
-        if (entry.isIntersecting) {
-          // Usuń klasę active ze wszystkich i dodaj do bieżącego
-          document.querySelectorAll('.toc a').forEach(link => link.classList.remove('active'));
-          if (tocLink) tocLink.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    // Śledzimy wszystkie nagłówki h2 i h3, które mają przypisane ID
-    document.querySelectorAll('h2[id], h3[id]').forEach((section) => {
-      observer.observe(section);
-    });
-  });
-</script>
+<!-- /layout:footer -->
 
 </body>
 </html>

@@ -1,14 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DPF Load Monitor – kompaktowe urządzenie OBD2 do monitorowania filtra cząstek stałych (DPF) w pojazdach grupy VAG w czasie rzeczywistym.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://dpfloadmonitor.pl/pl/parameters/">
+<link rel="alternate" hreflang="en" href="https://dpfloadmonitor.pl/en/parameters/">
+<link rel="alternate" hreflang="pl" href="https://dpfloadmonitor.pl/pl/parameters/">
+<link rel="alternate" hreflang="x-default" href="https://dpfloadmonitor.pl/en/parameters/">
 <title>Jak czytać parametry</title>
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
 </head>
 
 <body>
 
+<!-- layout:header (edytuj w templates/, potem: python tools/sync_layout.py) -->
 <header class="site-header">
   <div class="container nav">
 
@@ -16,7 +27,7 @@
     <a class="logo" href="/pl/">DPF Load Monitor</a>
 
     <!-- ŚRODEK: menu -->
-    <nav class="nav-center">
+    <nav class="nav-center" aria-label="Nawigacja główna">
       <ul class="nav-list">
         <li><a href="/pl/mini/">Monitor Mini</a></li>
         <li><a href="/pl/long/">Monitor Long</a></li>
@@ -29,14 +40,16 @@
     </nav>
 
     <!-- PRAWA: język -->
-    <div class="lang-switch">
+    <nav class="lang-switch" aria-label="Wybór języka">
       <a href="/en/">EN</a> |
       <a class="active" href="/pl/">PL</a>
-    </div>
+    </nav>
 
   </div>
 </header>
+<!-- /layout:header -->
 
+<main>
 
 <section class="section">
   <div class="container">
@@ -66,8 +79,8 @@ Podczas wypalania temperatury wynoszą 550–700°C.
 </p>
 
 <ul>
-<li><b>Regeneracja bierna</b> - samoczynne wypalanie się filtra DPF występuje gdy temperatura wynosi powyżej 350 stopni. Z moich obserwacji wynika że wypalanie bierne może być również przy niższej temperaturze – spada wtedy masa zmierzona sadzy.</li>
-<li><b>Regeneracja aktywna</b> – wypalanie się filtra DPF wymuszona przez sterownik. Aby poprawnie wypalić filtr DPF minimalna temperatura powinna wynosić 580stopni. Jeśli podczas wypalania auto nie osiąga tej temperatury oznacza to że występuje jakiś problem w osprzęcie.</li>
+<li><strong>Regeneracja bierna</strong> - samoczynne wypalanie się filtra DPF występuje gdy temperatura wynosi powyżej 350 stopni. Z moich obserwacji wynika że wypalanie bierne może być również przy niższej temperaturze – spada wtedy masa zmierzona sadzy.</li>
+<li><strong>Regeneracja aktywna</strong> – wypalanie się filtra DPF wymuszona przez sterownik. Aby poprawnie wypalić filtr DPF minimalna temperatura powinna wynosić 580stopni. Jeśli podczas wypalania auto nie osiąga tej temperatury oznacza to że występuje jakiś problem w osprzęcie.</li>
 </ul>
 
 <p>
@@ -77,12 +90,14 @@ Aby uzyskać odpowiednie temperatury nie można przyśpieszać samochodem ani ha
 <h2 id="diff-pressure">4. Ciśnienie różnicowe filtra (Differential Pressure)</h2>
 <p>
 Najważniejszy parametr oceny zapchania filtra DPF. Na podstawie tej wartości można stwierdzić w jakim stanie jest nasz filtr.
-<p><b>Sposoby mierzenia:</b></p>
+</p>
+<p><strong>Sposoby mierzenia:</strong></p>
 <ul>
 <li>Na biegu jałowym (1-15hPa);</li>    
 <li>Na biegu jałowym podnosząc obroty do 2.5-3tyś (10-30hPa);</li>
 <li>Podczas jazdy na wyższych biegach dając gaz w podłogę;</li>
 </ul>
+<p>
 Najbardziej interesuje nas opcja c) tylko w niej można sprawdzić jak bardzo nasz dpf jest zapchany.
 </p>
 <p>
@@ -100,7 +115,7 @@ obrotów należy interpretować według poniższej tabeli:
               </thead>
               <tbody>
                   <tr class="status-perfect">
-                      <td class="range">< 100</td>
+                      <td class="range">&lt; 100</td>
                       <td>DPF w idealnym stanie.</td>
                   </tr>
                   <tr class="status-good">
@@ -120,13 +135,12 @@ obrotów należy interpretować według poniższej tabeli:
                       <td>DPF zapchany.</td>
                   </tr>
                   <tr class="status-critical">
-                      <td class="range">> 450</td>
+                      <td class="range">&gt; 450</td>
                       <td>DPF w bardzo złym stanie – sterownik odcina moc silnika.</td>
                   </tr>
               </tbody>
           </table>
       </div>
-
 
 <h3 id="offset">4a. Offset różnicy ciśnień</h3>
 <p>
@@ -185,40 +199,15 @@ Gdy wartość ta rośnie szybciej wtedy ona rozpoczyna proces wypalania i warto�
   </div>
 </section>
 
+</main>
+
+<!-- layout:footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-10% 0px -70% 0px', // Aktywuje się, gdy nagłówek jest w górnej części ekranu
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
-        const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
-        
-        if (entry.isIntersecting) {
-          // Usuń klasę active ze wszystkich i dodaj do bieżącego
-          document.querySelectorAll('.toc a').forEach(link => link.classList.remove('active'));
-          if (tocLink) tocLink.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    // Śledzimy wszystkie nagłówki h2 i h3, które mają przypisane ID
-    document.querySelectorAll('h2[id], h3[id]').forEach((section) => {
-      observer.observe(section);
-    });
-  });
-</script>
-
+<!-- /layout:footer -->
 
 </body>
 </html>

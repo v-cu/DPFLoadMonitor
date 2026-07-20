@@ -1,14 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DPF Load Monitor – a compact OBD2 device for monitoring the diesel particulate filter (DPF) in VAG group vehicles in real time.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://dpfloadmonitor.pl/en/long/">
+<link rel="alternate" hreflang="en" href="https://dpfloadmonitor.pl/en/long/">
+<link rel="alternate" hreflang="pl" href="https://dpfloadmonitor.pl/pl/long/">
+<link rel="alternate" hreflang="x-default" href="https://dpfloadmonitor.pl/en/long/">
 <title>DPF Monitor Long</title>
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
 </head>
 
 <body>
 
+<!-- layout:header (edytuj w templates/, potem: python tools/sync_layout.py) -->
 <header class="site-header">
   <div class="container nav">
 
@@ -16,7 +27,7 @@
     <a class="logo" href="/en/">DPF Load Monitor</a>
 
     <!-- ŚRODEK: menu -->
-    <nav class="nav-center">
+    <nav class="nav-center" aria-label="Main navigation">
       <ul class="nav-list">
         <li><a href="/en/mini/">Monitor Mini</a></li>
         <li><a href="/en/long/">Monitor Long</a></li>
@@ -29,14 +40,16 @@
     </nav>
 
     <!-- PRAWA: język -->
-    <div class="lang-switch">
+    <nav class="lang-switch" aria-label="Language selection">
       <a class="active" href="/en/">EN</a> |
       <a href="/pl/">PL</a>
-    </div>
+    </nav>
 
   </div>
 </header>
+<!-- /layout:header -->
 
+<main>
 
 <section class="section">
   <div class="container">
@@ -44,51 +57,28 @@
     <p>Product under development phase :).</p>
 
     <div class="image-row">
-    <img src="/assets/img/monitor_long_1.jpg" alt="1">
-    <img src="/assets/img/monitor_long_2.jpg" alt="2">
-    <img src="/assets/img/monitor_long_3.jpg" alt="3">
+    <picture><source type="image/webp" srcset="/assets/img/monitor_long_1-640.webp 640w, /assets/img/monitor_long_1.webp 1544w" sizes="(max-width: 600px) 80vw, (max-width: 1100px) 30vw, 330px"><img src="/assets/img/monitor_long_1.jpg" alt="DPF Monitor Long – photo 1" width="1544" height="1158" loading="lazy" decoding="async"></picture>
+    <picture><source type="image/webp" srcset="/assets/img/monitor_long_2-640.webp 640w, /assets/img/monitor_long_2.webp 1719w" sizes="(max-width: 600px) 80vw, (max-width: 1100px) 30vw, 330px"><img src="/assets/img/monitor_long_2.jpg" alt="DPF Monitor Long – photo 2" width="1719" height="1289" loading="lazy" decoding="async"></picture>
+    <picture><source type="image/webp" srcset="/assets/img/monitor_long_3-640.webp 640w, /assets/img/monitor_long_3.webp 1860w" sizes="(max-width: 600px) 80vw, (max-width: 1100px) 30vw, 330px"><img src="/assets/img/monitor_long_3.jpg" alt="DPF Monitor Long – photo 3" width="1860" height="1395" loading="lazy" decoding="async"></picture>
     </div>
 
   </div>
 </section>
 
+</main>
+
+<!-- layout:footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
+<!-- /layout:footer -->
 
-<div class="lightbox-overlay" id="lightbox">
-  <span class="lightbox-close" id="lightboxClose">&times;</span>
-  <img src="" alt="Powiększone zdjęcie" id="lightboxImg">
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+  <img src="" alt="Enlarged photo" id="lightboxImg">
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxClose = document.getElementById('lightboxClose');
-
-  // Otwieranie po kliknięciu na dowolny obraz w .image-row
-  document.querySelectorAll('.image-row img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('active');
-    });
-  });
-
-  // Zamykanie: X, kliknięcie w tło, klawisz Escape
-  const closeLightbox = () => lightbox.classList.remove('active');
-
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-});
-</script>
 </body>
 </html>

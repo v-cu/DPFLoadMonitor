@@ -1,14 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DPF Load Monitor – a compact OBD2 device for monitoring the diesel particulate filter (DPF) in VAG group vehicles in real time.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noindex">
 <title>DPF Monitor Pro</title>
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
 </head>
 
 <body>
 
+<!-- layout:header (edytuj w templates/, potem: python tools/sync_layout.py) -->
 <header class="site-header">
   <div class="container nav">
 
@@ -16,7 +24,7 @@
     <a class="logo" href="/en/">DPF Load Monitor</a>
 
     <!-- ŚRODEK: menu -->
-    <nav class="nav-center">
+    <nav class="nav-center" aria-label="Main navigation">
       <ul class="nav-list">
         <li><a href="/en/mini/">Monitor Mini</a></li>
         <li><a href="/en/long/">Monitor Long</a></li>
@@ -29,14 +37,16 @@
     </nav>
 
     <!-- PRAWA: język -->
-    <div class="lang-switch">
+    <nav class="lang-switch" aria-label="Language selection">
       <a class="active" href="/en/">EN</a> |
       <a href="/pl/">PL</a>
-    </div>
+    </nav>
 
   </div>
 </header>
+<!-- /layout:header -->
 
+<main>
 
 <section class="section">
   <div class="container">
@@ -45,11 +55,15 @@
   </div>
 </section>
 
+</main>
+
+<!-- layout:footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
+<!-- /layout:footer -->
 
 </body>
 </html>

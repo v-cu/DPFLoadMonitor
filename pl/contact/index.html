@@ -1,14 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DPF Load Monitor – kompaktowe urządzenie OBD2 do monitorowania filtra cząstek stałych (DPF) w pojazdach grupy VAG w czasie rzeczywistym.">
+<meta name="theme-color" content="#0f172a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://dpfloadmonitor.pl/pl/contact/">
+<link rel="alternate" hreflang="en" href="https://dpfloadmonitor.pl/en/contact/">
+<link rel="alternate" hreflang="pl" href="https://dpfloadmonitor.pl/pl/contact/">
+<link rel="alternate" hreflang="x-default" href="https://dpfloadmonitor.pl/en/contact/">
 <title>Kontakt</title>
 <link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
 </head>
 
 <body>
 
+<!-- layout:header (edytuj w templates/, potem: python tools/sync_layout.py) -->
 <header class="site-header">
   <div class="container nav">
 
@@ -16,7 +27,7 @@
     <a class="logo" href="/pl/">DPF Load Monitor</a>
 
     <!-- ŚRODEK: menu -->
-    <nav class="nav-center">
+    <nav class="nav-center" aria-label="Nawigacja główna">
       <ul class="nav-list">
         <li><a href="/pl/mini/">Monitor Mini</a></li>
         <li><a href="/pl/long/">Monitor Long</a></li>
@@ -29,14 +40,16 @@
     </nav>
 
     <!-- PRAWA: język -->
-    <div class="lang-switch">
+    <nav class="lang-switch" aria-label="Wybór języka">
       <a href="/en/">EN</a> |
       <a class="active" href="/pl/">PL</a>
-    </div>
+    </nav>
 
   </div>
 </header>
+<!-- /layout:header -->
 
+<main>
 
 <section class="section">
   <div class="container">
@@ -45,11 +58,15 @@
   </div>
 </section>
 
+</main>
+
+<!-- layout:footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
+<!-- /layout:footer -->
 
 </body>
 </html>
