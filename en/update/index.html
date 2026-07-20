@@ -5,13 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="DPF Load Monitor – a compact OBD2 device for monitoring the diesel particulate filter (DPF) in VAG group vehicles in real time.">
 <meta name="theme-color" content="#0f172a">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="https://dpfloadmonitor.pl/en/update/">
-<link rel="alternate" hreflang="en" href="https://dpfloadmonitor.pl/en/update/">
-<link rel="alternate" hreflang="pl" href="https://dpfloadmonitor.pl/pl/update/">
-<link rel="alternate" hreflang="x-default" href="https://dpfloadmonitor.pl/en/update/">
 <title>Software Update</title>
 <link rel="stylesheet" href="/assets/css/style.css">
 <script src="/assets/js/main.js" defer></script>
@@ -19,7 +12,6 @@
 
 <body>
 
-<!-- layout:header (edytuj w templates/, potem: python tools/sync_layout.py) -->
 <header class="site-header">
   <div class="container nav">
 
@@ -47,7 +39,6 @@
 
   </div>
 </header>
-<!-- /layout:header -->
 
 <main>
 
@@ -83,6 +74,19 @@
           <span class="file-info">Firmware • 16-06-2026</span>
         </li>
 
+        <!-- <li>
+          <a href="/downloads/DPF_Pro_v2.1.0.bin" download>
+            DPF Pro – v2.1.0
+          </a>
+          <span class="file-info">Firmware • 2026-02-18</span>
+        </li> -->
+
+        <!-- <li>
+          <a href="/downloads/USB_Driver.zip" download>
+            Sterownik USB
+          </a>
+          <span class="file-info">Driver • Windows</span>
+        </li> -->
       </ul>
     </div>
 
@@ -116,6 +120,12 @@
         <li>Fix for percentage fill calculation. Now calculated based on the read Load Limit parameter. Previously it was a fixed value of 24g.</li>
       </ul>
 
+      <!-- <h3>DPF Pro – v2.1.0</h3>
+      <ul>
+        <li>Dodano nowe parametry diagnostyczne</li>
+        <li>Ulepszona kalibracja czujników</li>
+        <li>Optymalizacja zużycia pamięci</li>
+      </ul> -->
     </div>
 
     <!-- ===== INSTRUKCJA AKTUALIZACJI ===== -->
@@ -126,10 +136,10 @@
         <li>Download the firmware (.bin) file for your device.</li>
         <li>Copy the file to a microSD card.</li>
         <li>Insert the card into the device. You do not need to disconnect the device to insert the card. The microSD card is hot swappable. The image below shows which side of the card should be inserted.
-        <picture><source type="image/webp" srcset="/assets/img/microsd_card_insert-640.webp 640w, /assets/img/microsd_card_insert.webp 1501w" sizes="(max-width: 600px) 80vw, (max-width: 1100px) 30vw, 330px"><img src="/assets/img/microsd_card_insert.jpg" alt="Micro SD insert orientation" class="center-image" width="1501" height="1501" loading="lazy" decoding="async"></picture>
+        <img src="/assets/img/microsd_card_insert.jpg" alt="Micro SD insert orientation" class="center-image" width="1501" height="1501" loading="lazy" decoding="async">
 </li>
         <li>During operation, go to the menu and hold the "Update" button for 2 seconds.
-        <picture><source type="image/webp" srcset="/assets/img/update_menu.webp"><img src="/assets/img/update_menu.png" alt="Update menu" class="center-image" width="498" height="306" loading="lazy" decoding="async"></picture>
+        <img src="/assets/img/update_menu.png" alt="Update menu" class="center-image" width="498" height="306" loading="lazy" decoding="async">
 </li>
         <li>Wait for the update process to complete (do not disconnect power).</li>
         <li>After restarting, the device will operate with the new version.</li>
@@ -145,13 +155,11 @@
 
 </main>
 
-<!-- layout:footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <span>© 2026 DPF Load Monitor</span>
   </div>
 </footer>
-<!-- /layout:footer -->
 
 </body>
 </html>
