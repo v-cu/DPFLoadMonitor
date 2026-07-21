@@ -83,9 +83,41 @@
     headings.forEach((heading) => observer.observe(heading));
   };
 
+  /* ===== MENU MOBILNE (hamburger) ===== */
+  const initMobileNav = () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    if (!toggle || !nav) return;
+
+    const setOpen = (open) => {
+      nav.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(!nav.classList.contains('open'));
+    });
+
+    // Escape zamyka menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false);
+    });
+
+    // klik poza belką zamyka menu
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+    });
+
+    // powrót do desktopu czyści stan
+    window.matchMedia('(min-width: 701px)').addEventListener('change', (e) => {
+      if (e.matches) setOpen(false);
+    });
+  };
+
   const init = () => {
     initLightbox();
     initTocSpy();
+    initMobileNav();
   };
 
   if (document.readyState === 'loading') {

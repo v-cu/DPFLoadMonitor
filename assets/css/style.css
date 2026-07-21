@@ -148,6 +148,35 @@ button:focus-visible,
 
 .lang-switch a:hover { color: var(--brand-2); }
 
+/* HAMBURGER (widoczny tylko na mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform .25s ease, opacity .2s ease;
+}
+
+/* animacja w "X" po otwarciu */
+.nav.open .nav-toggle .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav.open .nav-toggle .bar:nth-child(2) { opacity: 0; }
+.nav.open .nav-toggle .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* ===== SECTION ===== */
 
 .section { padding: 4rem 0; }
@@ -558,35 +587,49 @@ img.center-image {
   .video-grid { grid-template-columns: 1fr; }
 }
 
+/* --- KOMPAKTOWA BELKA MOBILNA Z HAMBURGEREM --- */
 @media (max-width: 700px) {
-  :root { --header-offset: 170px; } /* wyższy nagłówek po złamaniu do kolumny */
+  :root { --header-offset: 76px; }  /* belka to teraz jeden niski wiersz */
 
   .section { padding: 2.75rem 0; }
 
+  /* jeden wiersz: logo | język | hamburger */
   .nav {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto auto;
     gap: .8rem;
-    text-align: center;
-    justify-items: center;
+    padding: .7rem 0;
   }
 
-  .nav-center { order: 3; }
-  .lang-switch { order: 2; }
+  .lang-switch { font-size: .95rem; }
+
+  .nav-toggle { display: flex; }
+
+  /* menu jako rozwijany panel pod belką, na całą szerokość */
+  .nav-center {
+    grid-column: 1 / -1;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  .nav.open .nav-center { max-height: 60vh; }
 
   .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .4rem .8rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .2rem;
+    padding: .4rem 0 .8rem;
   }
 
   .nav-list a {
-    display: inline-block;
-    text-align: center;      /* centruje zawinięty tekst */
-    width: 90px;             /* stała szerokość – punkt odniesienia */
-    white-space: normal;     /* pozwala na zawijanie */
-    font-size: .9rem;
-    padding: .4rem .3rem;
+    display: block;
+    padding: .7rem .8rem;
+    border-radius: 10px;
   }
+
+  .nav-list a:active,
+  .nav-list a:hover { background: rgba(255, 255, 255, .08); }
 }
 
 @media (max-width: 600px) {
