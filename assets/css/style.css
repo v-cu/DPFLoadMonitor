@@ -870,3 +870,17 @@ img.center-image {
   .gesture img{max-width:230px;margin-inline:auto}
   .gesture--nopic .arrow{margin-top:.3rem}
 }
+
+/* zdjęcie przy górnej krawędzi, nie na środku kolumny z tekstem */
+.product-layout{ align-items: start; }
+
+/* bez tego tabela (min-width:420px) rozpycha siatkę i na telefonie
+   pojawia się poziome przewijanie całej strony */
+.product-text{ min-width: 0; }
+
+/* .section h2 ma margin-top:0, więc nagłówki kleiłyby się do treści nad nimi */
+.product-text h2{ margin-top: 2.2rem; }
+
+/* lista wersji – korzysta z gotowego .pos-list */
+.version-list .where{ text-decoration: none; }
+.version-list .where:hover{ color: var(--brand-2); text-decoration: underline; }
