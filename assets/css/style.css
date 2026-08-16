@@ -475,7 +475,7 @@ img.center-image {
   border-radius: 20px;
 }
 
-/* ===== LISTA POBIERANIA ===== */
+
 
 .download-list {
   list-style: none;
@@ -516,7 +516,7 @@ img.center-image {
   color: var(--muted);
 }
 
-/* Ostrzeżenie w kartach (np. aktualizacja firmware) */
+
 .note-warning {
   margin-top: 1rem;
   color: var(--muted);
@@ -574,7 +574,7 @@ img.center-image {
 
 .lightbox-close:hover { transform: scale(1.2); }
 
-/* ===== RESPONSYWNOŚĆ ===== */
+
 
 @media (max-width: 1000px) {
   .page-layout { grid-template-columns: 1fr; }
@@ -587,13 +587,13 @@ img.center-image {
   .video-grid { grid-template-columns: 1fr; }
 }
 
-/* --- KOMPAKTOWA BELKA MOBILNA Z HAMBURGEREM --- */
+
 @media (max-width: 700px) {
-  :root { --header-offset: 76px; }  /* belka to teraz jeden niski wiersz */
+  :root { --header-offset: 76px; }  
 
   .section { padding: 2.75rem 0; }
 
-  /* jeden wiersz: logo | język | hamburger */
+
   .nav {
     grid-template-columns: 1fr auto auto;
     gap: .8rem;
@@ -604,7 +604,7 @@ img.center-image {
 
   .nav-toggle { display: flex; }
 
-  /* menu jako rozwijany panel pod belką, na całą szerokość */
+
   .nav-center {
     grid-column: 1 / -1;
     display: block;
@@ -635,9 +635,9 @@ img.center-image {
 @media (max-width: 600px) {
   .gallery { grid-template-columns: 1fr; }
 
-  .image-row img { width: 80%; }        /* po jednym na wąskim ekranie */
+  .image-row img { width: 80%; }        
 
-  img.center-image { width: 80%; }      /* czytelniejsze instrukcje na telefonie */
+  img.center-image { width: 80%; }     
 
   .download-list li {
     flex-direction: column;
@@ -650,7 +650,7 @@ img.center-image {
   }
 }
 
-/* ===== DOSTĘPNOŚĆ: ograniczenie animacji ===== */
+
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -666,12 +666,12 @@ img.center-image {
 
 
 :root{
-  --man-active: #2f3a8f;        /* jednolity ciemny niebieski – aktywna zakładka */
-  --man-active-hi: #3d49a8;     /* wersja rozjaśniona – hover aktywnej zakładki */
-  --man-sticky-top: 90px;       /* wyliczane skryptem z realnej wysokości belki */
+  --man-active: #2f3a8f;        
+  --man-active-hi: #3d49a8;     
+  --man-sticky-top: 90px;       
 }
  
-/* --- Nagłówek instrukcji --- */
+
 .man-head{
   display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;
   margin:.4rem 0 1.4rem;
@@ -683,14 +683,14 @@ img.center-image {
 }
 .man-head__hint{color:var(--muted);font-size:.9rem}
  
-/* --- Callout (uwaga / wskazówka) --- */
+
 .callout{
   display:grid;grid-template-columns:auto minmax(0,1fr);gap:.9rem;
   padding:1rem 1.2rem;border-radius:12px;margin:1.2rem 0;
   border:1px solid var(--border);background:rgba(255,255,255,.02);
 }
 .callout .ico{grid-column:1;font-size:1.25rem;line-height:1.5}
-/* wszystko poza ikoną trafia do prawej kolumny – także kilka akapitów pod sobą */
+
 .callout > *:not(.ico){grid-column:2}
 .callout p{margin:0}
 .callout p + p{margin-top:.4rem}
@@ -699,7 +699,7 @@ img.center-image {
 .callout.tip{border-color:rgba(99,112,204,.45);background:rgba(47,58,143,.18)}
 .callout.tip .ico{color:#a5b4fc}
  
-/* --- Pasek zakładek --- */
+
 .tabs{
   position:sticky;top:var(--man-sticky-top);z-index:20;scroll-margin-top:var(--man-sticky-top);
   display:flex;flex-wrap:wrap;gap:.4rem;padding:.5rem;margin:1.5rem 0 0;
@@ -722,13 +722,13 @@ img.center-image {
 }
 .tab[aria-selected="true"] .num{background:rgba(255,255,255,.18);color:#fff}
  
-/* --- Panel zakładki --- */
+
 .tabpanel{padding-top:1.8rem}
 .tabpanel[hidden]{display:none}
 .tabpanel > h3:first-child{margin-top:0}
 .tabpanel .lead{color:var(--muted);margin-top:-.4rem}
  
-/* --- Karta: obraz + opis --- */
+
 .man-card{
   display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:1.8rem;align-items:start;
   background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
@@ -753,7 +753,7 @@ img.center-image {
   background:var(--man-active);color:#fff;
 }
  
-/* Pojedynczy wyśrodkowany zrzut (gdy opis nie jest potrzebny obok) */
+
 .man-figure{
   background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
   padding:1.2rem;box-shadow:var(--shadow-soft);margin:0 0 1.4rem;
@@ -765,13 +765,13 @@ img.center-image {
 }
 .man-figure figcaption{margin-top:.5rem;font-size:.8rem;color:var(--muted);text-align:center}
  
-/* Para zrzutów obok siebie (np. wartości max / min) */
-.img-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:1.2rem 0 0}
-.img-pair figure{margin:0}
+
+.img-pair{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.2rem 0 0}
+.img-pair figure{margin:0;flex:1 1 240px;max-width:340px}
 .img-pair img{display:block;width:100%;border-radius:16px;box-shadow:var(--shadow);cursor:zoom-in;background:#0b1226}
 .img-pair figcaption{margin-top:.45rem;text-align:center;font-size:.82rem;color:var(--muted)}
  
-/* --- Lista "pozycja → parametr" --- */
+
 .pos-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
 .pos-list li{
   display:grid;grid-template-columns:140px minmax(0,1fr);gap:.9rem;align-items:baseline;
@@ -784,7 +784,7 @@ img.center-image {
 .pos-list .what{color:var(--text)}
 .pos-list .what small{display:block;color:var(--muted);font-size:.85em}
  
-/* --- Gesty --- */
+
 .gesture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.2rem 0 2.2rem}
 .gesture{
   background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
@@ -798,7 +798,7 @@ img.center-image {
 .gesture p + p{margin-top:.4rem}
 .gesture--nopic{justify-content:center;min-height:200px}
  
-/* --- Ustawienia: grupy + wiersze (bez efektu hover – nic tu nie jest klikalne) --- */
+
 .opt-group{margin:0 0 1.6rem}
 .opt-group > h4{
   margin:0 0 .7rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
@@ -821,11 +821,7 @@ img.center-image {
 .dot.red{background:#f87171}
 .dot.blue{background:#60a5fa}
 .dot.white{background:#fff}
- 
-/* --- Kroki ---
-   UWAGA: numer jest pozycjonowany absolutnie, a <li> zostaje zwykłym blokiem.
-   Gdyby <li> był gridem/flexem, każdy <strong> i <span class="key"> w środku
-   stałby się osobną komórką i tekst rozjechałby się na kilka wierszy. */
+
 .steps{list-style:none;counter-reset:s;margin:1rem 0;padding:0;display:grid;gap:.7rem}
 .steps li{counter-increment:s;position:relative;padding-left:2.4rem;min-height:26px}
 .steps li::before{
@@ -833,17 +829,16 @@ img.center-image {
   display:grid;place-items:center;width:26px;height:26px;border-radius:8px;
   background:var(--man-active);color:#fff;font-size:.82rem;font-weight:800;
 }
- 
-/* --- Nazwa opcji / przycisku w tekście --- */
+
 .key{
   display:inline-block;padding:.1rem .45rem;border-radius:6px;font-size:.85em;font-weight:600;
   background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;
 }
  
-/* ===== RESPONSYWNOŚĆ ===== */
- 
+
 @media (max-width:900px){
   .man-card{grid-template-columns:minmax(0,280px) 1fr;gap:1.3rem}
+  .img-pair figure{max-width:280px}
 }
  
 @media (max-width:760px){
@@ -853,7 +848,6 @@ img.center-image {
 }
  
 @media (max-width:700px){
-  /* pasek zakładek: jeden rząd przewijany poziomo, przyklejony pod belką */
   .tabs{
     flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;
     -webkit-overflow-scrolling:touch;scrollbar-width:none;
@@ -874,7 +868,8 @@ img.center-image {
 @media (max-width:560px){
   .pos-list li{grid-template-columns:1fr;gap:.15rem;padding:.45rem .1rem}
   .man-card__media img{max-width:100%}
-  .img-pair{grid-template-columns:1fr}
+  .img-pair{gap:1.2rem}
+  .img-pair figure{flex-basis:100%;max-width:360px;margin-inline:auto}
   .callout{padding:.9rem 1rem;gap:.7rem}
 }
  
