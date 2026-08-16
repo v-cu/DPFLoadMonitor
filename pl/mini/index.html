@@ -48,8 +48,7 @@
 
 <section class="section">
   <div class="container">
-    <div class="page-layout">
-      <div class="page-content">
+    <div class="page-content">
 
 <h1>DPF Monitor Mini</h1>
 
@@ -61,222 +60,469 @@
 
 <h2 id="spec">Specyfikacja techniczna</h2>
 <div class="table-container">
-
   <table>
     <tbody>
-      <tr>
-        <td>Napięcie pracy</td>
-        <td class="td-right">6-19V (32V MAX)</td>
-      </tr>
-      <tr>
-        <td>Pobór prądu podczas działania</td>
-        <td class="td-right">~40mA</td>
-      </tr>
-      <tr>
-        <td>Pobór prądu podczas uśpienia</td>
-        <td class="td-right">&lt;8mA @ 12.5V 25°C</td>
-      </tr>
-      <tr>
-        <td>Obsługiwany standard CAN</td>
-        <td class="td-right">UDS</td>
-      </tr>
-      <tr>
-        <td>Wyświetlacz</td>
-        <td class="td-right">AMOLED 460x280px</td>
-      </tr>
-      <tr>
-        <td>Rozmiar urządzenia</td>
-        <td class="td-right">43.5mm x 28.5mm x 11mm  (szer. x wys. x głęb.)</td>
-      </tr>
-      <tr>
-        <td>Materiał obudowy</td>
-        <td class="td-right">ASA-CF (wyświetlacz), PETG-CF (złącze OBD2)</td>
-      </tr>
-      <tr>
-        <td>Długość przewodu</td>
-        <td class="td-right">1.40m</td>
-      </tr>
+      <tr><td>Napięcie pracy</td><td class="td-right">6-19V (32V MAX)</td></tr>
+      <tr><td>Pobór prądu podczas działania</td><td class="td-right">~40mA</td></tr>
+      <tr><td>Pobór prądu podczas uśpienia</td><td class="td-right">&lt;8mA @ 12.5V 25°C</td></tr>
+      <tr><td>Temperatura pracy</td><td class="td-right">-30°C do +85°C</td></tr>
+      <tr><td>Obsługiwany standard CAN</td><td class="td-right">UDS</td></tr>
+      <tr><td>Wyświetlacz</td><td class="td-right">AMOLED 460x280px</td></tr>
+      <tr><td>Rozmiar urządzenia</td><td class="td-right">43.5mm x 28.5mm x 11mm (szer. x wys. x głęb.)</td></tr>
+      <tr><td>Materiał obudowy</td><td class="td-right">ASA-CF (wyświetlacz), PETG-CF (złącze OBD2)</td></tr>
+      <tr><td>Długość przewodu</td><td class="td-right">1.40m</td></tr>
     </tbody>
   </table>
 </div>
 
-<h2 id="instrukcja">Instrukcja użytkownika (dla wersji SW 1.8.9)</h2>
-<p><strong>UWAGA! Pierwsze podłączenie urządzenia w samochodzie powinno być wykonane zawsze na włączonym silniku.</strong></p>
-<h3 id="ekran">1. Ekran główny</h3>
-<ul>
-<li>Ekran główny składa się z pięciu stron. Użytkownik może wybrać stronę najbardziej odpowiadającą jego preferencjom.</li>
-<li>Przełączanie pomiędzy stronami odbywa się poprzez przesunięcie palcem w lewo lub w prawo.</li>
-</ul>
-<img src="/assets/img/mainscreen_gesture_leftright.png" alt="Gest przesunięcia palcem w lewo lub w prawo" class="center-image" width="454" height="280" loading="lazy" decoding="async">
-<ul>
-<li>Jeżeli urządzenie nie pracuje w trybie automatycznej regulacji jasności, dotknięcie ekranu w dowolnym miejscu powoduje przełączenie między trybem jasnym (dziennym) a ciemnym.</li>
-<li>Gdy wyświetlana jest strona ostatnia 6 – Differential Pressure Test, użytkownik może wyzerować wartości maksymalne, wykonując gest przesunięcia palcem z dołu do góry.</li>
-</ul>
-<img src="/assets/img/page5_gesture_bottomup.png" alt="Gest przesunięcia palcem z dołu do góry" class="center-image" width="456" height="281" loading="lazy" decoding="async">
-<ul>
-<li>Z każdej strony ekranu głównego użytkownik może przejść do menu, wykonując gest przesunięcia palcem z góry do dołu</li>
-</ul>
-<img src="/assets/img/gesture_topbottom.png" alt="Gest przesunięcia palcem z góry do dołu" class="center-image" width="454" height="280" loading="lazy" decoding="async">
-<h3>1.1 Opis parametrów na ekranie głównym</h3>
-<h4>Strona 1</h4>
-<img src="/assets/img/page1.png" alt="Strona 1" class="center-image" width="567" height="350" loading="lazy" decoding="async">
-<ul>
-<li>Po środku ekranu znajduje się zegar</li>
-<li>W lewym górnym rogu znajduje się czas od odpalenia silnika</li>
-<li>W prawym górnym rogu znajduje się aktualna temperatura oleju</li>
-<li>W lewym dolnym rogu znajduje się zapełnienie DPF liczone w procentach na podstawie masy obliczonej</li>
-<li>W prawym dolnym rogu znajduje się dystans od ostatniego wypalania</li>
-<li>Na dole ekranu znajduje się ikona stanu DPF</li>
-</ul>
-<h4>Strona 2</h4>
-<img src="/assets/img/page2.png" alt="Strona 2" class="center-image" width="568" height="350" loading="lazy" decoding="async">
-<ul>
-<li>Po lewej stronie znajduje się zapełnienie DPF oraz dystans od ostatniego wypalania</li>
-<li>Po prawej stronie u góry znajduje się ikona stanu DPF</li>
-<li>Po prawej stronie na dole znajduje się temperatura oleju (czerwona ikona) oraz tempratura cieczy chłodzącej (niebieska ikona)</li>
-</ul>
-<h4>Strona 3</h4>
-<img src="/assets/img/page3.png" alt="Strona 3" class="center-image" width="568" height="348" loading="lazy" decoding="async">
-<ul>
-  <li>Po lewej stronie znajduje się zapełnienie DPF oraz dystans od ostatniego wypalania</li>
-  <li>Po prawej stronie u góry znajduje się temperatura przed i po filtrze DPF</li>
-  <li>Po prawej stronie na dole znajduje się ciśnienie różnicowe.</li>
-</ul>
-<h4>Strona 4</h4>
-<img src="/assets/img/page4.png" alt="Strona 4" class="center-image" width="499" height="308" loading="lazy" decoding="async">
-<ul>
-<li>Parametry są opisane na ekranie.</li>
-</ul>
-<h4>Strona 5</h4>
-<img src="/assets/img/page5.png" alt="Strona 5" class="center-image" width="498" height="306" loading="lazy" decoding="async">
-<ul>
-<li>Parametry są opisane na ekranie.</li>
-</ul>
-<h4>Strona 6</h4>
-<img src="/assets/img/page6.png" alt="Strona 6" class="center-image" width="570" height="351" loading="lazy" decoding="async">
-<ul>
-<li>Na ostatniej stronie znajduje się pomiar ciśnienia różnicowego. Maksymalne wartości są podświetlone na czerwono. W dolnym lewym rogu znajduje się aktualny procent zapełnienia DPF.</li>
-</ul>
-<h3 id="menu">2. Menu</h3>
-<ul>
-<li>Menu składa się z sześciu podstron</li>
-<li>Po wejściu do dowolnej podstrony, wyjście odbywa się zawsze wykonując gest przesunięcia palcem z lewej strony do prawej.</li>
-</ul>
-<img src="/assets/img/info.png" alt="Menu" class="center-image" width="568" height="349" loading="lazy" decoding="async">
-<ul>
-<li>Wyjście z menu odbywa się poprzez gest przesunięcia palcem z dołu do góry.</li>
-</ul>
-<img src="/assets/img/menu1.png" alt="Menu" class="center-image" width="498" height="306" loading="lazy" decoding="async">
-<h3 id="ustawienia">3. Ustawienia</h3>
-<img src="/assets/img/settings1.png" alt="Ustawienia" class="center-image" width="568" height="819" loading="lazy" decoding="async">
-<ul>
-<li><strong>Fast mode</strong>
-<p>Włączenie trybu szybkiego. W tym trybie odczyt CAN wykonywany jest z większą częstotliwością oraz odświeżane są tylko te parametry które są wyświetlane na danej stronie.</p>
-</li>
-<li><strong>SD Card Save</strong>
-<p>Włączenie zapisu danych na kartę SD. Dane zapisywane są co 1 sekundę i zawierają wszystkie odczytywane parametry. Z tego względu po włączeniu Fast mode nie ma możliwości zapisu na kartę SD.</p>
-</li>
-<li><strong>Show Statistics</strong>
-<p>Włączenie tej opcji powoduje, że po zgaszeniu silnika, po każdej jeździe wyświetlane są statystyki przez 10 sekund a dopiero potem urządzenie się usypia.</p>
- <img src="/assets/img/statistics.png" alt="Statystyki" class="center-image" width="795" height="487" loading="lazy" decoding="async">
- <p>-Na czerwono wyświetlane są maksymalne zarejestrowane wartości.</p>
- <p>-Na niebiesko wyświetlane są minimalne zarejestrowane wartości.</p>
- <p>-Dla masy obliczonej i zmierzonej na biało wyświetlana jest różnica od startu silnika. Przykładowo jeśli wartość jest +1.21 oznacza to, że masa sadzy wzrosła o 1.21 gramy od momentu uruchomienia silnika do zakończenia podróży. Jeśli wartość jest -0.50 oznacza to, że masa sadzy zmalała o 0.50 gram.</p>
-</li>
-<li><strong>Show Passive Regen</strong>
-<p>Włączenie tej opcji powoduje że na ekranie głównym pojawia się informacja o wypalaniu biernym w postaci pomarańczowego koloru temperatur lub ikony DPF. Informacja o wypalaniu biernym jest brana na podstawie masy sadzy zmierzonej. Spadek masy = wypalanie bierne.</p>
-</li>
-<li><strong>Buzzer</strong>
-<p>Włączenie tej opcji powoduje że urządzenie wydaje dźwięk podczas rozpoczęcia i zakończenia wypalania filtra DPF.</p>
-</li>
-<li><strong>Switch page to regen</strong>
-<p>Włączenie tej opcji powoduje że podczas wypalania filtra DPF ekran automatycznie przełącza się na stronę 4 – stronę z najważniejszymi parametrami DPF.</p>
-</li>
-<li><strong>Clear max after regen</strong>
-<p>Włączenie tej opcji powoduje że po zakończeniu wypalania filtra DPF wartości maksymalne na stronie 5 – Differential Pressure Test są automatycznie zerowane.</p>
-</li>
-<li><strong>Auto brightness</strong>
-<p>Włączenie tej opcji powoduje że urządzenie automatycznie przełącza jasność ekranu w tryb dzienny/nocny. Jeżeli ta opcja jest wyłączona, użytkownik może ręcznie przełączać między trybem dziennym a nocnym poprzez dotknięcie ekranu.</p>
-</li>
-<li><strong>Day brightness</strong>
-<p>Ustawienie jasności ekranu w trybie dziennym.</p>
-</li>
-<li><strong>Night brightness</strong>
-<p>Ustawienie jasności ekranu w trybie nocnym.</p>
-</li>
-</ul>
-<h3 id="zegar">4. Ustawienie zegara</h3>
-<img src="/assets/img/clocksettings.png" alt="Zegar" class="center-image" width="500" height="307" loading="lazy" decoding="async"> 
-<ul>
-<li>W celu ustawienia godziny należy przesunąć palec po ekranie w górę lub dół dla godzin i minut po czym kliknąć przycisk set. </li>
-</ul>
-<h3 id="dtc">5. DTC</h3>
-<img src="/assets/img/dtc1.png" alt="DTC" class="center-image" width="567" height="347" loading="lazy" decoding="async">
-<ul>
-<li><strong>Current</strong>
-<p>Odczyt błędów DTC (Diagnostic Trouble Codes) zapisanych w pamięci sterownika. (Błędy powodujące zapalenie się lampki Check Engine)</p>
-</li>
-<li><strong>Pending</strong>
-<p>Odczyt błędów DTC, które zostały wykryte ale nie zostały jeszcze zapisane w pamięci sterownika.</p>
-</li>
-<li><strong>Clear</strong>
-<p>Wyczyszczenie wszystkich błędów DTC zapisanych w pamięci sterownika.</p>
-</li>
-</ul>
-<h3 id="historia">6. Historia</h3>
-<ul>
-<li>Urządzenie zapisuje historię dla 10 ostatnich regeneracji DPF. </li>
-<li>Po osiągnięciu 10 regeneracji nowa historia zastępuje najstarszą.</li>
-<li>Aby zobaczyć więcej rekordów historii należy przesunąć palcem w lewo lub prawo po prawej stronie ekranu.</li>
-<li>Aby wyczyścić całą historię należy przytrzymać przycisk History przez 2 sekundy.</li>
-</ul>
-<img src="/assets/img/history.png" alt="Historia" class="center-image" width="456" height="278" loading="lazy" decoding="async">
-<h3 id="pomiar">7. Pomiar 0-100</h3>
-<ul>
-<li>Urządzenie umożliwia pomiar czasu przyspieszenia od 0 do 100 km/h.</li>
-<li>Aktualny wynik pomiaru jest wyświetlany na ekranie w górnym prawym rogu.</li>
-<li>Poniżej wyświetlane są trzy ostatnie wyniki pomiaru. Na zielono oznaczony jest najlepszy wynik.</li>
-<li>READY oznacza gotowość do rozpoczęcia pomiaru. STOP oczekuje na zatrzymanie samochodu. RESET czeka na kliknięcie przycisku reset w celu zresetowania pomiaru i rozpoczecia nowego.</li> 
-<li>Przytrzymanie przycisku RESET powoduje zresetowanie trzech ostatnich wyników pomiaru.</li>
-</ul>
-<img src="/assets/img/performance.png" alt="Pomiar 0-100" class="center-image" width="499" height="306" loading="lazy" decoding="async">
-<h3 id="silnik">8. Odczyt danych silnika (Advanced)</h3>
-<ul>
-<li>Urządzenie umożliwia odczyt danych z silnika takich jak: ciśnienie doładowania, ciśnienie paliwa na listwie, MAF, korekty wtrysków czy temperatury wydechu. Wejście odbywa się poprzez klikniecie przycisku Advanced w menu.</li>
-<li>Zmiana stron następuje po przesunięciu palcem góra/dół.</li>
-</ul>
-<img src="/assets/img/advanced.png" alt="Dane silnika" class="center-image" width="500" height="307" loading="lazy" decoding="async">
-<ul>
-<li>Wyjście z tego podmenu odbywa się standardowo gestem palca z lewej do prawej.</li>
-<li>Jest również możliwość podejrzenia dancyh na wykresie, takich jak: ciśnienie doładowania, ciśnienie paliwa, MAF - wartości rzeczywiste i zmierzone. W tym celu należy przytrzymać przycisk Advanced przez 2 sekundy.</li> 
-</ul>
-<img src="/assets/img/advanced_Wide_press.png" alt="Pomiar 0-100" class="center-image" width="498" height="306" loading="lazy" decoding="async">
-<ul>
-<li>Następnie należy wybrać który wykres chce się podejrzeć.</li>
-</ul>
-<img src="/assets/img/choose_graph.png" alt="Wybierz wykres" class="center-image" width="497" height="305" loading="lazy" decoding="async">
+<!-- ============================================================
+     INSTRUKCJA UŻYTKOWNIKA – sekcja z zakładkami
+     ============================================================ -->
 
+<h2 id="instrukcja">Instrukcja użytkownika</h2>
+
+<div class="man-head">
+  <span class="man-badge">Wersja SW 1.9.5</span>
+  <span class="man-head__hint">Wybierz temat poniżej – wyświetli się tylko ta część instrukcji.</span>
+</div>
+
+<div class="callout warn">
+  <span class="ico" aria-hidden="true">⚠</span>
+  <p><strong>Pierwsze podłączenie urządzenia w samochodzie wykonaj zawsze przy włączonym silniku.</strong></p>
+</div>
+
+<div class="tabs" role="tablist" aria-label="Sekcje instrukcji">
+  <button type="button" class="tab" role="tab" id="t-ekran"      aria-controls="p-ekran"      aria-selected="true"><span class="num">1</span> Ekran główny</button>
+  <button type="button" class="tab" role="tab" id="t-menu"       aria-controls="p-menu"       aria-selected="false"><span class="num">2</span> Menu</button>
+  <button type="button" class="tab" role="tab" id="t-ustawienia" aria-controls="p-ustawienia" aria-selected="false"><span class="num">3</span> Ustawienia</button>
+  <button type="button" class="tab" role="tab" id="t-zegar"      aria-controls="p-zegar"      aria-selected="false"><span class="num">4</span> Zegar</button>
+  <button type="button" class="tab" role="tab" id="t-dtc"        aria-controls="p-dtc"        aria-selected="false"><span class="num">5</span> DTC</button>
+  <button type="button" class="tab" role="tab" id="t-historia"   aria-controls="p-historia"   aria-selected="false"><span class="num">6</span> Historia</button>
+  <button type="button" class="tab" role="tab" id="t-pomiar"     aria-controls="p-pomiar"     aria-selected="false"><span class="num">7</span> Pomiar 0-100</button>
+  <button type="button" class="tab" role="tab" id="t-advanced"   aria-controls="p-advanced"   aria-selected="false"><span class="num">8</span> Dane silnika</button>
+</div>
+
+<!-- ---------- 1. EKRAN GŁÓWNY ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-ekran" aria-labelledby="t-ekran">
+
+  <h3>Obsługa gestami</h3>
+  <p class="lead">Urządzenie obsługuje się wyłącznie gestami na ekranie dotykowym.</p>
+
+  <div class="gesture-grid">
+    <div class="gesture">
+      <img src="/assets/img/mainscreen_gesture_leftright.png" alt="Gest przesunięcia palcem w lewo lub w prawo" width="454" height="280" loading="lazy" decoding="async">
+      <div class="arrow" aria-hidden="true">↔</div>
+      <h5>Przesuń w lewo / prawo</h5>
+      <p>Zmiana strony ekranu głównego (7 stron).</p>
+    </div>
+    <div class="gesture">
+      <img src="/assets/img/gesture_topbottom.png" alt="Gest przesunięcia palcem z góry do dołu" width="454" height="280" loading="lazy" decoding="async">
+      <div class="arrow" aria-hidden="true">↓</div>
+      <h5>Przesuń z góry na dół</h5>
+      <p>Wejście do menu – działa z każdej strony.</p>
+    </div>
+    <div class="gesture">
+      <img src="/assets/img/page5_gesture_bottomup.png" alt="Gest przesunięcia palcem z dołu do góry" width="456" height="281" loading="lazy" decoding="async">
+      <div class="arrow" aria-hidden="true">↑</div>
+      <h5>Przesuń z dołu do góry</h5>
+      <p><strong>Strona 6</strong> – podgląd wartości max / min.<br><strong>Strona 7</strong> – zerowanie wartości maksymalnych.</p>
+    </div>
+    <div class="gesture gesture--nopic">
+      <div class="arrow" aria-hidden="true">◉</div>
+      <h5>Dotknij ekranu</h5>
+      <p>Przełączenie trybu jasnego (dziennego) i ciemnego.</p>
+      <p><small>Działa tylko przy wyłączonej opcji <span class="key">Auto brightness</span>.</small></p>
+    </div>
+  </div>
+
+  <h3>Strony ekranu głównego</h3>
+  <p class="lead">Ekran główny ma 7 stron – wybierz tę, która najbardziej Ci odpowiada.</p>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page1.png" alt="Strona 1" width="567" height="350" loading="lazy" decoding="async">
+      <figcaption>Strona 1 – przegląd z zegarem</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">1</span> Przegląd z zegarem</h4>
+      <ul class="pos-list">
+        <li><span class="where">Środek</span><span class="what">Zegar</span></li>
+        <li><span class="where">Lewy górny</span><span class="what">Czas od odpalenia silnika</span></li>
+        <li><span class="where">Prawy górny</span><span class="what">Aktualna temperatura oleju</span></li>
+        <li><span class="where">Lewy dolny</span><span class="what">Zapełnienie DPF <small>w %, na podstawie masy obliczonej</small></span></li>
+        <li><span class="where">Prawy dolny</span><span class="what">Dystans od ostatniego wypalania</span></li>
+        <li><span class="where">Dół</span><span class="what">Ikona stanu DPF</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page2.png" alt="Strona 2" width="568" height="350" loading="lazy" decoding="async">
+      <figcaption>Strona 2 – DPF i temperatury</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">2</span> DPF i temperatury płynów</h4>
+      <ul class="pos-list">
+        <li><span class="where">Lewa strona</span><span class="what">Zapełnienie DPF oraz dystans od ostatniego wypalania</span></li>
+        <li><span class="where">Prawa – góra</span><span class="what">Ikona stanu DPF</span></li>
+        <li><span class="where">Prawa – dół</span><span class="what">Temperatura oleju <small>ikona czerwona</small> oraz temperatura cieczy chłodzącej <small>ikona niebieska</small></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page3.png" alt="Strona 3" width="568" height="348" loading="lazy" decoding="async">
+      <figcaption>Strona 3 – masa sadzy</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">3</span> Masa sadzy</h4>
+      <ul class="pos-list">
+        <li><span class="where">Lewa strona</span><span class="what">Zapełnienie DPF oraz dystans od ostatniego wypalania</span></li>
+        <li><span class="where">Prawa – góra</span><span class="what">Obliczona i zmierzona masa sadzy</span></li>
+        <li><span class="where">Nad masą obliczoną</span><span class="what">Przyrost zapełnienia filtra w mg/km <small>ile mg sadzy obliczonej przybywa na każdy kilometr jazdy</small></span></li>
+        <li><span class="where">Prawa – dół</span><span class="what">Ciśnienie różnicowe</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page4.png" alt="Strona 4" width="568" height="348" loading="lazy" decoding="async">
+      <figcaption>Strona 4 – temperatury filtra</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">4</span> Temperatury filtra</h4>
+      <ul class="pos-list">
+        <li><span class="where">Lewa strona</span><span class="what">Zapełnienie DPF oraz dystans od ostatniego wypalania</span></li>
+        <li><span class="where">Prawa – góra</span><span class="what">Temperatura przed i za filtrem DPF</span></li>
+        <li><span class="where">Prawa – dół</span><span class="what">Ciśnienie różnicowe</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page5.png" alt="Strona 5" width="499" height="308" loading="lazy" decoding="async">
+      <figcaption>Strona 5 – najważniejsze parametry DPF</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">5</span> Najważniejsze parametry DPF</h4>
+      <p class="opt__desc">Wszystkie parametry są opisane bezpośrednio na ekranie urządzenia.</p>
+      <div class="callout tip" style="margin-bottom:0">
+        <span class="ico" aria-hidden="true">i</span>
+        <p>Przy włączonej opcji <span class="key">Switch page to regen</span> urządzenie samo przełącza się na tę stronę na czas wypalania filtra.</p>
       </div>
+    </div>
+  </div>
 
-      <aside class="toc">
-        <h4>Spis treści</h4>
-        <ul>
-          <li><a href="#spec">Specyfikacja</a></li>
-          <li><a href="#instrukcja">Instrukcja</a></li>
-          <li><a href="#ekran">Ekran główny</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#ustawienia">Ustawienia</a></li>
-          <li><a href="#zegar">Ustawienie zegara</a></li>
-          <li><a href="#dtc">DTC</a></li>
-          <li><a href="#historia">Historia</a></li>
-          <li><a href="#pomiar">Pomiar 0-100</a></li>
-          <li><a href="#silnik">Odczyt danych silnika</a></li>
-        </ul>
-      </aside>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page6.png" alt="Strona 6" width="498" height="306" loading="lazy" decoding="async">
+      <figcaption>Strona 6 – wartości bieżące</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">6</span> Parametry z podglądem max / min</h4>
+      <p class="opt__desc">Wszystkie parametry są opisane bezpośrednio na ekranie urządzenia. Dla każdego z nich urządzenie zapamiętuje wartość maksymalną i minimalną.</p>
+      <ol class="steps">
+        <li>Przesuń palcem <strong>z dołu do góry</strong> – pojawią się wartości <strong>maksymalne</strong>.</li>
+        <li>Przesuń ponownie – pojawią się wartości <strong>minimalne</strong>.</li>
+        <li>Kolejne przesunięcie wraca do wartości bieżących.</li>
+      </ol>
+    </div>
+  </div>
 
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <h4 class="man-card__title">Strona 6 – widok wartości maksymalnych i minimalnych</h4>
+      <div class="img-pair">
+        <figure>
+          <img src="/assets/img/page6_max.png" alt="Strona 6 – wartości maksymalne" width="498" height="306" loading="lazy" decoding="async">
+          <figcaption>Wartości maksymalne</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/page6_min.png" alt="Strona 6 – wartości minimalne" width="498" height="306" loading="lazy" decoding="async">
+          <figcaption>Wartości minimalne</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page7.png" alt="Strona 7" width="570" height="351" loading="lazy" decoding="async">
+      <figcaption>Strona 7 – Differential Pressure Test</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">7</span> Differential Pressure Test</h4>
+      <ul class="pos-list">
+        <li><span class="where">Główny obszar</span><span class="what">Pomiar ciśnienia różnicowego</span></li>
+        <li><span class="where">Na czerwono</span><span class="what">Wartości maksymalne</span></li>
+        <li><span class="where">Lewy dolny</span><span class="what">Aktualne zapełnienie DPF w %</span></li>
+      </ul>
+      <div class="callout tip" style="margin-bottom:0">
+        <span class="ico" aria-hidden="true">↑</span>
+        <p>Przesuń palcem <strong>z dołu do góry</strong>, aby wyzerować wartości maksymalne. Opcja <span class="key">Clear max after regen</span> robi to automatycznie po każdym wypalaniu.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 2. MENU ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-menu" aria-labelledby="t-menu" hidden>
+  <h3>Nawigacja po menu</h3>
+
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <h4 class="man-card__title">Menu – 6 podstron</h4>
+      <ul class="pos-list">
+        <li><span class="where">Wejście</span><span class="what">Gest <strong>z góry na dół</strong> – z dowolnej strony ekranu głównego</span></li>
+        <li><span class="where">Wyjście z menu</span><span class="what">Gest <strong>z dołu do góry</strong></span></li>
+        <li><span class="where">Wyjście z podstrony</span><span class="what">Gest <strong>z lewej do prawej</strong> – działa zawsze, w każdej podstronie</span></li>
+      </ul>
+      <div class="img-pair">
+        <figure>
+          <img src="/assets/img/info.png" alt="Menu – widok 1" width="568" height="349" loading="lazy" decoding="async">
+          <figcaption>Menu – widok 1</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/menu1.png" alt="Menu – widok 2" width="498" height="306" loading="lazy" decoding="async">
+          <figcaption>Menu – widok 2</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 3. USTAWIENIA ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-ustawienia" aria-labelledby="t-ustawienia" hidden>
+  <h3>Ustawienia</h3>
+
+  <p class="lead">Opcje pogrupowane tematycznie – opis każdej z nich znajdziesz poniżej.</p>
+
+  <figure class="man-figure">
+    <img src="/assets/img/settings1.png" alt="Ustawienia" width="568" height="819" loading="lazy" decoding="async">
+    <figcaption>Lista ustawień w urządzeniu</figcaption>
+  </figure>
+
+  <div class="opt-group">
+    <h4>Wydajność i zapis danych</h4>
+    <div class="opt">
+      <div class="opt__name">Fast mode</div>
+      <p class="opt__desc">Włączenie trybu szybkiego – odczyt CAN wykonywany jest z większą częstotliwością.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">SD Card Save</div>
+      <p class="opt__desc">Zapis danych na kartę SD co 1 sekundę. Rejestrowane są wszystkie parametry odczytywane na stronie głównej.</p>
+    </div>
+  </div>
+
+  <div class="opt-group">
+    <h4>Wyświetlanie informacji</h4>
+    <div class="opt">
+      <div class="opt__name">Show Statistics</div>
+      <p class="opt__desc">Po zgaszeniu silnika urządzenie pokazuje statystyki przejazdu przez 10 sekund, dopiero potem się usypia.</p>
     </div>
 
+    <div class="man-card" style="margin:.6rem 0 1rem">
+      <figure class="man-card__media">
+        <img src="/assets/img/statistics.png" alt="Statystyki" width="795" height="487" loading="lazy" decoding="async">
+        <figcaption>Ekran statystyk</figcaption>
+      </figure>
+      <div class="man-card__body">
+        <h4 class="man-card__title">Jak czytać statystyki</h4>
+        <ul class="legend">
+          <li><span class="dot red"></span><span><strong>Czerwony</strong> – maksymalne zarejestrowane wartości</span></li>
+          <li><span class="dot blue"></span><span><strong>Niebieski</strong> – minimalne zarejestrowane wartości</span></li>
+          <li><span class="dot white"></span><span><strong>Biały</strong> – dla masy obliczonej i zmierzonej: różnica od uruchomienia silnika</span></li>
+        </ul>
+        <div class="callout tip" style="margin-bottom:0">
+          <span class="ico" aria-hidden="true">i</span>
+          <p><strong>+1.21</strong> → masa sadzy wzrosła o 1.21 g od uruchomienia silnika do końca podróży.</p>
+          <p><strong>-0.50</strong> → masa sadzy zmalała o 0.50 g.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt">
+      <div class="opt__name">Show Passive Regen</div>
+      <p class="opt__desc">Sygnalizuje wypalanie bierne na ekranie głównym – temperatury lub ikona DPF zmieniają kolor na pomarańczowy. Wykrywane na podstawie spadku masy sadzy zmierzonej.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Switch page to regen</div>
+      <p class="opt__desc">Podczas wypalania filtra DPF ekran automatycznie przełącza się na stronę 5 – z najważniejszymi parametrami DPF.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Clear max after regen</div>
+      <p class="opt__desc">Po zakończeniu wypalania wartości maksymalne na stronie 7 (Differential Pressure Test) są automatycznie zerowane.</p>
+    </div>
+  </div>
+
+  <div class="opt-group">
+    <h4>Sygnalizacja dźwiękowa</h4>
+    <div class="opt">
+      <div class="opt__name">Buzzer</div>
+      <p class="opt__desc">Sygnał dźwiękowy przy rozpoczęciu i zakończeniu wypalania filtra DPF.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Buzzer Volume</div>
+      <p class="opt__desc">Głośność sygnału: <span class="key">HIGH</span> – głośny, <span class="key">LOW</span> – cichy.</p>
+    </div>
+  </div>
+
+  <div class="opt-group">
+    <h4>Jasność ekranu</h4>
+    <div class="opt">
+      <div class="opt__name">Auto brightness</div>
+      <p class="opt__desc">Automatyczne przełączanie trybu dziennego i nocnego. Przy wyłączonej opcji tryb zmieniasz ręcznie – dotknięciem ekranu.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Day brightness<small>tryb dzienny</small></div>
+      <p class="opt__desc">Poziom jasności ekranu w trybie dziennym.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Night brightness<small>tryb nocny</small></div>
+      <p class="opt__desc">Poziom jasności ekranu w trybie nocnym.</p>
+    </div>
+  </div>
 </div>
+
+<!-- ---------- 4. ZEGAR ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-zegar" aria-labelledby="t-zegar" hidden>
+  <h3>Ustawienie zegara</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/clocksettings.png" alt="Ustawienia zegara" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Ekran ustawiania godziny</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ol class="steps">
+        <li>Przesuń palcem w górę lub w dół nad polem <strong>godzin</strong>, aby zmienić wartość.</li>
+        <li>Powtórz to samo nad polem <strong>minut</strong>.</li>
+        <li>Naciśnij przycisk <span class="key">SET</span>, aby zapisać.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 5. DTC ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-dtc" aria-labelledby="t-dtc" hidden>
+  <h3>DTC – kody błędów</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/dtc1.png" alt="DTC" width="567" height="347" loading="lazy" decoding="async">
+      <figcaption>Ekran DTC</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <p class="opt__desc" style="margin-bottom:1rem">Po wejściu na stronę DTC błędy odczytywane są automatycznie.</p>
+      <div class="opt">
+        <div class="opt__name">Read</div>
+        <p class="opt__desc">Odczyt błędów DTC (Diagnostic Trouble Codes) zapisanych w pamięci sterownika. Służy do ręcznego odświeżenia listy.</p>
+      </div>
+      <div class="opt" style="margin-bottom:0">
+        <div class="opt__name">Clear</div>
+        <p class="opt__desc">Kasowanie wszystkich błędów DTC zapisanych w pamięci sterownika.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 6. HISTORIA ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-historia" aria-labelledby="t-historia" hidden>
+  <h3>Historia regeneracji</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/history.png" alt="Historia" width="456" height="278" loading="lazy" decoding="async">
+      <figcaption>Ekran historii</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ul class="pos-list">
+        <li><span class="where">Pojemność</span><span class="what">10 ostatnich regeneracji DPF <small>po zapełnieniu najstarszy wpis jest nadpisywany</small></span></li>
+        <li><span class="where">Kolejność</span><span class="what">Pierwszy rekord to zawsze ostatnia regeneracja, kolejne to starsze</span></li>
+        <li><span class="where">Przeglądanie</span><span class="what">Przesuń palcem w lewo lub w prawo <strong>po prawej stronie ekranu</strong></span></li>
+        <li><span class="where">Czyszczenie</span><span class="what">Przytrzymaj przycisk <span class="key">History</span> przez 2 sekundy</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 7. POMIAR 0-100 ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-pomiar" aria-labelledby="t-pomiar" hidden>
+  <h3>Pomiar przyspieszenia 0-100 km/h</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/performance.png" alt="Pomiar 0-100" width="499" height="306" loading="lazy" decoding="async">
+      <figcaption>Ekran pomiaru</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ul class="pos-list">
+        <li><span class="where">Prawy górny</span><span class="what">Aktualny wynik pomiaru</span></li>
+        <li><span class="where">Poniżej</span><span class="what">Trzy ostatnie wyniki – najlepszy oznaczony na zielono</span></li>
+        <li><span class="where">Reset wyników</span><span class="what">Przytrzymaj <span class="key">RESET</span>, aby wyczyścić trzy ostatnie wyniki</span></li>
+      </ul>
+
+      <h4 class="man-card__title" style="margin-top:1.4rem">Statusy na ekranie</h4>
+      <ul class="pos-list">
+        <li><span class="where">READY</span><span class="what">Gotowość do rozpoczęcia pomiaru</span></li>
+        <li><span class="where">STOP</span><span class="what">Oczekiwanie na zatrzymanie samochodu</span></li>
+        <li><span class="where">RESET</span><span class="what">Oczekiwanie na naciśnięcie przycisku reset, aby rozpocząć nowy pomiar</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 8. DANE SILNIKA ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-advanced" aria-labelledby="t-advanced" hidden>
+  <h3>Odczyt danych silnika (Advanced)</h3>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/advanced.png" alt="Dane silnika" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Ekran Advanced</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title">Odczyt parametrów</h4>
+      <p class="opt__desc" style="margin-bottom:1rem">Dostępne dane: ciśnienie doładowania, ciśnienie paliwa na listwie, MAF, korekty wtrysków oraz temperatury wydechu.</p>
+      <ul class="pos-list">
+        <li><span class="where">Wejście</span><span class="what">Przycisk <span class="key">Advanced</span> w menu</span></li>
+        <li><span class="where">Zmiana stron</span><span class="what">Przesunięcie palcem w górę lub w dół</span></li>
+        <li><span class="where">Wyjście</span><span class="what">Gest z lewej do prawej</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.2rem">Podgląd wykresów</h3>
+  <p class="lead">Dostępne wykresy: ciśnienie doładowania, ciśnienie paliwa oraz MAF – wartości rzeczywiste i zmierzone.</p>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/advanced_Wide_press.png" alt="Przytrzymanie przycisku Advanced" width="498" height="306" loading="lazy" decoding="async">
+      <figcaption>Krok 1 – przytrzymaj Advanced</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ol class="steps">
+        <li>Przytrzymaj przycisk <span class="key">Advanced</span> przez 2 sekundy.</li>
+        <li>Wybierz wykres, który chcesz podejrzeć.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/choose_graph.png" alt="Wybierz wykres" width="497" height="305" loading="lazy" decoding="async">
+      <figcaption>Krok 2 – wybór wykresu</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <p class="opt__desc">Lista dostępnych wykresów.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ KONIEC SEKCJI INSTRUKCJI ============ -->
+
+    </div>
+  </div>
 </section>
 
 </main>
@@ -291,6 +537,114 @@
   <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Zamknij podgląd">&times;</button>
   <img src="" alt="Powiększone zdjęcie" id="lightboxImg">
 </div>
+
+<!-- ============================================================
+     Obsługa zakładek instrukcji + lightbox dla zrzutów ekranu.
+     Można też przenieść do /assets/js/main.js
+     ============================================================ -->
+<script>
+(function () {
+  var bar = document.querySelector('.tabs');
+  if (!bar) return;
+  var tabs = Array.prototype.slice.call(bar.querySelectorAll('.tab'));
+  if (!tabs.length) return;
+  var header = document.querySelector('.site-header');
+
+  /* Pasek zakładek przykleja się dokładnie pod belką – niezależnie od jej wysokości
+     (na telefonie belka jest wyższa niż stała --header-offset). */
+  function syncStickyTop() {
+    var h = header ? Math.round(header.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty('--man-sticky-top', h + 'px');
+  }
+  syncStickyTop();
+  window.addEventListener('resize', syncStickyTop);
+  window.addEventListener('load', syncStickyTop);
+
+  /* Dosuwa aktywną zakładkę w polu widzenia paska – bez przewijania strony. */
+  function revealTab(t) {
+    if (bar.scrollWidth <= bar.clientWidth) return;
+    var left = t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2;
+    left = Math.max(0, Math.min(left, bar.scrollWidth - bar.clientWidth));
+    if (bar.scrollTo) bar.scrollTo({ left: left, behavior: 'smooth' });
+    else bar.scrollLeft = left;
+  }
+
+  function stickyPx() {
+    return parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue('--man-sticky-top'), 10) || 0;
+  }
+  function barDocTop() {
+    return bar.getBoundingClientRect().top + window.pageYOffset;
+  }
+
+  /* Po zmianie zakładki: jeśli pasek uciekł nad ekran, wracamy do niego. */
+  function keepBarInView() {
+    if (bar.getBoundingClientRect().top <= stickyPx() + 1) {
+      window.scrollTo({ top: barDocTop() - stickyPx() - 8, behavior: 'smooth' });
+    }
+  }
+
+  function select(id, userAction) {
+    tabs.forEach(function (t) {
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !on;
+      if (on) revealTab(t);
+    });
+    if (userAction) {
+      keepBarInView();
+      if (history.replaceState) history.replaceState(null, '', '#i-' + id.replace('t-', ''));
+    }
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { select(t.id, true); });
+    t.addEventListener('keydown', function (e) {
+      var i = tabs.indexOf(t), n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft')  n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === 'Home')       n = tabs[0];
+      if (e.key === 'End')        n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); select(n.id, true); n.focus(); }
+    });
+  });
+
+  /* Wejście z adresu typu /pl/mini/#i-ustawienia */
+  var h = location.hash.replace('#i-', '');
+  if (h && document.getElementById('t-' + h)) {
+    select('t-' + h, false);
+    window.addEventListener('load', function () {
+      syncStickyTop();
+      window.scrollTo(0, barDocTop() - stickyPx() - 8);
+    });
+  } else {
+    select(tabs[0].id, false);
+  }
+})();
+
+(function () {
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var img = document.getElementById('lightboxImg');
+  var close = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.man-card__media img, .man-figure img, .gesture img, .img-pair img').forEach(function (el) {
+    el.addEventListener('click', function () {
+      img.src = el.currentSrc || el.src;
+      img.alt = el.alt || '';
+      box.classList.add('active');
+      document.body.classList.add('no-scroll');
+    });
+  });
+
+  function hide() { box.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  box.addEventListener('click', function (e) { if (e.target !== img) hide(); });
+  if (close) close.addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
 
 </body>
 </html>

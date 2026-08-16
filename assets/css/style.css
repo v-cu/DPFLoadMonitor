@@ -663,3 +663,217 @@ img.center-image {
     transition-duration: .01ms !important;
   }
 }
+
+
+:root{
+  --man-active: #2f3a8f;        /* jednolity ciemny niebieski – aktywna zakładka */
+  --man-active-hi: #3d49a8;     /* wersja rozjaśniona – hover aktywnej zakładki */
+  --man-sticky-top: 90px;       /* wyliczane skryptem z realnej wysokości belki */
+}
+ 
+/* --- Nagłówek instrukcji --- */
+.man-head{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;
+  margin:.4rem 0 1.4rem;
+}
+.man-badge{
+  display:inline-block;padding:.28rem .7rem;border-radius:999px;
+  font-size:.78rem;font-weight:700;letter-spacing:.03em;
+  background:rgba(47,58,143,.35);border:1px solid rgba(99,112,204,.5);color:#c7d2fe;
+}
+.man-head__hint{color:var(--muted);font-size:.9rem}
+ 
+/* --- Callout (uwaga / wskazówka) --- */
+.callout{
+  display:grid;grid-template-columns:auto 1fr;gap:.9rem;
+  padding:1rem 1.2rem;border-radius:12px;margin:1.2rem 0;
+  border:1px solid var(--border);background:rgba(255,255,255,.02);
+}
+.callout .ico{font-size:1.25rem;line-height:1.5}
+.callout p{margin:0}
+.callout p + p{margin-top:.4rem}
+.callout.warn{border-color:rgba(255,152,0,.45);background:rgba(255,152,0,.10)}
+.callout.warn .ico{color:#ffb74d}
+.callout.tip{border-color:rgba(99,112,204,.45);background:rgba(47,58,143,.18)}
+.callout.tip .ico{color:#a5b4fc}
+ 
+/* --- Pasek zakładek --- */
+.tabs{
+  position:sticky;top:var(--man-sticky-top);z-index:20;scroll-margin-top:var(--man-sticky-top);
+  display:flex;flex-wrap:wrap;gap:.4rem;padding:.5rem;margin:1.5rem 0 0;
+  background:rgba(11,18,38,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--border);border-radius:14px;
+}
+.tab{
+  flex:0 0 auto;display:flex;align-items:center;gap:.45rem;
+  padding:.55rem 1rem;border:0;border-radius:10px;cursor:pointer;
+  background:transparent;color:var(--muted);
+  font:inherit;font-size:.92rem;font-weight:600;white-space:nowrap;
+  transition:background-color .2s ease,color .2s ease;
+}
+.tab:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.tab[aria-selected="true"]{background:var(--man-active);color:#fff}
+.tab[aria-selected="true"]:hover{background:var(--man-active-hi)}
+.tab .num{
+  display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;
+  font-size:.72rem;font-weight:800;background:rgba(255,255,255,.08);
+}
+.tab[aria-selected="true"] .num{background:rgba(255,255,255,.18);color:#fff}
+ 
+/* --- Panel zakładki --- */
+.tabpanel{padding-top:1.8rem}
+.tabpanel[hidden]{display:none}
+.tabpanel > h3:first-child{margin-top:0}
+.tabpanel .lead{color:var(--muted);margin-top:-.4rem}
+ 
+/* --- Karta: obraz + opis --- */
+.man-card{
+  display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:1.8rem;align-items:start;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.4rem;box-shadow:var(--shadow-soft);margin-bottom:1.2rem;
+}
+.man-card.wide{grid-template-columns:1fr}
+.man-card__media{margin:0}
+.man-card__media img{
+  display:block;width:100%;border-radius:18px;box-shadow:var(--shadow);
+  cursor:zoom-in;transition:transform .2s ease;background:#0b1226;
+}
+.man-card__media img:hover{transform:scale(1.02)}
+.man-card__media figcaption{margin-top:.5rem;text-align:center;font-size:.8rem;color:var(--muted)}
+.man-card__body{min-width:0}
+.man-card__title{
+  margin:0 0 .9rem;font-size:1.05rem;font-weight:700;
+  display:flex;align-items:center;gap:.6rem;
+}
+.man-card__title .idx{
+  display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 .4rem;
+  border-radius:9px;font-size:.85rem;font-weight:800;
+  background:var(--man-active);color:#fff;
+}
+ 
+/* Pojedynczy wyśrodkowany zrzut (gdy opis nie jest potrzebny obok) */
+.man-figure{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.2rem;box-shadow:var(--shadow-soft);margin:0 0 1.4rem;
+  display:grid;justify-items:center;
+}
+.man-figure img{
+  width:100%;max-width:300px;border-radius:18px;box-shadow:var(--shadow);
+  cursor:zoom-in;background:#0b1226;
+}
+.man-figure figcaption{margin-top:.5rem;font-size:.8rem;color:var(--muted);text-align:center}
+ 
+/* Para zrzutów obok siebie (np. wartości max / min) */
+.img-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:1.2rem 0 0}
+.img-pair figure{margin:0}
+.img-pair img{display:block;width:100%;border-radius:16px;box-shadow:var(--shadow);cursor:zoom-in;background:#0b1226}
+.img-pair figcaption{margin-top:.45rem;text-align:center;font-size:.82rem;color:var(--muted)}
+ 
+/* --- Lista "pozycja → parametr" --- */
+.pos-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.pos-list li{
+  display:grid;grid-template-columns:140px 1fr;gap:.9rem;align-items:baseline;
+  padding:.5rem .1rem;border-bottom:1px dashed rgba(255,255,255,.07);
+}
+.pos-list li:last-child{border-bottom:0}
+.pos-list .where{
+  font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#a5b4fc;
+}
+.pos-list .what{color:var(--text)}
+.pos-list .what small{display:block;color:var(--muted);font-size:.85em}
+ 
+/* --- Gesty --- */
+.gesture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.2rem 0 2.2rem}
+.gesture{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1rem;text-align:center;box-shadow:var(--shadow-soft);
+  display:flex;flex-direction:column;
+}
+.gesture img{width:100%;border-radius:12px;margin-bottom:.7rem;cursor:zoom-in;background:#0b1226}
+.gesture .arrow{font-size:1.6rem;line-height:1;color:#a5b4fc}
+.gesture h5{margin:.4rem 0 .3rem;font-size:.95rem}
+.gesture p{margin:0;font-size:.87rem;color:var(--muted)}
+.gesture p + p{margin-top:.4rem}
+.gesture--nopic{justify-content:center;min-height:200px}
+ 
+/* --- Ustawienia: grupy + wiersze (bez efektu hover – nic tu nie jest klikalne) --- */
+.opt-group{margin:0 0 1.6rem}
+.opt-group > h4{
+  margin:0 0 .7rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.opt{
+  display:grid;grid-template-columns:220px 1fr;gap:1.2rem;align-items:start;
+  padding:.9rem 1.1rem;border:1px solid var(--border);border-radius:12px;
+  margin-bottom:.6rem;background:rgba(255,255,255,.02);
+}
+.opt__name{font-weight:700;color:#fff}
+.opt__name small{display:block;font-weight:400;font-size:.78rem;color:var(--muted);margin-top:.15rem}
+.opt__desc{margin:0;color:var(--text);font-size:.94rem}
+.opt__desc + .opt__desc{margin-top:.5rem}
+ 
+/* --- Legenda kolorów --- */
+.legend{list-style:none;margin:.8rem 0 0;padding:0;display:grid;gap:.45rem}
+.legend li{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:baseline;font-size:.92rem}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;transform:translateY(-1px)}
+.dot.red{background:#f87171}
+.dot.blue{background:#60a5fa}
+.dot.white{background:#fff}
+ 
+/* --- Kroki --- */
+.steps{list-style:none;counter-reset:s;margin:1rem 0;padding:0;display:grid;gap:.7rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+.steps li::before{
+  content:counter(s);display:grid;place-items:center;width:26px;height:26px;border-radius:8px;
+  background:var(--man-active);color:#fff;font-size:.82rem;font-weight:800;
+}
+ 
+/* --- Nazwa opcji / przycisku w tekście --- */
+.key{
+  display:inline-block;padding:.1rem .45rem;border-radius:6px;font-size:.85em;font-weight:600;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;
+}
+ 
+/* ===== RESPONSYWNOŚĆ ===== */
+ 
+@media (max-width:900px){
+  .man-card{grid-template-columns:minmax(0,280px) 1fr;gap:1.3rem}
+}
+ 
+@media (max-width:760px){
+  .man-card{grid-template-columns:1fr;gap:1.1rem;padding:1.1rem}
+  .man-card__media img{max-width:360px;margin-inline:auto}
+  .opt{grid-template-columns:1fr;gap:.35rem;padding:.85rem 1rem}
+}
+ 
+@media (max-width:700px){
+  /* pasek zakładek: jeden rząd przewijany poziomo, przyklejony pod belką */
+  .tabs{
+    flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    border-radius:0;border-left:0;border-right:0;
+    margin-inline:calc(50% - 50vw);padding:.5rem max(2.5vw,12px);
+    scroll-snap-type:x proximity;
+  }
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{font-size:.88rem;padding:.5rem .8rem;scroll-snap-align:start}
+  .tabpanel{padding-top:1.4rem}
+  .gesture-grid{grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.6rem}
+  .gesture{padding:.8rem}
+  .gesture h5{font-size:.88rem}
+  .gesture p{font-size:.8rem}
+  .gesture--nopic{min-height:0}
+}
+ 
+@media (max-width:560px){
+  .pos-list li{grid-template-columns:1fr;gap:.15rem;padding:.45rem .1rem}
+  .man-card__media img{max-width:100%}
+  .img-pair{grid-template-columns:1fr}
+  .callout{padding:.9rem 1rem;gap:.7rem}
+}
+ 
+@media (max-width:430px){
+  /* wąskie telefony: gesty jeden pod drugim, ale ze zmniejszonym zrzutem */
+  .gesture-grid{grid-template-columns:1fr}
+  .gesture img{max-width:230px;margin-inline:auto}
+  .gesture--nopic .arrow{margin-top:.3rem}
+}
