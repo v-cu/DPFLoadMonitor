@@ -685,11 +685,13 @@ img.center-image {
  
 /* --- Callout (uwaga / wskazówka) --- */
 .callout{
-  display:grid;grid-template-columns:auto 1fr;gap:.9rem;
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:.9rem;
   padding:1rem 1.2rem;border-radius:12px;margin:1.2rem 0;
   border:1px solid var(--border);background:rgba(255,255,255,.02);
 }
-.callout .ico{font-size:1.25rem;line-height:1.5}
+.callout .ico{grid-column:1;font-size:1.25rem;line-height:1.5}
+/* wszystko poza ikoną trafia do prawej kolumny – także kilka akapitów pod sobą */
+.callout > *:not(.ico){grid-column:2}
 .callout p{margin:0}
 .callout p + p{margin-top:.4rem}
 .callout.warn{border-color:rgba(255,152,0,.45);background:rgba(255,152,0,.10)}
@@ -772,7 +774,7 @@ img.center-image {
 /* --- Lista "pozycja → parametr" --- */
 .pos-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
 .pos-list li{
-  display:grid;grid-template-columns:140px 1fr;gap:.9rem;align-items:baseline;
+  display:grid;grid-template-columns:140px minmax(0,1fr);gap:.9rem;align-items:baseline;
   padding:.5rem .1rem;border-bottom:1px dashed rgba(255,255,255,.07);
 }
 .pos-list li:last-child{border-bottom:0}
@@ -813,17 +815,22 @@ img.center-image {
  
 /* --- Legenda kolorów --- */
 .legend{list-style:none;margin:.8rem 0 0;padding:0;display:grid;gap:.45rem}
-.legend li{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:baseline;font-size:.92rem}
+.legend li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.6rem;align-items:baseline;font-size:.92rem}
+.legend li > *:not(.dot){grid-column:2}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;transform:translateY(-1px)}
 .dot.red{background:#f87171}
 .dot.blue{background:#60a5fa}
 .dot.white{background:#fff}
  
-/* --- Kroki --- */
+/* --- Kroki ---
+   UWAGA: numer jest pozycjonowany absolutnie, a <li> zostaje zwykłym blokiem.
+   Gdyby <li> był gridem/flexem, każdy <strong> i <span class="key"> w środku
+   stałby się osobną komórką i tekst rozjechałby się na kilka wierszy. */
 .steps{list-style:none;counter-reset:s;margin:1rem 0;padding:0;display:grid;gap:.7rem}
-.steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+.steps li{counter-increment:s;position:relative;padding-left:2.4rem;min-height:26px}
 .steps li::before{
-  content:counter(s);display:grid;place-items:center;width:26px;height:26px;border-radius:8px;
+  content:counter(s);position:absolute;left:0;top:.12rem;
+  display:grid;place-items:center;width:26px;height:26px;border-radius:8px;
   background:var(--man-active);color:#fff;font-size:.82rem;font-weight:800;
 }
  
