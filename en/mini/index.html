@@ -18,10 +18,10 @@
 <header class="site-header">
   <div class="container nav">
 
-    <!-- LEWA: logo -->
+    <!-- LEFT: logo -->
     <a class="logo" href="/en/">DPF Load Monitor</a>
 
-    <!-- ŚRODEK: menu -->
+    <!-- CENTER: menu -->
     <nav class="nav-center" id="site-menu" aria-label="Main navigation">
       <ul class="nav-list">
         <li><a href="/en/mini/">Monitor Mini</a></li>
@@ -34,7 +34,7 @@
       </ul>
     </nav>
 
-    <!-- PRAWA: język -->
+    <!-- RIGHT: language -->
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
     <nav class="lang-switch" aria-label="Language selection">
       <a class="active" href="/en/">EN</a> |
@@ -48,8 +48,7 @@
 
 <section class="section">
   <div class="container">
-    <div class="page-layout">
-      <div class="page-content">
+    <div class="page-content">
 
 <h1>DPF Monitor Mini</h1>
 
@@ -59,241 +58,461 @@
   <img src="/assets/img/bench_photo3.jpg" alt="DPF Monitor Mini – photo 3" width="521" height="521" loading="lazy" decoding="async">
 </div>
 
-<h2 id="spec">Technical Specification</h2>
+<h2 id="spec">Technical specification</h2>
 <div class="table-container">
- 
   <table>
     <tbody>
-      <tr>
-        <td>Operating voltage</td>
-        <td class="td-right">6-19V (32V MAX)</td>
-      </tr>
-      <tr>
-        <td>Operating current consumption</td>
-        <td class="td-right">~40mA</td>
-      </tr>
-      <tr>
-        <td>Standby current consumption</td>
-        <td class="td-right">&lt;8mA @ 12.5V 25°C</td>
-      </tr>
-      <tr>
-        <td>Supported CAN standard</td>
-        <td class="td-right">UDS</td>
-      </tr>
-      <tr>
-        <td>Display</td>
-        <td class="td-right">AMOLED 460x280px</td>
-      </tr>
-      <tr>
-        <td>Device size</td>
-        <td class="td-right">43.5mm x 28.5mm x 11mm  (width x height x depth)</td>
-      </tr>
-      <tr>
-        <td>Housing material</td>
-        <td class="td-right">ASA-CF (display), PETG-CF (OBD2 connector)</td>
-      </tr>
-      <tr>
-        <td>Cable length</td>
-        <td class="td-right">1.40m</td>
-      </tr>
+      <tr><td>Operating voltage</td><td class="td-right">6-19V (32V MAX)</td></tr>
+      <tr><td>Current draw in operation</td><td class="td-right">~40mA</td></tr>
+      <tr><td>Current draw in sleep mode</td><td class="td-right">&lt;8mA @ 12.5V 25°C</td></tr>
+      <tr><td>Operating temperature</td><td class="td-right">-30°C to +85°C</td></tr>
+      <tr><td>Supported CAN standard</td><td class="td-right">UDS</td></tr>
+      <tr><td>Display</td><td class="td-right">AMOLED 460x280px</td></tr>
+      <tr><td>Device dimensions</td><td class="td-right">43.5mm x 28.5mm x 11mm (W x H x D)</td></tr>
+      <tr><td>Housing material</td><td class="td-right">ASA-CF (display), PETG-CF (OBD2 connector)</td></tr>
+      <tr><td>Cable length</td><td class="td-right">1.40m</td></tr>
     </tbody>
   </table>
 </div>
 
-<h2 id="instrukcja">User Manual (for SW version 1.8.9)</h2>
-<p><strong>NOTE! The first connection of the device in the vehicle should always be performed with the engine running.</strong></p>
+<!-- ============================================================
+     USER MANUAL – tabbed section
+     ============================================================ -->
 
-<h3 id="ekran">1. Main Screen</h3>
-<ul>
-  <li>The main screen consists of five pages. The user can choose the page that best suits their preferences.</li>
-  <li>Switching between pages is done by swiping left or right.</li>
-</ul>
-<img src="/assets/img/mainscreen_gesture_leftright.png" alt="Swipe left or right gesture" class="center-image" width="454" height="280" loading="lazy" decoding="async">
-<ul>
-  <li>If the device is not in auto-brightness mode, tapping the screen anywhere toggles between light (day) and dark (night) mode.</li>
-  <li>When page 6 – Differential Pressure Test is displayed, the user can reset the maximum values by performing an upward swipe gesture.</li>
-</ul>
-<img src="/assets/img/page5_gesture_bottomup.png" alt="Swipe up gesture" class="center-image" width="456" height="281" loading="lazy" decoding="async">
-<ul>
-  <li>From any page of the main screen, the user can access the menu by performing a downward swipe gesture.</li>
-</ul>
-<img src="/assets/img/gesture_topbottom.png" alt="Swipe down gesture" class="center-image" width="454" height="280" loading="lazy" decoding="async">
+<h2 id="instrukcja">User manual</h2>
 
-<h3>1.1 Description of Main Screen Parameters</h3>
-<h4>Page 1</h4>
-<img src="/assets/img/page1.png" alt="Page 1" class="center-image" width="567" height="350" loading="lazy" decoding="async">
-<ul>
-  <li>The clock is located in the center of the screen.</li>
-  <li>Upper left corner: Time elapsed since engine start.</li>
-  <li>Upper right corner: Current oil temperature.</li>
-  <li>Lower left corner: DPF load percentage (calculated based on calculated mass).</li>
-  <li>Lower right corner: Distance since the last regeneration.</li>
-  <li>Bottom of the screen: DPF status icon.</li>
-</ul>
-
-<h4>Page 2</h4>
-<img src="/assets/img/page2.png" alt="Page 2" class="center-image" width="568" height="350" loading="lazy" decoding="async">
-<ul>
-  <li>Left side: DPF load and distance since the last regeneration.</li>
-  <li>Upper right: DPF status icon.</li>
-  <li>Lower right: Oil temperature (red icon) and coolant temperature (blue icon).</li>
-</ul>
-
-<h4>Page 3</h4>
-<img src="/assets/img/page3.png" alt="Page 3" class="center-image" width="568" height="348" loading="lazy" decoding="async">
-<ul>
-  <li>Left side: DPF load and distance since last regeneration.</li>
-  <li>Upper right: Temperatures before and after the DPF filter.</li>
-  <li>Lower right: Differential pressure.</li>
-</ul>
-<h4>Page 4</h4>
-<img src="/assets/img/page4.png" alt="Page 4" class="center-image" width="499" height="308" loading="lazy" decoding="async">
-<ul>
-<li>Parameters are described on the screen.</li>
-</ul>
-<h4>Page 5</h4>
-<img src="/assets/img/page5.png" alt="Page 5" class="center-image" width="498" height="306" loading="lazy" decoding="async">
-<ul>
-<li>Parameters are described on the screen.</li>
-</ul>
-<h4>Page 6</h4>
-<img src="/assets/img/page6.png" alt="Page 6" class="center-image" width="570" height="351" loading="lazy" decoding="async">
-<ul>
-<li>On the last page, there is a measurement of the differential pressure. The maximum values are highlighted in red. In the lower left corner, the current percentage of DPF filling is displayed.</li>
-</ul>
-<h3 id="menu">2. Menu</h3>
-<ul>
-  <li>The menu consists of six subpages.</li>
-  <li>After entering any subpage, you can exit by swiping from left to right.</li>
-</ul>
-<img src="/assets/img/info.png" alt="Menu" class="center-image" width="568" height="349" loading="lazy" decoding="async">
-<ul>
-  <li>Exit the main menu by performing an upward swipe gesture.</li>
-</ul>
-<img src="/assets/img/menu1.png" alt="Menu" class="center-image" width="498" height="306" loading="lazy" decoding="async">
-
-<h3 id="ustawienia">3. Settings</h3>
-<img src="/assets/img/settings1.png" alt="Settings" class="center-image" width="568" height="819" loading="lazy" decoding="async">
-<ul>
-  <li><strong>Fast mode</strong>
-  <p>Enables high-speed mode. In this mode, CAN readings are performed more frequently, and only the parameters displayed on the current page are refreshed.</p>
-  
-</li>
-  <li><strong>SD Card Save</strong>
-  <p>Enables data logging to the SD card. Data is saved every 1 second and includes all readable parameters. Note: SD card logging is not available when Fast Mode is active.</p>
-  
-</li>
-  <li><strong>Show Statistics</strong>
-  <p>Enabling this option displays statistics after the engine is turned off, showing data for each trip for 10 seconds before the device enters sleep mode.</p>
-  <img src="/assets/img/statistics.png" alt="Statistics" class="center-image" width="795" height="487" loading="lazy" decoding="async">
-  <p>-Maximum recorded values are displayed in red.</p>
-  <p>-Minimum recorded values are displayed in blue.</p>
-  <p>-For calculated and measured mass, the difference from engine start is shown in white. For example, if the value is +1.21, it means the soot mass increased by 1.21 grams from engine start to trip end. If the value is -0.50, it means the soot mass decreased by 0.50 grams.</p>
-</li>
-  <li><strong>Show Passive Regen</strong>
-  <p>Enabling this option displays passive regeneration info on the main screen (indicated by orange temperature values or DPF icon). Passive regeneration is detected based on measured soot mass (mass decrease = passive regen).</p>
-  
-</li>
-  <li><strong>Buzzer</strong>
-  <p>When enabled, the device emits a sound signal at the start and end of the DPF regeneration process.</p>
-  
-</li>
-  <li><strong>Switch page to regen</strong>
-  <p>When enabled, the screen automatically switches to Page 4 (key DPF parameters) during DPF regeneration.</p>
-  
-</li>
-  <li><strong>Clear max after regen</strong>
-  <p>When enabled, the maximum values on Page 5 – Differential Pressure Test are automatically reset after DPF regeneration is completed.</p>
-  
-</li>
-  <li><strong>Auto brightness</strong>
-  <p>The device automatically toggles between day/night brightness. If disabled, the user can manually switch modes by tapping the screen.</p>
-  
-</li>
-  <li><strong>Day brightness</strong>
-  <p>Screen brightness setting for day mode.</p>
-  
-</li>
-  <li><strong>Night brightness</strong>
-  <p>Screen brightness setting for night mode.</p>
-</li>
-</ul>
-<h3 id="zegar">4. Setting the Clock</h3>
-<img src="/assets/img/clocksettings.png" alt="Clock" class="center-image" width="500" height="307" loading="lazy" decoding="async"> 
-<ul>
-<li>To set the time, swipe your finger up or down on the screen for hours and minutes, then click the set button.</li>
-</ul>
-<h3 id="dtc">5. DTC</h3>
-<img src="/assets/img/dtc1.png" alt="DTC" class="center-image" width="567" height="347" loading="lazy" decoding="async">
-<ul>
-  <li><strong>Current</strong>
-  <p>Reads Diagnostic Trouble Codes (DTC) stored in the controller's memory (codes that trigger the Check Engine light).</p>
-  
-</li>
-  <li><strong>Pending</strong>
-  <p>Reads DTCs that have been detected but are not yet permanently stored in memory.</p>
-  
-</li>
-  <li><strong>Clear</strong>
-  <p>Clears all DTCs stored in the controller's memory.</p>
-</li>
-</ul>
-
-<h3 id="historia">6. History</h3>
-<ul>
-  <li>The device stores history for the last 10 DPF regenerations.</li>
-  <li>After reaching 10 entries, new data overwrites the oldest records.</li>
-  <li>To view more history records, swipe left or right on the right side of the screen.</li>
-  <li>To clear the entire history, hold the History button for 2 seconds.</li>
-</ul>
-<img src="/assets/img/history.png" alt="History" class="center-image" width="456" height="278" loading="lazy" decoding="async">
-
-<h3 id="pomiar">7. 0-100 km/h Measurement</h3>
-<ul>
-<li>The device enables measurement of acceleration time from 0 to 100 km/h.</li>
-<li>The current measurement result is displayed in the upper right corner of the screen.</li>
-<li>Below, the three most recent results are shown. The best result is highlighted in green.</li>
-<li>READY indicates readiness to start the measurement. STOP waits for the vehicle to stop. RESET waits for a reset button click to reset the measurement and start a new one.</li> 
-<li>Holding the RESET button resets the three most recent measurement results.</li>
-</ul>
-<img src="/assets/img/performance.png" alt="Pomiar 0-100" class="center-image" width="499" height="306" loading="lazy" decoding="async">
-<h3 id="silnik">8. Engine Data Reading (Advanced)</h3>
-<ul>
-<li>The device enables reading data from the engine such as: boost pressure, fuel pressure on the rail, MAF, injector corrections, and exhaust temperatures. Access is provided through the Advanced button in the menu.</li>
-<li>Page changes occur by swiping the finger up/down.</li>
-</ul>
-<img src="/assets/img/advanced.png" alt="Engine Data" class="center-image" width="500" height="307" loading="lazy" decoding="async">
-<ul>
-<li>To get out of this menu, swipe left or right on the screen.</li>
-<li>There is also the possibility to view data on a graph, such as: boost pressure, fuel pressure, MAF - actual and measured values. For this, you need to hold the Advanced button for 2 seconds.</li> 
-</ul>
-<img src="/assets/img/advanced_Wide_press.png" alt="Engine Data" class="center-image" width="498" height="306" loading="lazy" decoding="async">
-<ul>
-<li>Next, select the graph you want to view.</li>
-</ul>
-<img src="/assets/img/choose_graph.png" alt="Choose Graph" class="center-image" width="497" height="305" loading="lazy" decoding="async">
-
+<div class="man-head">
+  <span class="man-badge">SW version 1.9.5</span>
+  <span class="man-head__hint">Pick a topic below – only that part of the manual is shown.</span>
 </div>
 
-<aside class="toc">
-  <h4>Table of Contents</h4>
-  <ul>
-    <li><a href="#spec">Specification</a></li>
-    <li><a href="#instrukcja">Manual</a></li>
-    <li><a href="#ekran">Main Screen</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#ustawienia">Settings</a></li>
-    <li><a href="#zegar">Setting the Clock</a></li>
-    <li><a href="#dtc">DTC</a></li>
-    <li><a href="#historia">History</a></li>
-    <li><a href="#pomiar">0-100 km/h Measurement</a></li>
-    <li><a href="#silnik">Engine Data Reading</a></li>
-  </ul>
-</aside>
+<div class="callout warn">
+  <span class="ico" aria-hidden="true">⚠</span>
+  <p><strong>Always connect the device in the car for the first time with the engine running.</strong></p>
+</div>
 
+<div class="tabs" role="tablist" aria-label="Manual sections">
+  <button type="button" class="tab" role="tab" id="t-main"     aria-controls="p-main"     aria-selected="true"><span class="num">1</span> Main screen</button>
+  <button type="button" class="tab" role="tab" id="t-menu"     aria-controls="p-menu"     aria-selected="false"><span class="num">2</span> Menu</button>
+  <button type="button" class="tab" role="tab" id="t-settings" aria-controls="p-settings" aria-selected="false"><span class="num">3</span> Settings</button>
+  <button type="button" class="tab" role="tab" id="t-clock"    aria-controls="p-clock"    aria-selected="false"><span class="num">4</span> Clock</button>
+  <button type="button" class="tab" role="tab" id="t-dtc"      aria-controls="p-dtc"      aria-selected="false"><span class="num">5</span> DTC</button>
+  <button type="button" class="tab" role="tab" id="t-history"  aria-controls="p-history"  aria-selected="false"><span class="num">6</span> History</button>
+  <button type="button" class="tab" role="tab" id="t-perf"     aria-controls="p-perf"     aria-selected="false"><span class="num">7</span> 0-100 test</button>
+  <button type="button" class="tab" role="tab" id="t-advanced" aria-controls="p-advanced" aria-selected="false"><span class="num">8</span> Engine data</button>
+</div>
+
+<!-- ---------- 1. MAIN SCREEN ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-main" aria-labelledby="t-main">
+
+  <h3>Touch gestures</h3>
+  <p class="lead">The device is operated entirely with gestures on the touchscreen.</p>
+
+  <div class="gesture-grid">
+    <div class="gesture">
+      <img src="/assets/img/mainscreen_gesture_leftright.png" alt="Swipe left or right gesture" width="454" height="280" loading="lazy" decoding="async">
+      <div class="arrow" aria-hidden="true">↔</div>
+      <h5>Swipe left / right</h5>
+      <p>Changes the main screen page (7 pages).</p>
+    </div>
+    <div class="gesture">
+      <img src="/assets/img/gesture_topbottom.png" alt="Swipe down gesture" width="454" height="280" loading="lazy" decoding="async">
+      <div class="arrow" aria-hidden="true">↓</div>
+      <h5>Swipe down</h5>
+      <p>Opens the menu – works from any page.</p>
+    </div>
+    <div class="gesture">
+      <img src="/assets/img/page7_gesture_bottomup.png" alt="Swipe up gesture" width="456" height="281" loading="lazy" decoding="async">
+      <div class="arrow" aria-hidden="true">↑</div>
+      <h5>Swipe up</h5>
+      <p><strong>Page 6</strong> – shows max / min values.<br><strong>Page 7</strong> – resets the maximum values.</p>
+    </div>
+    <div class="gesture gesture--nopic">
+      <div class="arrow" aria-hidden="true">◉</div>
+      <h5>Tap the screen</h5>
+      <p>Switches between light (day) and dark mode.</p>
+      <p><small>Only works when <span class="key">Auto brightness</span> is turned off.</small></p>
+    </div>
+  </div>
+
+  <h3>Main screen pages</h3>
+  <p class="lead">The main screen has 7 pages – choose the one that suits you best.</p>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page1.png" alt="Page 1" width="567" height="350" loading="lazy" decoding="async">
+      <figcaption>Page 1 – overview with clock</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">1</span> Overview with clock</h4>
+      <ul class="pos-list">
+        <li><span class="where">Center</span><span class="what">Clock</span></li>
+        <li><span class="where">Top left</span><span class="what">Time since engine start</span></li>
+        <li><span class="where">Top right</span><span class="what">Current oil temperature</span></li>
+        <li><span class="where">Bottom left</span><span class="what">DPF load <small>in %, based on the calculated soot mass</small></span></li>
+        <li><span class="where">Bottom right</span><span class="what">Distance since last regeneration</span></li>
+        <li><span class="where">Bottom</span><span class="what">DPF status icon</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page2.png" alt="Page 2" width="568" height="350" loading="lazy" decoding="async">
+      <figcaption>Page 2 – DPF and temperatures</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">2</span> DPF and fluid temperatures</h4>
+      <ul class="pos-list">
+        <li><span class="where">Left side</span><span class="what">DPF load and distance since last regeneration</span></li>
+        <li><span class="where">Right – top</span><span class="what">DPF status icon</span></li>
+        <li><span class="where">Right – bottom</span><span class="what">Oil temperature <small>red icon</small> and coolant temperature <small>blue icon</small></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page3.png" alt="Page 3" width="568" height="348" loading="lazy" decoding="async">
+      <figcaption>Page 3 – soot mass</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">3</span> Soot mass</h4>
+      <ul class="pos-list">
+        <li><span class="where">Left side</span><span class="what">DPF load and distance since last regeneration</span></li>
+        <li><span class="where">Right – top</span><span class="what">Calculated and measured soot mass</span></li>
+        <li><span class="where">Above calculated</span><span class="what">Soot accumulation rate in mg/km <small>how many mg of calculated soot is added per kilometre driven</small></span></li>
+        <li><span class="where">Right – bottom</span><span class="what">Differential pressure</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page4.png" alt="Page 4" width="568" height="348" loading="lazy" decoding="async">
+      <figcaption>Page 4 – filter temperatures</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">4</span> Filter temperatures</h4>
+      <ul class="pos-list">
+        <li><span class="where">Left side</span><span class="what">DPF load and distance since last regeneration</span></li>
+        <li><span class="where">Right – top</span><span class="what">Temperature before and after the DPF</span></li>
+        <li><span class="where">Right – bottom</span><span class="what">Differential pressure</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page5.png" alt="Page 5" width="499" height="308" loading="lazy" decoding="async">
+      <figcaption>Page 5 – key DPF parameters</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">5</span> Key DPF parameters</h4>
+      <p class="opt__desc">All parameters are labelled directly on the device screen.</p>
+      <div class="callout tip" style="margin-bottom:0">
+        <span class="ico" aria-hidden="true">i</span>
+        <p>With <span class="key">Switch page to regen</span> enabled, the device switches to this page automatically for the duration of a regeneration.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page6.png" alt="Page 6" width="498" height="306" loading="lazy" decoding="async">
+      <figcaption>Page 6 – live values</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">6</span> Parameters with max / min view</h4>
+      <p class="opt__desc" style="margin-bottom:1rem">All parameters are labelled directly on the device screen. The device records a maximum and a minimum value for each of them – you switch between them by swiping up.</p>
+      <ul class="pos-list">
+        <li><span class="where">1st swipe</span><span class="what">Maximum values</span></li>
+        <li><span class="where">2nd swipe</span><span class="what">Minimum values</span></li>
+        <li><span class="where">3rd swipe</span><span class="what">Back to live values</span></li>
+      </ul>
+      <h4 class="man-card__title" style="margin-top:1.4rem">Maximum and minimum value view</h4>
+      <div class="img-pair">
+        <figure>
+          <img src="/assets/img/page6_max.png" alt="Page 6 – maximum values" width="498" height="306" loading="lazy" decoding="async">
+          <figcaption>Maximum values</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/page6_min.png" alt="Page 6 – minimum values" width="498" height="306" loading="lazy" decoding="async">
+          <figcaption>Minimum values</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/page7.png" alt="Page 7" width="570" height="351" loading="lazy" decoding="async">
+      <figcaption>Page 7 – Differential Pressure Test</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title"><span class="idx">7</span> Differential Pressure Test</h4>
+      <ul class="pos-list">
+        <li><span class="where">Main area</span><span class="what">Differential pressure reading</span></li>
+        <li><span class="where">In red</span><span class="what">Maximum values</span></li>
+        <li><span class="where">Bottom left</span><span class="what">Current DPF load in %</span></li>
+      </ul>
+      <div class="callout tip" style="margin-bottom:0">
+        <span class="ico" aria-hidden="true">↑</span>
+        <p>Swipe <strong>up</strong> to reset the maximum values. The <span class="key">Clear max after regen</span> option does this automatically after every regeneration.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 2. MENU ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-menu" aria-labelledby="t-menu" hidden>
+  <h3>Menu navigation</h3>
+
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <h4 class="man-card__title">Menu – 6 submenus</h4>
+      <ul class="pos-list">
+        <li><span class="where">Enter</span><span class="what"><strong>Swipe down</strong> – from any main screen page</span></li>
+        <li><span class="where">Exit the menu</span><span class="what"><strong>Swipe up</strong></span></li>
+        <li><span class="where">Exit a submenu</span><span class="what"><strong>Swipe left to right</strong> – always works, in every submenu</span></li>
+      </ul>
+      <div class="img-pair">
+        <figure>
+          <img src="/assets/img/menu1.png" alt="Menu – view 2" width="498" height="306" loading="lazy" decoding="async">
+          <figcaption>Menu – view 2</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/info.png" alt="Menu – view 1" width="568" height="349" loading="lazy" decoding="async">
+          <figcaption>Menu – view 1</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 3. SETTINGS ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-settings" aria-labelledby="t-settings" hidden>
+  <h3>Settings</h3>
+
+  <p class="lead">The options are grouped by topic – each one is described below.</p>
+
+  <figure class="man-figure">
+    <img src="/assets/img/settings1.png" alt="Settings" width="568" height="819" loading="lazy" decoding="async">
+    <figcaption>Settings list on the device</figcaption>
+  </figure>
+
+  <div class="opt-group">
+    <h4>Performance and data logging</h4>
+    <div class="opt">
+      <div class="opt__name">Fast mode</div>
+      <p class="opt__desc">Enables fast mode – the CAN bus is polled at a higher rate.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">SD Card Save</div>
+      <p class="opt__desc">Logs data to the SD card once per second. All parameters read on the main page are recorded.</p>
+    </div>
+  </div>
+
+  <div class="opt-group">
+    <h4>Information display</h4>
+    <div class="opt">
+      <div class="opt__name">Show Statistics</div>
+      <p class="opt__desc">After the engine is switched off, the device shows the trip statistics for 10 seconds before going to sleep.</p>
     </div>
 
+    <div class="man-card" style="margin:.6rem 0 1rem">
+      <figure class="man-card__media">
+        <img src="/assets/img/statistics.png" alt="Statistics" width="795" height="487" loading="lazy" decoding="async">
+        <figcaption>Statistics screen</figcaption>
+      </figure>
+      <div class="man-card__body">
+        <h4 class="man-card__title">How to read the statistics</h4>
+        <ul class="legend">
+          <li><span class="dot red"></span><span>Red shows the maximum recorded values.</span></li>
+          <li><span class="dot blue"></span><span>Blue shows the minimum recorded values.</span></li>
+          <li><span class="dot white"></span><span>For the calculated and measured soot mass, white shows the difference since engine start. For example, a value of +1.21 means the soot mass increased by 1.21 grams between starting the engine and the end of the trip. A value of -0.50 means the soot mass decreased by 0.50 grams.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="opt">
+      <div class="opt__name">Show Passive Regen</div>
+      <p class="opt__desc">Signals passive regeneration on the main screen – the temperatures or the DPF icon turn orange. Detected from a drop in the measured soot mass.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Switch page to regen</div>
+      <p class="opt__desc">During a DPF regeneration the screen switches automatically to page 5 – the one with the key DPF parameters.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Clear max after regen</div>
+      <p class="opt__desc">After a regeneration finishes, the maximum values on page 7 (Differential Pressure Test) are reset automatically.</p>
+    </div>
+  </div>
+
+  <div class="opt-group">
+    <h4>Audible signals</h4>
+    <div class="opt">
+      <div class="opt__name">Buzzer</div>
+      <p class="opt__desc">Audible signal when a DPF regeneration starts and finishes.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Buzzer Volume</div>
+      <p class="opt__desc">Signal volume: <span class="key">HIGH</span> – loud, <span class="key">LOW</span> – quiet.</p>
+    </div>
+  </div>
+
+  <div class="opt-group">
+    <h4>Screen brightness</h4>
+    <div class="opt">
+      <div class="opt__name">Auto brightness</div>
+      <p class="opt__desc">Switches between day and night mode automatically. With this option off, you switch modes manually by tapping the screen.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Day brightness<small>day mode</small></div>
+      <p class="opt__desc">Screen brightness level in day mode.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Night brightness<small>night mode</small></div>
+      <p class="opt__desc">Screen brightness level in night mode.</p>
+    </div>
+  </div>
 </div>
+
+<!-- ---------- 4. CLOCK ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-clock" aria-labelledby="t-clock" hidden>
+  <h3>Setting the clock</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/clocksettings.png" alt="Clock settings" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Time setting screen</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ol class="steps">
+        <li>Swipe up or down over the <strong>hours</strong> field to change the value.</li>
+        <li>Repeat the same over the <strong>minutes</strong> field.</li>
+        <li>Press the <span class="key">SET</span> button to save.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 5. DTC ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-dtc" aria-labelledby="t-dtc" hidden>
+  <h3>DTC – fault codes</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/dtc1.png" alt="DTC" width="567" height="347" loading="lazy" decoding="async">
+      <figcaption>DTC screen</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <p class="opt__desc" style="margin-bottom:1rem">Fault codes are read automatically when you open the DTC page.</p>
+      <div class="opt">
+        <div class="opt__name">Read</div>
+        <p class="opt__desc">Reads the DTCs (Diagnostic Trouble Codes) stored in the ECU memory. Use it to refresh the list manually.</p>
+      </div>
+      <div class="opt" style="margin-bottom:0">
+        <div class="opt__name">Clear</div>
+        <p class="opt__desc">Clears all DTCs stored in the ECU memory.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 6. HISTORY ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-history" aria-labelledby="t-history" hidden>
+  <h3>Regeneration history</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/history.png" alt="History" width="456" height="278" loading="lazy" decoding="async">
+      <figcaption>History screen</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ul class="pos-list">
+        <li><span class="where">Capacity</span><span class="what">The last 10 DPF regenerations <small>once full, the oldest entry is overwritten</small></span></li>
+        <li><span class="where">Order</span><span class="what">The first record is always the most recent regeneration, the following ones are older</span></li>
+        <li><span class="where">Browsing</span><span class="what">Swipe left or right <strong>on the right-hand side of the screen</strong></span></li>
+        <li><span class="where">Clearing</span><span class="what">Press and hold the <span class="key">History</span> button for 2 seconds</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 7. 0-100 TEST ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-perf" aria-labelledby="t-perf" hidden>
+  <h3>0-100 km/h acceleration test</h3>
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/performance.png" alt="0-100 test" width="499" height="306" loading="lazy" decoding="async">
+      <figcaption>Measurement screen</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ul class="pos-list">
+        <li><span class="where">Top right</span><span class="what">Current measurement result</span></li>
+        <li><span class="where">Below</span><span class="what">The last three results – the best one is marked green</span></li>
+        <li><span class="where">Reset results</span><span class="what">Press and hold <span class="key">RESET</span> to clear the last three results</span></li>
+      </ul>
+
+      <h4 class="man-card__title" style="margin-top:1.4rem">On-screen statuses</h4>
+      <ul class="pos-list">
+        <li><span class="where">READY</span><span class="what">Ready to start a measurement</span></li>
+        <li><span class="where">STOP</span><span class="what">Waiting for the car to come to a stop</span></li>
+        <li><span class="where">RESET</span><span class="what">Waiting for the reset button to be pressed to start a new measurement</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- 8. ENGINE DATA ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-advanced" aria-labelledby="t-advanced" hidden>
+  <h3>Engine data readout (Advanced)</h3>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/advanced.png" alt="Engine data" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Advanced screen</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title">Reading the parameters</h4>
+      <p class="opt__desc" style="margin-bottom:1rem">Available data: boost pressure, fuel rail pressure, MAF, injector corrections and exhaust gas temperatures.</p>
+      <ul class="pos-list">
+        <li><span class="where">Enter</span><span class="what">The <span class="key">Advanced</span> button in the menu</span></li>
+        <li><span class="where">Page change</span><span class="what">Swipe up or down</span></li>
+        <li><span class="where">Exit</span><span class="what">Swipe left to right</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.2rem">Graph view</h3>
+  <p class="lead">Available graphs: boost pressure, fuel pressure and MAF – actual and specified values.</p>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/advanced_long_press.png" alt="Press and hold the Advanced button" width="498" height="306" loading="lazy" decoding="async">
+      <figcaption>Step 1 – press and hold Advanced</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <ol class="steps">
+        <li>Press and hold the <span class="key">Advanced</span> button for 2 seconds.</li>
+        <li>Select the graph you want to view.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/choose_graph.png" alt="Select a graph" width="497" height="305" loading="lazy" decoding="async">
+      <figcaption>Step 2 – graph selection</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <p class="opt__desc">List of available graphs.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ END OF MANUAL SECTION ============ -->
+
+    </div>
+  </div>
 </section>
 
 </main>
@@ -306,8 +525,116 @@
 
 <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
   <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
-  <img src="" alt="Enlarged photo" id="lightboxImg">
+  <img src="" alt="Enlarged image" id="lightboxImg">
 </div>
+
+<!-- ============================================================
+     Manual tabs + lightbox for the screenshots.
+     Can also be moved into /assets/js/main.js
+     ============================================================ -->
+<script>
+(function () {
+  var bar = document.querySelector('.tabs');
+  if (!bar) return;
+  var tabs = Array.prototype.slice.call(bar.querySelectorAll('.tab'));
+  if (!tabs.length) return;
+  var header = document.querySelector('.site-header');
+
+  /* The tab bar sticks exactly below the header, whatever its height
+     (on phones the header is taller than the fixed --header-offset). */
+  function syncStickyTop() {
+    var h = header ? Math.round(header.getBoundingClientRect().height) : 0;
+    document.documentElement.style.setProperty('--man-sticky-top', h + 'px');
+  }
+  syncStickyTop();
+  window.addEventListener('resize', syncStickyTop);
+  window.addEventListener('load', syncStickyTop);
+
+  /* Scrolls the active tab into view inside the bar – without scrolling the page. */
+  function revealTab(t) {
+    if (bar.scrollWidth <= bar.clientWidth) return;
+    var left = t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2;
+    left = Math.max(0, Math.min(left, bar.scrollWidth - bar.clientWidth));
+    if (bar.scrollTo) bar.scrollTo({ left: left, behavior: 'smooth' });
+    else bar.scrollLeft = left;
+  }
+
+  function stickyPx() {
+    return parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue('--man-sticky-top'), 10) || 0;
+  }
+  function barDocTop() {
+    return bar.getBoundingClientRect().top + window.pageYOffset;
+  }
+
+  /* After switching tabs: if the bar scrolled off the top, come back to it. */
+  function keepBarInView() {
+    if (bar.getBoundingClientRect().top <= stickyPx() + 1) {
+      window.scrollTo({ top: barDocTop() - stickyPx() - 8, behavior: 'smooth' });
+    }
+  }
+
+  function select(id, userAction) {
+    tabs.forEach(function (t) {
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !on;
+      if (on) revealTab(t);
+    });
+    if (userAction) {
+      keepBarInView();
+      if (history.replaceState) history.replaceState(null, '', '#i-' + id.replace('t-', ''));
+    }
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { select(t.id, true); });
+    t.addEventListener('keydown', function (e) {
+      var i = tabs.indexOf(t), n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft')  n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === 'Home')       n = tabs[0];
+      if (e.key === 'End')        n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); select(n.id, true); n.focus(); }
+    });
+  });
+
+  /* Entering from a URL such as /en/mini/#i-settings */
+  var h = location.hash.replace('#i-', '');
+  if (h && document.getElementById('t-' + h)) {
+    select('t-' + h, false);
+    window.addEventListener('load', function () {
+      syncStickyTop();
+      window.scrollTo(0, barDocTop() - stickyPx() - 8);
+    });
+  } else {
+    select(tabs[0].id, false);
+  }
+})();
+
+(function () {
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var img = document.getElementById('lightboxImg');
+  var close = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.man-card__media img, .man-figure img, .gesture img, .img-pair img').forEach(function (el) {
+    el.addEventListener('click', function () {
+      img.src = el.currentSrc || el.src;
+      img.alt = el.alt || '';
+      box.classList.add('active');
+      document.body.classList.add('no-scroll');
+    });
+  });
+
+  function hide() { box.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  box.addEventListener('click', function (e) { if (e.target !== img) hide(); });
+  if (close) close.addEventListener('click', hide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+})();
+</script>
 
 </body>
 </html>

@@ -766,7 +766,7 @@ img.center-image {
 .man-figure figcaption{margin-top:.5rem;font-size:.8rem;color:var(--muted);text-align:center}
  
 
-.img-pair{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.2rem 0 0}
+.img-pair{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.4rem 0 0}
 .img-pair figure{margin:0;flex:1 1 240px;max-width:340px}
 .img-pair img{display:block;width:100%;border-radius:16px;box-shadow:var(--shadow);cursor:zoom-in;background:#0b1226}
 .img-pair figcaption{margin-top:.45rem;text-align:center;font-size:.82rem;color:var(--muted)}
