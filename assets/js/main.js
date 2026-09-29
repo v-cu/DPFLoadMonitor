@@ -13,11 +13,20 @@
     if (!triggers.length) return;
 
     let lastFocused = null;
+    let group = [];   // zdjęcia z tej samej galerii / rzędu co otwarte
+    let index = -1;   // pozycja aktualnie wyświetlanego zdjęcia w grupie
+
+    const showImage = (img) => {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || '';
+    };
 
     const openLightbox = (img) => {
       lastFocused = img;
-      lightboxImg.src = img.currentSrc || img.src;
-      lightboxImg.alt = img.alt || '';
+      const parent = img.closest('.gallery, .image-row');
+      group = parent ? Array.from(parent.querySelectorAll('img')) : [img];
+      index = group.indexOf(img);
+      showImage(img);
       lightbox.classList.add('active');
       document.body.classList.add('no-scroll');
       lightboxClose.focus();
@@ -27,7 +36,21 @@
       lightbox.classList.remove('active');
       document.body.classList.remove('no-scroll');
       lightboxImg.src = '';
-      if (lastFocused) lastFocused.focus();
+      // fokus wraca na zdjęcie, które było oglądane jako ostatnie
+      if (index >= 0 && group[index]) group[index].focus();
+      else if (lastFocused) lastFocused.focus();
+      group = [];
+      index = -1;
+    };
+
+    // Strzałki lewo/prawo: poprzednie / następne zdjęcie (w kółko)
+    const step = (dir) => {
+      if (group.length < 2 || index < 0) return;
+      // podgląd otwarty innym skryptem (np. zrzuty instrukcji) – nie ruszamy
+      const cur = group[index];
+      if (lightboxImg.src !== (cur.currentSrc || cur.src)) return;
+      index = (index + dir + group.length) % group.length;
+      showImage(group[index]);
     };
 
     triggers.forEach((img) => {
@@ -48,7 +71,10 @@
       if (e.target === lightbox) closeLightbox();
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+      else if (e.key === 'ArrowLeft')  { e.preventDefault(); step(-1); }
     });
   };
 
