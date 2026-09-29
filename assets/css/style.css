@@ -758,6 +758,14 @@ img.center-image {
   cursor:zoom-in;background:#0b1226;
 }
 .man-figure figcaption{margin-top:.5rem;font-size:.8rem;color:var(--muted);text-align:center}
+.man-figure--wide{padding:.8rem;margin-bottom:1rem}
+.man-figure--wide img{max-width:100%;height:auto;border-radius:8px}
+.man-figure--wide + .man-figure--wide{margin-top:0}
+@media (max-width:700px){
+  .man-figure--wide{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.7rem}
+  .man-figure--wide img{display:block;width:1000px;max-width:none}
+  .man-figure--wide figcaption{position:sticky;left:0;text-align:left}
+}
 
 .img-pair{
   display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;
