@@ -276,6 +276,11 @@ button:focus-visible,
   box-shadow: 0 14px 34px rgba(0, 0, 0, .45);
 }
 
+/* Samotne ostatnie zdjęcie w rzędzie (3 kolumny) – na środek */
+@media (min-width: 901px) {
+  .gallery img:last-child:nth-child(3n+1) { grid-column: 2; }
+}
+
 /* ===== TABELE ===== */
 
 .table-container {
