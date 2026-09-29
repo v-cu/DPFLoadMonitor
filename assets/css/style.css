@@ -373,6 +373,21 @@ img.center-image {
   box-shadow: 0 14px 34px rgba(0, 0, 0, .45);
 }
 
+/* Wariant: 5 zdjęć w jednym rzędzie (strona Mini) */
+.image-row--5 { gap: 1rem; }
+.image-row--5 img {
+  width: calc((100% - 4rem) / 5);
+  max-width: none;
+  border-radius: 20px;
+}
+@media (max-width: 900px) {
+  .image-row.image-row--5 img { width: calc((100% - 2rem) / 3); }
+}
+@media (max-width: 600px) {
+  .image-row--5 { gap: .8rem; }
+  .image-row.image-row--5 img { width: calc((100% - .8rem) / 2); border-radius: 16px; }
+}
+
 /* ===== PAGE WITH SIDEBAR ===== */
 
 .page-layout {
