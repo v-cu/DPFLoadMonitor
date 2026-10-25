@@ -263,22 +263,55 @@ button:focus-visible,
   gap: 1.2rem;
 }
 
-.gallery img {
-  width: 100%;
+.gallery-item {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1 / 1;          /* wszystkie kafelki tej samej wielkości */
   border-radius: 20px;
-  cursor: zoom-in;
-  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
   box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.gallery img:hover {
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* kadr do kwadratu, bez zniekształceń */
+  cursor: zoom-in;
+}
+
+.gallery-item:hover {
   transform: scale(1.03);
   box-shadow: 0 14px 34px rgba(0, 0, 0, .45);
 }
 
+/* Podpis z modelem auta – lewy dolny róg, widoczny po najechaniu */
+.gallery-item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem .9rem .6rem;
+  font-size: .8rem;
+  color: #cbd5e1;
+  background: linear-gradient(to top, rgba(0, 0, 0, .65), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;         /* klik dalej otwiera powiększenie */
+}
+
+.gallery-item:hover figcaption,
+.gallery-item:focus-within figcaption { opacity: 1; }
+
+/* Telefony / ekrany dotykowe – brak najechania, podpis widoczny stale */
+@media (hover: none) {
+  .gallery-item figcaption { opacity: 1; }
+}
+
 /* Samotne ostatnie zdjęcie w rzędzie (3 kolumny) – na środek */
 @media (min-width: 901px) {
-  .gallery img:last-child:nth-child(3n+1) { grid-column: 2; }
+  .gallery-item:last-child:nth-child(3n+1) { grid-column: 2; }
 }
 
 /* ===== TABELE ===== */
