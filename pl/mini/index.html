@@ -84,7 +84,7 @@
 <h2 id="instrukcja">Instrukcja użytkownika</h2>
 
 <div class="man-head">
-  <span class="man-badge">Wersja SW 1.9.6</span>
+  <span class="man-badge">Wersja SW 1.9.7.5</span>
   <span class="man-head__hint">Wybierz temat poniżej – wyświetli się tylko ta część instrukcji.</span>
 </div>
 
@@ -102,6 +102,7 @@
   <button type="button" class="tab" role="tab" id="t-historia"   aria-controls="p-historia"   aria-selected="false"><span class="num">6</span> Historia</button>
   <button type="button" class="tab" role="tab" id="t-pomiar"     aria-controls="p-pomiar"     aria-selected="false"><span class="num">7</span> Pomiar 0-100</button>
   <button type="button" class="tab" role="tab" id="t-advanced"   aria-controls="p-advanced"   aria-selected="false"><span class="num">8</span> Dane silnika</button>
+  <button type="button" class="tab" role="tab" id="t-sd"         aria-controls="p-sd"         aria-selected="false"><span class="num">9</span> Karta SD</button>
 </div>
 
 <!-- ---------- 1. EKRAN GŁÓWNY ---------- -->
@@ -317,7 +318,7 @@
   <p class="lead">Opcje pogrupowane tematycznie – opis każdej z nich znajdziesz poniżej.</p>
 
   <figure class="man-figure">
-    <img src="/assets/img/settings1.png" alt="Ustawienia" width="568" height="819" loading="lazy" decoding="async">
+    <img src="/assets/img/settings2.png" alt="Ustawienia" width="568" height="993" loading="lazy" decoding="async">
     <figcaption>Lista ustawień w urządzeniu</figcaption>
   </figure>
 
@@ -329,7 +330,7 @@
     </div>
     <div class="opt">
       <div class="opt__name">SD Card Save</div>
-      <p class="opt__desc">Zapis danych na kartę SD co 1 sekundę. Rejestrowane są wszystkie parametry odczytywane na stronie głównej.</p>
+      <p class="opt__desc">Zapis danych na kartę microSD co 1 sekundę do pliku CSV. Nowy plik tworzony jest m.in. po każdym wypalaniu DPF. Szczegóły w zakładce <strong>9 – Karta SD</strong>.</p>
     </div>
   </div>
 
@@ -386,6 +387,10 @@
     <div class="opt">
       <div class="opt__name">Auto brightness</div>
       <p class="opt__desc">Automatyczne przełączanie trybu dziennego i nocnego. Przy wyłączonej opcji tryb zmieniasz ręcznie – dotknięciem ekranu.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Smooth brightness</div>
+      <p class="opt__desc">Płynne przejście między jasnością dzienną i nocną zamiast skokowej zmiany. Aktywne tylko przy włączonej opcji <span class="key">Auto brightness</span>.</p>
     </div>
     <div class="opt">
       <div class="opt__name">Day brightness<small>tryb dzienny</small></div>
@@ -488,18 +493,45 @@
 
   <div class="man-card">
     <figure class="man-card__media">
-      <img src="/assets/img/advanced.png" alt="Dane silnika" width="500" height="307" loading="lazy" decoding="async">
-      <figcaption>Ekran Advanced</figcaption>
+      <img src="/assets/img/advanced_p2.png" alt="Dane silnika – strona 2" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Ekran Advanced – strona 2</figcaption>
     </figure>
     <div class="man-card__body">
       <h4 class="man-card__title">Odczyt parametrów</h4>
-      <p class="opt__desc" style="margin-bottom:1rem">Dostępne dane: ciśnienie doładowania, ciśnienie paliwa na listwie, MAF, korekty wtrysków oraz temperatury wydechu.</p>
+      <p class="opt__desc" style="margin-bottom:1rem">Dostępne dane na 4 stronach:</p>
+      <ul class="pos-list" style="margin-bottom:1rem">
+        <li><span class="where">Strona 1</span><span class="what">Ciśnienie doładowania, ciśnienie paliwa na listwie, MAF <small>wartości rzeczywiste i zadane</small></span></li>
+        <li><span class="where">Strona 2</span><span class="what">Korekty wtrysków cylindrów 1-6, średnia dawka wtrysku <strong>Mean Inj Q</strong> (mg/suw), zamknięcie EGR, offset czujnika ΔP</span></li>
+        <li><span class="where">Strona 3</span><span class="what">Temperatury wydechu 1-4</span></li>
+        <li><span class="where">Strona 4</span><span class="what"><strong>Post Injection 1/2/3</strong> – dawka wtrysku dodatkowego (mg/suw) lub czas sterowania, gdy w tytule widać [ms] – oraz <strong>Lambda</strong> <small>podczas aktywnego wypalania rośnie wtrysk 2 lub 3</small></span></li>
+      </ul>
+      <div class="callout tip" style="margin-bottom:1rem">
+        <span class="ico" aria-hidden="true">i</span>
+        <p>Wartość, której sterownik danego silnika nie udostępnia, jest wyszarzona i pokazuje 0.</p>
+      </div>
       <ul class="pos-list">
         <li><span class="where">Wejście</span><span class="what">Przycisk <span class="key">Advanced</span> w menu</span></li>
-        <li><span class="where">Zmiana stron</span><span class="what">Przesunięcie palcem w górę lub w dół</span></li>
+        <li><span class="where">Zmiana stron</span><span class="what">Przesunięcie palcem w górę lub w dół <small>4 strony</small></span></li>
         <li><span class="where">Wyjście</span><span class="what">Gest z lewej do prawej</span></li>
       </ul>
     </div>
+  </div>
+
+  <div class="img-pair">
+    <figure>
+      <img src="/assets/img/advanced_p1.png" alt="Advanced – strona 1" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Strona 1 – doładowanie, paliwo, MAF</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/img/advanced_p3.png" alt="Advanced – strona 3" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Strona 3 – temperatury spalin</figcaption>
+    </figure>
+  </div>
+  <div class="img-pair">
+    <figure>
+      <img src="/assets/img/advanced_p4.png" alt="Advanced – strona 4" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Strona 4 – wtrysk dodatkowy i lambda</figcaption>
+    </figure>
   </div>
 
   <h3 style="margin-top:2.2rem">Podgląd wykresów</h3>
@@ -529,6 +561,95 @@
   </div>
 </div>
 
+<!-- ---------- 9. KARTA SD ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-sd" aria-labelledby="t-sd" hidden>
+  <h3>Zapis danych na kartę microSD</h3>
+  <p class="lead">Urządzenie może zapisywać dane z jazdy na kartę microSD – co sekundę jeden wiersz w pliku CSV. Logi pozwalają później dokładnie przeanalizować zapełnianie filtra i przebieg wypalań.</p>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/microsd_card_insert.jpg" alt="Wkładanie karty microSD" width="1501" height="1501" loading="lazy" decoding="async">
+      <figcaption>Strona, którą należy włożyć kartę</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title">Uruchomienie zapisu</h4>
+      <ol class="steps">
+        <li>Włóż kartę microSD sformatowaną w <strong>FAT32</strong> lub <strong>exFAT</strong>. Karta jest hot swappable – nie trzeba odłączać urządzenia.</li>
+        <li>W <span class="key">Settings</span> włącz <span class="key">SD Card Save</span>. Przełącznik jest aktywny tylko z włożoną kartą.</li>
+        <li>Migający <strong>zielony znacznik</strong> przy górnej krawędzi ekranu oznacza, że zapis trwa.</li>
+      </ol>
+      <ul class="pos-list">
+        <li><span class="where">Częstotliwość</span><span class="what">1 wiersz co 1 sekundę <small>dane fizycznie trafiają na kartę co 5 sekund</small></span></li>
+        <li><span class="where">Rozmiar</span><span class="what">ok. 250 kB na godzinę jazdy <small>nawet mała karta wystarczy na bardzo długo</small></span></li>
+        <li><span class="where">Nazwy plików</span><span class="what">dpf_log_0.csv, dpf_log_1.csv, … <small>nowy plik dostaje numer o 1 większy od najwyższego na karcie, maksymalnie dpf_log_999</small></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <h4 class="man-card__title">Kiedy tworzy się nowy plik?</h4>
+      <ul class="pos-list">
+        <li><span class="where">Włożenie karty</span><span class="what">Po każdym włożeniu karty zapis zaczyna się w nowym pliku</span></li>
+        <li><span class="where">Start urządzenia</span><span class="what">Po uruchomieniu lub restarcie urządzenia <small>np. po ponownym podłączeniu do gniazda OBD-II</small></span></li>
+        <li><span class="where">Koniec wypalania</span><span class="what">Po zakończeniu każdego wypalania DPF <small>dzięki temu jeden plik obejmuje jeden cykl zapełniania filtra – od wypalania do wypalania</small></span></li>
+      </ul>
+      <div class="callout tip" style="margin:1rem 0 0">
+        <span class="ico" aria-hidden="true">i</span>
+        <p>Po zgaszeniu i ponownym uruchomieniu silnika oraz po wyłączeniu i włączeniu <span class="key">SD Card Save</span> dane są <strong>dopisywane do tego samego pliku</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.2rem">Zawartość pliku CSV</h3>
+  <p class="lead">Pierwszy wiersz zawiera nazwy kolumn, separatorem jest przecinek, a separatorem dziesiętnym kropka. Każdy kolejny wiersz to jedna sekunda jazdy.</p>
+  <div class="table-container">
+    <table>
+      <tbody>
+        <tr><td>DPF_in</td><td class="td-right">temperatura przed DPF, °C</td></tr>
+        <tr><td>DPF_out</td><td class="td-right">temperatura za DPF, °C</td></tr>
+        <tr><td>Diff_press</td><td class="td-right">ciśnienie różnicowe ΔP, hPa</td></tr>
+        <tr><td>Last_regen_km</td><td class="td-right">dystans od ostatniego wypalania, km</td></tr>
+        <tr><td>Last_regen_min</td><td class="td-right">czas od ostatniego wypalania, min</td></tr>
+        <tr><td>Oil_temp</td><td class="td-right">temperatura oleju, °C</td></tr>
+        <tr><td>Soot_calc</td><td class="td-right">masa sadzy obliczona, g</td></tr>
+        <tr><td>Soot_meas</td><td class="td-right">masa sadzy zmierzona, g</td></tr>
+        <tr><td>Coolant</td><td class="td-right">temperatura płynu chłodzącego, °C</td></tr>
+        <tr><td>Batt</td><td class="td-right">napięcie akumulatora, V</td></tr>
+        <tr><td>Engine_time</td><td class="td-right">czas pracy silnika od uruchomienia, min</td></tr>
+        <tr><td>Intake</td><td class="td-right">temperatura powietrza dolotowego, °C</td></tr>
+        <tr><td>Engine_speed</td><td class="td-right">obroty silnika, RPM</td></tr>
+        <tr><td>Vehicle_speed</td><td class="td-right">prędkość pojazdu, km/h</td></tr>
+        <tr><td>Post_Inj2</td><td class="td-right">wtrysk dodatkowy 2 (wartość ze sterownika)</td></tr>
+        <tr><td>Post_Inj3</td><td class="td-right">wtrysk dodatkowy 3 (wartość ze sterownika)</td></tr>
+        <tr><td>Oil_Ash</td><td class="td-right">popiół olejowy, g lub l (zależnie od silnika)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><small>Parametry, których dany silnik nie obsługuje, zapisywane są jako 0.</small></p>
+
+  <h3 style="margin-top:2.2rem">Jak przeglądać logi?</h3>
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <p class="opt__desc" style="margin-bottom:1rem">Najwygodniej oglądać log jako wykresy w <strong>log viewerze online</strong> – wystarczy wczytać plik CSV w przeglądarce i wybrać parametry do porównania.</p>
+      <ul class="pos-list">
+        <li><span class="where">Online</span><span class="what"><a href="https://datazap.me" target="_blank" rel="noopener" style="color:var(--brand-2)">datazap.me</a>, <a href="https://www.csvplot.com" target="_blank" rel="noopener" style="color:var(--brand-2)">csvplot.com</a> <small>wykresy wielu parametrów na wspólnej osi czasu</small></span></li>
+        <li><span class="where">Offline</span><span class="what">MegaLogViewer, Excel, LibreOffice Calc <small>w polskim Excelu otwieraj plik przez Dane → Z tekstu/CSV i ustaw przecinek jako separator, a kropkę jako separator dziesiętny – inaczej liczby z kropką mogą zamienić się w daty</small></span></li>
+        <li><span class="where">Warto porównać</span><span class="what">Przyrost Soot_calc i Soot_meas, Diff_press względem Engine_speed oraz temperatury DPF_in / DPF_out podczas wypalania <small>Post_Inj2 / Post_Inj3 większe od 0 oznaczają aktywny wtrysk dodatkowy, czyli wypalanie</small></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.2rem">Wyjmowanie karty i błędy zapisu</h3>
+  <div class="callout warn">
+    <span class="ico" aria-hidden="true">⚠</span>
+    <p>Najbezpieczniej wyjąć kartę przy <strong>zgaszonym silniku</strong> (urządzenie jest uśpione, a plik zamknięty) albo po wyłączeniu <span class="key">SD Card Save</span>. Wyjęcie karty w trakcie zapisu może spowodować utratę ostatnich kilku sekund danych.</p>
+  </div>
+  <ul class="pos-list">
+    <li><span class="where">Błąd zapisu</span><span class="what">Jeśli wystąpi błąd zapisu, przełącznik <span class="key">SD Card Save</span> robi się szary, a zapis zostaje wyłączony. Aby go przywrócić, zresetuj urządzenie – odłącz je od gniazda OBD-II i podłącz ponownie</span></li>
+  </ul>
+</div>
+
 <!-- ============ KONIEC SEKCJI INSTRUKCJI ============ -->
 
 <h2 id="pobierz">Instrukcja do pobrania</h2>
@@ -537,11 +658,11 @@
 <ul class="download-list">
   <li>
     <a href="/downloads/DPF_Monitor_Mini_Instrukcja_PL.pdf" download>Instrukcja obsługi – polski</a>
-    <span class="file-info">Silniki TDI common-rail (UDS) • PDF • 5,7 MB</span>
+    <span class="file-info">Silniki TDI common-rail (UDS) • SW 1.9.7.5 • PDF • 6,3 MB</span>
   </li>
   <li>
     <a href="/downloads/DPF_Monitor_Mini_User_Manual_EN.pdf" download>User Manual – English</a>
-    <span class="file-info">Silniki TDI common-rail (UDS) • PDF • 5,7 MB</span>
+    <span class="file-info">Silniki TDI common-rail (UDS) • SW 1.9.7.5 • PDF • 6,3 MB</span>
   </li>
   <li>
     <a href="/downloads/DPF_Monitor_Mini_BLS_Instrukcja_PL.pdf" download>Instrukcja obsługi BLS / BXE / BMN – polski</a>

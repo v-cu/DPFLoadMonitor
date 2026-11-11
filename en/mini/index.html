@@ -84,7 +84,7 @@
 <h2 id="instrukcja">User manual</h2>
 
 <div class="man-head">
-  <span class="man-badge">SW version 1.9.6</span>
+  <span class="man-badge">SW version 1.9.7.5</span>
   <span class="man-head__hint">Pick a topic below – only that part of the manual is shown.</span>
 </div>
 
@@ -102,6 +102,7 @@
   <button type="button" class="tab" role="tab" id="t-history"  aria-controls="p-history"  aria-selected="false"><span class="num">6</span> History</button>
   <button type="button" class="tab" role="tab" id="t-perf"     aria-controls="p-perf"     aria-selected="false"><span class="num">7</span> 0-100 test</button>
   <button type="button" class="tab" role="tab" id="t-advanced" aria-controls="p-advanced" aria-selected="false"><span class="num">8</span> Engine data</button>
+  <button type="button" class="tab" role="tab" id="t-sd"       aria-controls="p-sd"       aria-selected="false"><span class="num">9</span> SD card</button>
 </div>
 
 <!-- ---------- 1. MAIN SCREEN ---------- -->
@@ -313,7 +314,7 @@
   <p class="lead">The options are grouped by topic – each one is described below.</p>
 
   <figure class="man-figure">
-    <img src="/assets/img/settings1.png" alt="Settings" width="568" height="819" loading="lazy" decoding="async">
+    <img src="/assets/img/settings2.png" alt="Settings" width="568" height="993" loading="lazy" decoding="async">
     <figcaption>Settings list on the device</figcaption>
   </figure>
 
@@ -325,7 +326,7 @@
     </div>
     <div class="opt">
       <div class="opt__name">SD Card Save</div>
-      <p class="opt__desc">Logs data to the SD card once per second. All parameters read on the main page are recorded.</p>
+      <p class="opt__desc">Logs data to the microSD card once per second into a CSV file. A new file is created e.g. after every DPF regeneration. Details in tab <strong>9 – SD card</strong>.</p>
     </div>
   </div>
 
@@ -382,6 +383,10 @@
     <div class="opt">
       <div class="opt__name">Auto brightness</div>
       <p class="opt__desc">Switches between day and night mode automatically. With this option off, you switch modes manually by tapping the screen.</p>
+    </div>
+    <div class="opt">
+      <div class="opt__name">Smooth brightness</div>
+      <p class="opt__desc">Smooth transition between day and night brightness instead of a step change. Active only with <span class="key">Auto brightness</span> turned on.</p>
     </div>
     <div class="opt">
       <div class="opt__name">Day brightness<small>day mode</small></div>
@@ -484,18 +489,45 @@
 
   <div class="man-card">
     <figure class="man-card__media">
-      <img src="/assets/img/advanced.png" alt="Engine data" width="500" height="307" loading="lazy" decoding="async">
-      <figcaption>Advanced screen</figcaption>
+      <img src="/assets/img/advanced_p2.png" alt="Engine data – page 2" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Advanced screen – page 2</figcaption>
     </figure>
     <div class="man-card__body">
       <h4 class="man-card__title">Reading the parameters</h4>
-      <p class="opt__desc" style="margin-bottom:1rem">Available data: boost pressure, fuel rail pressure, MAF, injector corrections and exhaust gas temperatures.</p>
+      <p class="opt__desc" style="margin-bottom:1rem">Data available on 4 pages:</p>
+      <ul class="pos-list" style="margin-bottom:1rem">
+        <li><span class="where">Page 1</span><span class="what">Boost pressure, fuel rail pressure, MAF <small>actual and specified values</small></span></li>
+        <li><span class="where">Page 2</span><span class="what">Injector corrections of cylinders 1-6, mean injection quantity <strong>Mean Inj Q</strong> (mg/str), EGR closing, ΔP sensor offset</span></li>
+        <li><span class="where">Page 3</span><span class="what">Exhaust gas temperatures 1-4</span></li>
+        <li><span class="where">Page 4</span><span class="what"><strong>Post Injection 1/2/3</strong> – post injection quantity (mg/str) or control duration when the title shows [ms] – and <strong>Lambda</strong> <small>during an active regeneration post injection 2 or 3 rises</small></span></li>
+      </ul>
+      <div class="callout tip" style="margin-bottom:1rem">
+        <span class="ico" aria-hidden="true">i</span>
+        <p>A value the ECU of a given engine does not provide is greyed out and shows 0.</p>
+      </div>
       <ul class="pos-list">
         <li><span class="where">Enter</span><span class="what">The <span class="key">Advanced</span> button in the menu</span></li>
-        <li><span class="where">Page change</span><span class="what">Swipe up or down</span></li>
+        <li><span class="where">Page change</span><span class="what">Swipe up or down <small>4 pages</small></span></li>
         <li><span class="where">Exit</span><span class="what">Swipe left to right</span></li>
       </ul>
     </div>
+  </div>
+
+  <div class="img-pair">
+    <figure>
+      <img src="/assets/img/advanced_p1.png" alt="Advanced – page 1" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Page 1 – boost, fuel, MAF</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/img/advanced_p3.png" alt="Advanced – page 3" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Page 3 – exhaust temperatures</figcaption>
+    </figure>
+  </div>
+  <div class="img-pair">
+    <figure>
+      <img src="/assets/img/advanced_p4.png" alt="Advanced – page 4" width="500" height="307" loading="lazy" decoding="async">
+      <figcaption>Page 4 – post injection and lambda</figcaption>
+    </figure>
   </div>
 
   <h3 style="margin-top:2.2rem">Graph view</h3>
@@ -525,6 +557,95 @@
   </div>
 </div>
 
+<!-- ---------- 9. SD CARD ---------- -->
+<div class="tabpanel" role="tabpanel" id="p-sd" aria-labelledby="t-sd" hidden>
+  <h3>Data logging to a microSD card</h3>
+  <p class="lead">The device can log driving data to a microSD card – one row per second in a CSV file. The logs let you analyse filter loading and regenerations in detail later.</p>
+
+  <div class="man-card">
+    <figure class="man-card__media">
+      <img src="/assets/img/microsd_card_insert.jpg" alt="Inserting the microSD card" width="1501" height="1501" loading="lazy" decoding="async">
+      <figcaption>Which way to insert the card</figcaption>
+    </figure>
+    <div class="man-card__body">
+      <h4 class="man-card__title">Starting the logging</h4>
+      <ol class="steps">
+        <li>Insert a microSD card formatted as <strong>FAT32</strong> or <strong>exFAT</strong>. The card is hot swappable – no need to disconnect the device.</li>
+        <li>In <span class="key">Settings</span> turn on <span class="key">SD Card Save</span>. The switch is only active with a card inserted.</li>
+        <li>A blinking <strong>green dot</strong> at the top edge of the screen means logging is active.</li>
+      </ol>
+      <ul class="pos-list">
+        <li><span class="where">Rate</span><span class="what">1 row every second <small>data is physically written to the card every 5 seconds</small></span></li>
+        <li><span class="where">Size</span><span class="what">about 250 kB per hour of driving <small>even a small card lasts a very long time</small></span></li>
+        <li><span class="where">File names</span><span class="what">dpf_log_0.csv, dpf_log_1.csv, … <small>each new file gets a number one higher than the highest on the card, up to dpf_log_999</small></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <h4 class="man-card__title">When is a new file created?</h4>
+      <ul class="pos-list">
+        <li><span class="where">Card inserted</span><span class="what">Every time the card is inserted, logging starts in a new file</span></li>
+        <li><span class="where">Device start</span><span class="what">After the device starts or restarts <small>e.g. after plugging it into the OBD-II port again</small></span></li>
+        <li><span class="where">End of regeneration</span><span class="what">After every DPF regeneration ends <small>so one file covers one filter loading cycle – from regeneration to regeneration</small></span></li>
+      </ul>
+      <div class="callout tip" style="margin:1rem 0 0">
+        <span class="ico" aria-hidden="true">i</span>
+        <p>After switching the engine off and on again, or turning <span class="key">SD Card Save</span> off and on, data is <strong>appended to the same file</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.2rem">CSV file contents</h3>
+  <p class="lead">The first row holds the column names, the separator is a comma and the decimal separator is a dot. Every following row is one second of driving.</p>
+  <div class="table-container">
+    <table>
+      <tbody>
+        <tr><td>DPF_in</td><td class="td-right">DPF inlet temperature, °C</td></tr>
+        <tr><td>DPF_out</td><td class="td-right">DPF outlet temperature, °C</td></tr>
+        <tr><td>Diff_press</td><td class="td-right">differential pressure ΔP, hPa</td></tr>
+        <tr><td>Last_regen_km</td><td class="td-right">distance since last regeneration, km</td></tr>
+        <tr><td>Last_regen_min</td><td class="td-right">time since last regeneration, min</td></tr>
+        <tr><td>Oil_temp</td><td class="td-right">oil temperature, °C</td></tr>
+        <tr><td>Soot_calc</td><td class="td-right">calculated soot mass, g</td></tr>
+        <tr><td>Soot_meas</td><td class="td-right">measured soot mass, g</td></tr>
+        <tr><td>Coolant</td><td class="td-right">coolant temperature, °C</td></tr>
+        <tr><td>Batt</td><td class="td-right">battery voltage, V</td></tr>
+        <tr><td>Engine_time</td><td class="td-right">engine run time since start, min</td></tr>
+        <tr><td>Intake</td><td class="td-right">intake air temperature, °C</td></tr>
+        <tr><td>Engine_speed</td><td class="td-right">engine speed, RPM</td></tr>
+        <tr><td>Vehicle_speed</td><td class="td-right">vehicle speed, km/h</td></tr>
+        <tr><td>Post_Inj2</td><td class="td-right">post injection 2 (raw ECU value)</td></tr>
+        <tr><td>Post_Inj3</td><td class="td-right">post injection 3 (raw ECU value)</td></tr>
+        <tr><td>Oil_Ash</td><td class="td-right">oil ash, g or l (engine dependent)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><small>Parameters not supported by a given engine are logged as 0.</small></p>
+
+  <h3 style="margin-top:2.2rem">How to view the logs?</h3>
+  <div class="man-card wide">
+    <div class="man-card__body">
+      <p class="opt__desc" style="margin-bottom:1rem">The most convenient way is to view the log as graphs in an <strong>online log viewer</strong> – just load the CSV file in your browser and pick the parameters to compare.</p>
+      <ul class="pos-list">
+        <li><span class="where">Online</span><span class="what"><a href="https://datazap.me" target="_blank" rel="noopener" style="color:var(--brand-2)">datazap.me</a>, <a href="https://www.csvplot.com" target="_blank" rel="noopener" style="color:var(--brand-2)">csvplot.com</a> <small>graphs of many parameters on a common time axis</small></span></li>
+        <li><span class="where">Offline</span><span class="what">MegaLogViewer, Excel, LibreOffice Calc <small>if your Excel uses a decimal comma, open the file via Data → From Text/CSV and set the comma as separator and the dot as decimal separator</small></span></li>
+        <li><span class="where">Worth comparing</span><span class="what">Growth of Soot_calc and Soot_meas, Diff_press vs Engine_speed, and DPF_in / DPF_out temperatures during regeneration <small>Post_Inj2 / Post_Inj3 above 0 means active post injection, i.e. regeneration</small></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2.2rem">Removing the card and write errors</h3>
+  <div class="callout warn">
+    <span class="ico" aria-hidden="true">⚠</span>
+    <p>It is safest to remove the card with the <strong>engine off</strong> (the device is asleep and the file is closed) or after turning <span class="key">SD Card Save</span> off. Removing the card while logging may lose the last few seconds of data.</p>
+  </div>
+  <ul class="pos-list">
+    <li><span class="where">Write error</span><span class="what">If a write error occurs, the <span class="key">SD Card Save</span> switch turns grey and logging is disabled. To restore it, reset the device – unplug it from the OBD-II port and plug it in again</span></li>
+  </ul>
+</div>
+
 <!-- ============ END OF MANUAL SECTION ============ -->
 
 <h2 id="download">Download the manual</h2>
@@ -533,11 +654,11 @@
 <ul class="download-list">
   <li>
     <a href="/downloads/DPF_Monitor_Mini_User_Manual_EN.pdf" download>User Manual – English</a>
-    <span class="file-info">TDI common-rail engines (UDS) • PDF • 5.7 MB</span>
+    <span class="file-info">TDI common-rail engines (UDS) • SW 1.9.7.5 • PDF • 6.3 MB</span>
   </li>
   <li>
     <a href="/downloads/DPF_Monitor_Mini_Instrukcja_PL.pdf" download>Instrukcja obsługi – Polish</a>
-    <span class="file-info">TDI common-rail engines (UDS) • PDF • 5.7 MB</span>
+    <span class="file-info">TDI common-rail engines (UDS) • SW 1.9.7.5 • PDF • 6.3 MB</span>
   </li>
   <li>
     <a href="/downloads/DPF_Monitor_Mini_BLS_User_Manual_EN.pdf" download>User Manual BLS / BXE / BMN – English</a>
